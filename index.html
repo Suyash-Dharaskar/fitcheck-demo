@@ -1,37 +1,280 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>FitCheck.ai</title>
-    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
-    <style id="expo-reset">
-      /* These styles make the body full-height */
-      html,
-      body {
-        height: 100%;
-      }
-      /* These styles disable body scrolling if you are using <ScrollView> */
-      body {
-        overflow: hidden;
-      }
-      /* These styles make the root element full-height */
-      #root {
-        display: flex;
-        height: 100%;
-        flex: 1;
-      }
-    </style>
-  <link rel="icon" href="/fitcheck-demo/favicon.ico"/></head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FitCheck.ai — building a wardrobe app, and deciding not to</title>
+<meta name="description" content="A product decision, documented: 11,389 reviews read, 12 models measured, 47 screens designed, 4 built. What the evidence said and where I was wrong.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#201A28; --soft:#6B6472; --line:#EEE9F2; --surface:#F5F2F8;
+    --canvas:#FFFFFF; --plum:#4A2E5B; --hot:#E23B7A; --gold:#C6A15A; --ok:#147A44;
+    /* The brand pink is 4.1:1 against white -- below the 4.5:1 AA floor for
+       anything under 18.66px bold. This is the same hue at the brand's own
+       darker stop, used wherever white text sits ON pink. #E23B7A stays for
+       borders and accents, where contrast does not apply. */
+    --hot-on-white:#B01A57;
+    --measure:68ch;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--surface);color:var(--ink);
+       font-family:Mukta,system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.6;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Rozha One',Georgia,serif;font-weight:400;line-height:1.08;margin:0}
+  h1{font-size:clamp(38px,7vw,64px);letter-spacing:-.015em}
+  h2{font-size:clamp(28px,4.4vw,40px);letter-spacing:-.01em;margin:64px 0 8px}
+  h3{font-size:22px;margin:32px 0 6px}
+  p{margin:14px 0;max-width:var(--measure)}
+  a{color:var(--plum)}
+  .lede{font-size:clamp(18px,2.4vw,21px);color:var(--soft);max-width:var(--measure)}
 
-  <body>
-    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <!-- The root element for your Expo app. -->
-    <div id="root"></div>
-  <script src="/fitcheck-demo/_expo/static/js/web/entry-00bb7ec1c4a65673ae81935495b0252a.js" defer></script>
+  /* The brand gradient, with a scrim over it. Without the scrim, white body
+     text sitting over the #E23B7A end is about 3.9:1 and fails AA -- and which
+     end a given line lands on depends on the viewport, so it cannot be checked
+     by looking once. The scrim makes it safe everywhere and keeps the hue. */
+  header.hero{background:
+                linear-gradient(180deg,rgba(26,20,34,.30) 0%,rgba(26,20,34,.14) 100%),
+                linear-gradient(135deg,#4A2E5B 0%,#8E44AD 55%,#E23B7A 100%);
+              color:#fff;padding:72px 0 64px;margin-bottom:8px}
+  header.hero h1{color:#fff}
+  header.hero .lede{color:rgba(255,255,255,.92)}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+          margin-bottom:14px}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:14px;margin:34px 0 0}
+  /* Tinted DOWN, not up. The gradient ends in #E23B7A, where white at 12px is
+     about 3.4:1 and fails AA however opaque it is. Darkening the chip gives the
+     small text its own backing instead of relying on where it happens to sit. */
+  .stat{background:rgba(26,20,34,.42);border:1px solid rgba(255,255,255,.22);
+        border-radius:14px;padding:14px 16px}
+  .stat b{display:block;font-family:'Rozha One',serif;font-size:30px;line-height:1.1}
+  .stat span{font-size:12.5px}
+
+  .card{background:var(--canvas);border-radius:18px;padding:26px 28px;margin:22px 0;
+        box-shadow:0 4px 16px rgba(32,26,40,.07)}
+  .quote{border-left:3px solid var(--hot);padding:4px 0 4px 18px;margin:18px 0;
+         font-size:18px;color:var(--ink)}
+  .quote cite{display:block;font-size:13.5px;color:var(--soft);font-style:normal;margin-top:8px}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-weight:700}
+  td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.05em;
+       padding:3px 9px;border-radius:999px;white-space:nowrap}
+  .t-keep{background:#E6F4EC;color:var(--ok)}
+  .t-change{background:#F6ECD2;color:#7A5A16}
+  .t-no{background:#FBE6E6;color:#7A1414}
+  .t-later{background:var(--surface);color:var(--soft)}
+
+  .wrong{background:var(--canvas);border-radius:18px;padding:22px 26px;margin:16px 0;
+         border-left:4px solid var(--gold)}
+  .wrong b{display:block;margin-bottom:4px}
+
+  .cta{background:var(--ink);color:#fff;border-radius:22px;padding:40px 32px;margin:52px 0 72px}
+  .cta h2{color:#fff;margin-top:0}
+  .cta p{color:rgba(255,255,255,.82)}
+  .buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .btn{display:inline-block;padding:14px 22px;border-radius:12px;text-decoration:none;
+       font-weight:700;font-size:16px}
+  .btn-primary{background:var(--hot-on-white);color:#fff}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.26)}
+  .btn:hover{opacity:.92}
+
+  footer{color:var(--soft);font-size:14px;padding:0 0 56px}
+  .note{font-size:14.5px;color:var(--soft)}
+  @media (max-width:560px){ .card,.wrong{padding:20px} .cta{padding:28px 22px} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Product case study · 2026</div>
+    <h1>I set out to build a wardrobe app.<br>The evidence told me to build something smaller.</h1>
+    <p class="lede">FitCheck.ai — an India-first wardrobe and styling app. This is the
+    research, the measurements, the decisions, and the four places I was wrong.</p>
+    <div class="stats">
+      <div class="stat"><b>11,389</b><span>app-store reviews read, 11 apps</span></div>
+      <div class="stat"><b>1,463</b><span>feature requests ranked</span></div>
+      <div class="stat"><b>2,486</b><span>YouTube comments analysed</span></div>
+      <div class="stat"><b>12</b><span>models measured on real hardware</span></div>
+      <div class="stat"><b>47</b><span>screens designed</span></div>
+      <div class="stat"><b>4</b><span>screens built first, deliberately</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<h2>The problem</h2>
+<p>People own clothes they forget they own, and buy more because of it. Wardrobe
+apps exist to fix that and mostly die the same way: the user has to photograph
+every garment before the app does anything useful, and almost nobody finishes.</p>
+<p>I wanted to know two things before writing a line of product code —
+<b>is the problem felt strongly enough to act on</b>, and
+<b>can the technology actually deliver the promise on a mid-range Indian phone?</b></p>
+
+<h2>What I did</h2>
+<div class="card">
+  <table>
+    <tr><th>Method</th><th>Scale</th><th>What it was for</th></tr>
+    <tr><td>App teardowns</td><td class="num">15 apps</td><td>Six walked hands-on over ADB, not read about</td></tr>
+    <tr><td>Review mining</td><td class="num">11,389</td><td>Every review with text, across 11 products</td></tr>
+    <tr><td>Request ranking</td><td class="num">1,463</td><td>What users ask for, counted and ranked</td></tr>
+    <tr><td>Comment corpus</td><td class="num">2,486</td><td>YouTube, where people argue rather than rate</td></tr>
+    <tr><td>Feature parity</td><td class="num">128 × 6</td><td>Us against six apps, with UNKNOWN as the default</td></tr>
+    <tr><td>Model benchmarks</td><td class="num">12</td><td>Measured, on real hardware, not quoted from papers</td></tr>
+  </table>
+</div>
+<p class="note">The parity matrix was filled by a separate reader per app, under one
+standing rule: <b>UNKNOWN is the default, and 90 honest unknowns beat one invented
+tick.</b> Five apps were excluded on purpose because nobody had opened them.</p>
+
+<h2>What the evidence said</h2>
+
+<h3>1. The most-wanted feature was one nobody had built</h3>
+<p>Ranked across 1,463 requests, the top ask was a deeper taxonomy. Sixth was
+<b>custom, user-created categories</b> — and that turned out to be the whole
+ethnic-wear answer.</p>
+<div class="quote">
+  “When you add clothes to your closet gallery with photos <b>you can have custom
+  categories, I use it a lot because I wear a lot of Indian sarees.</b>”
+  <cite>Smart Closet · 5★ · 2016</cite>
+</div>
+<p>The only satisfied ethnic-wear user in a decade of reviews did not get a saree
+category. She got <b>permission to make one.</b> Eight years later a Whering
+reviewer asked for exactly that fallback. The lesson is not “add saree” — it is
+“ship a taxonomy <i>and</i> let people extend it”.</p>
+<div class="quote">
+  “pls can you add ethic wear section… like Indian wear, kurti, lehenga… <b>like
+  koreans have hanbok</b>..pls do consider”
+  <cite>Acloset · 4★ · 2024</cite>
+</div>
+<p>Acloset already models hanbok — a Korean garment, in a Korean app. The schema
+can carry non-Western clothing. They built it for their home market and stopped.
+A user noticed, and made the argument better than I could.</p>
+
+<h3>2. “AI” is both the ask and the objection</h3>
+<p>The same corpus wants on-device intelligence and resents being sold it.</p>
+<table>
+  <tr><th>Wanted</th><th>Not wanted</th></tr>
+  <tr>
+    <td>“only on device processing and <b>autotagging</b> with db export”</td>
+    <td>“an app that focused on data and <b>didn’t shove AI outfit ideas down my throat</b>”</td>
+  </tr>
+  <tr>
+    <td>“it keeps your data on your devices rather than on the cloud”</td>
+    <td>“<b>‘AI-powered’ is a pretty big turn off</b>… is there the option to turn it off?”</td>
+  </tr>
+</table>
+<p><b>The distinction is specific, and it is a product decision.</b> Auto-tagging is
+labour people want removed. A stylist volunteering outfits is an opinion they did
+not ask for. So: tagging is automatic, the stylist only answers when asked, and
+the off switch ships at the same time — not in a later release.</p>
+
+<h3>3. The crowd had already solved onboarding, and the answer was not gamification</h3>
+<table>
+  <tr><th class="num">Upvotes</th><th>What people actually do</th></tr>
+  <tr><td class="num">683</td><td>“clean out <b>one drawer at a time</b>, and then stop for a couple of days”</td></tr>
+  <tr><td class="num">108</td><td>“screenshot your item so you don’t have to photograph it”</td></tr>
+  <tr><td class="num">49</td><td>“<b>log the outfit as you wear them</b> instead of taking a day off to log all your clothes”</td></tr>
+</table>
+<p>So the onboarding stopped asking for five items and started asking for one
+drawer — and logging what you wore became a way to <i>build</i> the wardrobe, not
+just record it. Neither idea was mine.</p>
+
+<h2>What I measured</h2>
+<p>Every number below is from a benchmark I ran, not a figure from a paper. Two of
+them changed the product.</p>
+<div class="card">
+<table>
+  <tr><th>Thing</th><th class="num">Target</th><th class="num">Measured</th><th>Consequence</th></tr>
+  <tr><td>Background removal (cutout)</td><td class="num">2 s</td><td class="num"><b>10.9 s</b></td><td>Cut from v1. Every setting tried: half resolution works, quarter returns an empty mask, int8 buys 1.09×, fp16 is <i>slower</i></td></tr>
+  <tr><td>On-device styling sentence</td><td class="num">—</td><td class="num"><b>4.2 s</b></td><td>No answer length fits. Replaced with stated rules a user can argue with</td></tr>
+  <tr><td>Zero-shot tagging, Indian ethnic wear</td><td class="num">—</td><td class="num"><b>82.1%</b></td><td>Good enough to ship. The fine-tuned classifier was cancelled</td></tr>
+  <tr><td>Item embedding, on phone</td><td class="num">—</td><td class="num"><b>357 ms</b></td><td>Fast enough. The spec had claimed ~3 ms — a <b>119×</b> error I found in my own document</td></tr>
+</table>
+</div>
+<p>A licence audit ran alongside it. Two models the plan depended on turned out to
+be unlicensed for commercial use, and were replaced before any code was written
+around them.</p>
+
+<h2>Where I was wrong</h2>
+<p>Four corrections I had to make to my own work. I think these matter more than
+the things I got right.</p>
+
+<div class="wrong">
+  <b>I divided when I should have read the architecture.</b>
+  I claimed a progressive review screen would show its first tile in ~1.4 s, by
+  dividing 10.9 by 8. The cutout runs <b>once per photograph</b>, not once per
+  garment — so every tile lands at the same instant. The arithmetic was fine; the
+  pipeline it described did not exist. Withdrawn from three documents.
+</div>
+<div class="wrong">
+  <b>I repeated an unsourced number four times.</b>
+  “Most users quit after fewer than 20 items” had anchored the whole onboarding
+  argument across three documents. It has no source. Withdrawn — and the only “20”
+  the evidence <i>does</i> support is wardrobe <i>size</i>, not abandonment.
+</div>
+<div class="wrong">
+  <b>I said nobody asked for on-device AI. They had.</b>
+  True of the video transcripts, false of the comments — where the privacy
+  finding ran the other way entirely.
+</div>
+<div class="wrong">
+  <b>I shipped twelve messages that said nothing.</b>
+  A tester reported “button clicks, nothing happens, no message”. The cause was
+  one empty function: React Native Web’s alert is <code>static alert(){}</code>.
+  Every error, every confirmation, discarded. It typechecks and it works on a
+  phone — only an error path in a browser reveals it.
+</div>
+
+<h2>The decision</h2>
+<p>128 features were marked for launch, 85 of them in the first release, to be
+built by one person. The honest answer to “can one person build this?” was no.</p>
+<p>So I built an <b>instrument instead of a product</b>: four screens, no AI model
+shipped, and a pass mark written down <i>before</i> the build —
+<b>40% of 15 testers acting twice in ten days.</b> If that number is not met, the
+remaining 81 features are not worth building, and I will have found out in ten
+days instead of ten months.</p>
+<div class="card">
+<table>
+  <tr><th>Of the 47 designed screens</th><th class="num">Count</th><th>Why</th></tr>
+  <tr><td><span class="tag t-keep">Build as designed</span></td><td class="num">31</td><td>The evidence supports them</td></tr>
+  <tr><td><span class="tag t-change">Build, changed</span></td><td class="num">10</td><td>Evidence arrived after the design</td></tr>
+  <tr><td><span class="tag t-later">Later</span></td><td class="num">3</td><td>Unvalidated, or nothing reads the data yet</td></tr>
+  <tr><td><span class="tag t-no">Not built</span></td><td class="num">4</td><td>Needs a server, a catalogue, or answers a question nobody asked</td></tr>
+</table>
+</div>
+<p class="note">Two of the four were cut on principle rather than effort: importing
+from a link needs network scraping, which would end the “nothing leaves your
+phone” guarantee that is the product’s only real moat.</p>
+
+</main>
+
+<div class="wrap">
+<section class="cta">
+  <h2>See it</h2>
+  <p>The working app runs entirely on your device — no account, no server, and
+  nothing in it can upload a photograph. The prototype is the full product as
+  designed, all 47 screens.</p>
+  <div class="buttons">
+    <a class="btn btn-primary" href="app/">Open the app</a>
+    <a class="btn btn-ghost" href="prototype/gallery.html">All 47 screens</a>
+  </div>
+</section>
+</div>
+
+<footer class="wrap">
+  <p>Built and researched by Suyash Dharaskar. Every figure on this page comes from
+  a document or a benchmark in the project repository; nothing is estimated.</p>
+</footer>
+
 </body>
 </html>
