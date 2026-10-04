@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Closet Wrapped - FitCheck.ai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            future: { hoverOnlyWhenSupported: true },
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#B01A57",
+                      "on-primary": "#ffffff",
+                      "success": "#147A44",
+                      "on-tertiary-fixed": "#261900",
+                      "gold-container": "#F6ECD2",
+                      "cat-gym": "#1E7BB0",
+                      "surface-container-high": "#F5F2F8",
+                      "on-tertiary-fixed-variant": "#5d4201",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "hot-text": "#B01A57",
+                      "inverse-surface": "#332f33",
+                      "tertiary-fixed": "#F6ECD2",
+                      "cat-travel": "#9A6410",
+                      "secondary-fixed-dim": "#FDE7EF",
+                      "surface-dim": "#EEE9F2",
+                      "outline": "#6B6472",
+                      "error": "#D42D2D",
+                      "tertiary-container": "#F6ECD2",
+                      "surface-container-low": "#FFFFFF",
+                      "inverse-on-surface": "#f6eff3",
+                      "tertiary-fixed-dim": "#C6A15A",
+                      "primary-fixed-dim": "#EFE9F5",
+                      "surface-bright": "#FFFFFF",
+                      "cat-ethnic": "#7A2E4C",
+                      "secondary": "#E23B7A",
+                      "on-primary-fixed": "#2a0f3b",
+                      "on-secondary-fixed": "#3f001a",
+                      "outline-variant": "#EEE9F2",
+                      "on-primary-fixed-variant": "#583b69",
+                      "cat-casual": "#0F7A59",
+                      "secondary-container": "#E23B7A",
+                      "tertiary": "#C6A15A",
+                      "surface-container": "#FFFFFF",
+                      "ink": "#201A28",
+                      "surface": "#F5F2F8",
+                      "on-background": "#201A28",
+                      "surface-container-highest": "#F5F2F8",
+                      "secondary-fixed": "#F6ECD2",
+                      "primary-container": "#4a2e5b",
+                      "on-tertiary-container": "#7A5A16",
+                      "on-surface": "#201A28",
+                      "on-primary-container": "#EFE9F5",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#6B6472",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#715382",
+                      "cat-office": "#3E5CC0",
+                      "primary-fixed": "#EFE9F5",
+                      "on-tertiary": "#201A28",
+                      "ink-secondary": "#6B6472",
+                      "cat-party": "#E23B7A",
+                      "surface-variant": "#F5F2F8",
+                      "on-secondary-container": "#B01A57",
+                      "canvas": "#FFFFFF",
+                      "inverse-primary": "#EFE9F5",
+                      "primary": "#4A2E5B",
+                      "border": "#EEE9F2",
+                      "hot-container": "#FDE7EF",
+                      "on-secondary": "#ffffff",
+                      "background": "#FFFFFF",
+                      // Custom colors requested by user but adapting to tailwind config requested
+                      "amethyst-deep": "#4A2E5B",
+                      "amethyst-dark": "#2A1A35",
+                      "champagne": "#C6A15A"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "lg": "16px",
+                      "md": "12px",
+                      "sm": "8px",
+                      "xl": "24px",
+                      "margin-side": "16px"
+              },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+              "fontFamily": {
+                      "label-lg": ["Mukta", "sans-serif"],
+                      "headline-md": ["Rozha One", "serif"],
+                      "title-lg": ["Mukta", "sans-serif"],
+                      "headline-lg": ["Rozha One", "serif"],
+                      "body-md": ["Mukta", "sans-serif"],
+                      "display": ["Rozha One", "serif"],
+                      "body-lg": ["Mukta", "sans-serif"],
+                      "display-mobile": ["Rozha One", "serif"],
+                      "label-md": ["Mukta", "sans-serif"]
+              },
+              "fontSize": {
+                      "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700"}],
+                      "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                      "title-lg": ["20px", {"lineHeight": "26px", "fontWeight": "800"}],
+                      "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "display-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                      "label-md": ["11px", {"lineHeight": "14px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .bg-amethyst-gradient {
+            background: linear-gradient(180deg, #4A2E5B 0%, #2A1A35 100%);
+        }
+        .text-shadow-subtle {
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-amethyst-gradient text-on-primary min-h-screen flex flex-col font-body-md overflow-x-hidden pb-[88px]">
+<!-- TopAppBar Semantic Shell Suppressed due to being a 'Wrapped' / Story immersive screen as per logic -->
+<!-- Story Progress Bars -->
+<div class="fixed top-0 left-0 w-full z-50 px-margin-side pt-4 pb-2 flex gap-1.5 items-center bg-gradient-to-b from-[rgba(42,26,53,0.8)] to-transparent">
+<div class="h-1 flex-1 bg-white rounded-full opacity-100"></div>
+<div class="h-1 flex-1 bg-white/30 rounded-full"></div>
+<div class="h-1 flex-1 bg-white/30 rounded-full"></div>
+<div class="h-1 flex-1 bg-white/30 rounded-full"></div>
+</div>
+<!-- Header Navigation (Immersive Context) -->
+<header class="w-full flex items-center justify-between px-margin-side pt-10 pb-4 z-40 relative">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-white" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-[20px] text-white tracking-tight">Your Week</h1>
+<div class="w-10 h-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col px-margin-side pt-4 pb-24 relative z-10">
+<!-- Typography Group -->
+<div class="flex flex-col gap-sm mb-lg relative z-20">
+<span class="font-label-lg text-label-lg text-[#7A5A16] uppercase tracking-widest">THIS WEEK</span>
+<h2 class="font-display-mobile text-display-mobile text-white leading-tight">Signature colour:<br/>Indigo</h2>
+<p class="font-body-lg text-body-lg text-white/80 mt-xs max-w-[280px]">Indigo showed up in 40% of your looks.</p>
+</div>
+<!-- Editorial Flat-Lay Imagery -->
+<div class="relative w-full aspect-[4/5] mt-md z-10 flex items-center justify-center">
+<!-- Backdrop Card -->
+<div class="absolute inset-0 bg-surface rounded-2xl shadow-[0_12px_24px_rgba(32,26,40,0.15)] overflow-hidden">
+<div class="absolute inset-0 bg-[url('placeholder')] bg-cover bg-center opacity-5" data-alt="Subtle texture for a magazine layout background, high contrast, clean white surface with very faint marble or paper grain, high-end fashion aesthetic, neutral lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOHbFpDQcXtlZ1121yY8J3Iq2ntF1Jtpsz7viWTwIuGXPkEVXRAwNgWxkfMN5o90PT0jBOMILGVuLMsyFqvg9RipUlbT1QGCF2_sUcjf1Jhfy7a8Z-H-EVPKjL1ycaALAfBwrw76fth8LfUcPymdU4CGigJuSB5s3_BhuDVT8cuWAAk5oWDXSeznJ8zQTpRD0Qf2jTXn5imUn95FTK2vzqGK4Eg88uIUIAuuK-eAXzaSO0Q-NzsP45PlhKevV8OAIso9QSxMZ_znd1')"></div>
+</div>
+<!-- Garment 1: Jeans (Background) -->
+<div class="absolute top-10 right-4 w-48 h-64 shadow-[0_8px_16px_rgba(32,26,40,0.12)] rotate-6 rounded-lg overflow-hidden border-4 border-white transition-transform hover:scale-105 duration-300">
+<img class="w-full h-full object-cover" data-alt="A pair of premium indigo selvedge denim jeans laid flat on a pristine white surface. Soft, realistic contact shadows ground the garment. Shot from directly above in a high-fashion editorial flat-lay style. Deep blues, crisp texture, high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA64bBncRnlU6LjrSu2lKg25cVlDY8mpUSI2Pa9VdgiY-3F3VSI1iuEnU_Oi9uk1EznXxEimxLxeZpwKZPbVlKk8WMKgiJtSao6l2O2xVanJBulCqCKc-W2ZYD7Ohp7mWOsButngnCk3bvowih9vWx8fat0g4GlZ_nYcs-H7TsU7OzsB9CfiU9KnqIUabr5cIaYsyPdeUWpf8RjFLyDKsE7yL75Hc24FpKGT6r4j2LzPsMIaImIUsgkVoaekVLQeoBA0EyrHuSAGtAZ"/>
+</div>
+<!-- Garment 2: Jacket (Middle) -->
+<div class="absolute top-24 left-2 w-44 h-56 shadow-[0_8px_16px_rgba(32,26,40,0.15)] -rotate-3 rounded-lg overflow-hidden border-4 border-white transition-transform hover:scale-105 duration-300">
+<img class="w-full h-full object-cover" data-alt="A structured indigo blue chore jacket or lightweight blazer laid perfectly flat on a white background. Realistic contact shadows underneath. Minimalist, magazine-quality flat-lay photography. High contrast, sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP2gOW1sFv51ZR83A385bNF81kOqYEV414Jb0clF52U0pzo5XXN-5OpceF0aGOk0fclJTd8mE5W9AnsJ6noKKSDZLNE5XoFN7A_6PO118DUud8WGmiJUHa_4010RoNx4uxllJ8BymHz35JRZWecM0yWUB14cfCgQnzKiUROLRuPQubzzFAOoi739SKLv9v7OwW7MFKP74AKdCIUvSPuJfeN81U6Ctpsc9s9FABm_qyO3r1MOYYzzz8XrQ_8XC8hPqJ8QIAjKGinZhC"/>
+</div>
+<!-- Garment 3: Shirt (Foreground) -->
+<div class="absolute bottom-6 left-12 w-52 h-60 shadow-[0_12px_24px_rgba(32,26,40,0.2)] rotate-2 rounded-lg overflow-hidden border-4 border-white transition-transform hover:scale-105 duration-300">
+<img class="w-full h-full object-cover" data-alt="A casual indigo blue button-down shirt neatly folded flat on a bright white studio surface. Strong but soft contact shadows giving a sense of depth and grounding. High-end retail catalog flat-lay style. Deep amethyst and indigo tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg6OdAemxvF8qZjy_lJv7hMULtRIiCirztlhxgr8SYGXU3HeQtWRJmghyD1tsppEFnOrCbkCLJXTlYOl9L30FRI50whfAVKHwO6x845uxQ7FFecYcS0AgM_lCHsTZxm6jMqD5FoZlG3iKSODp2BRckjQqM39r1cPm9vQVoNtGBFcFEqNguavSdEXVM6OFekDl_LV2bRv0BeCXLxD3tRMykwgn-q9i66UTpl4K4AoVCyMBTzvs63UO97vuKNqzzmgVBxUEZhsFYQpO2"/>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-[88px] right-margin-side z-50">
+<button onclick="event.stopPropagation(); window.parent.postMessage('share_sheet','*')" class="bg-secondary text-white font-title-lg text-title-lg px-6 py-3 rounded-full flex items-center gap-2 active:scale-95 transition-transform uppercase tracking-wider shadow-[0_4px_12px_rgba(226,59,122,0.3)]">
+<span class="material-symbols-outlined" data-icon="ios_share" style="font-variation-settings: 'FILL' 1;">ios_share</span>
+            Share
+        </button>
+</div>
+<!-- BottomNavBar (Semantic Shell: Immersive screen, but instructed to include Bottom Nav) -->
+<!-- Note: Standard rule says suppress nav on immersive 'story' screens, but prompt explicitly asks for: Bottom nav: Today, Closet, Trips, You. -->
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+</body></html>

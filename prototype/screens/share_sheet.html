@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Share Look</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "surface-bright": "#FFFFFF",
+                        "cat-party": "#E23B7A",
+                        "cat-travel": "#9A6410",
+                        "on-tertiary": "#201A28",
+                        "surface-container-low": "#FFFFFF",
+                        "tertiary-container": "#F6ECD2",
+                        "on-primary-fixed-variant": "#583b69",
+                        "background": "#FFFFFF",
+                        "outline-variant": "#EEE9F2",
+                        "canvas": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "on-surface": "#201A28",
+                        "surface-container-high": "#F5F2F8",
+                        "secondary-container": "#E23B7A",
+                        "on-error": "#ffffff",
+                        "secondary": "#E23B7A",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "cat-casual": "#0F7A59",
+                        "inverse-on-surface": "#f6eff3",
+                        "inverse-surface": "#332f33",
+                        "success": "#147A44",
+                        "on-secondary-container": "#B01A57",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "cat-ethnic": "#7A2E4C",
+                        "primary-container": "#4a2e5b",
+                        "outline": "#6B6472",
+                        "hot-container": "#FDE7EF",
+                        "ink": "#201A28",
+                        "on-primary-fixed": "#2a0f3b",
+                        "surface-tint": "#715382",
+                        "inverse-primary": "#EFE9F5",
+                        "on-secondary-fixed": "#3f001a",
+                        "surface-container": "#FFFFFF",
+                        "border": "#EEE9F2",
+                        "on-tertiary-fixed": "#261900",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#F5F2F8",
+                        "hot-text": "#B01A57",
+                        "cat-gym": "#1E7BB0",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "gold-container": "#F6ECD2",
+                        "on-background": "#201A28",
+                        "cat-office": "#3E5CC0",
+                        "surface-dim": "#EEE9F2",
+                        "tertiary": "#C6A15A",
+                        "tertiary-fixed": "#F6ECD2",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#F6ECD2",
+                        "on-primary-container": "#EFE9F5",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#7A5A16",
+                        "error": "#D42D2D",
+                        "surface-container-highest": "#F5F2F8",
+                        "primary": "#4A2E5B",
+                        "primary-fixed": "#EFE9F5",
+                        "surface": "#F5F2F8",
+                        "ink-secondary": "#6B6472",
+                        "on-surface-variant": "#6B6472"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "12px",
+                        "margin-side": "16px",
+                        "xl": "24px",
+                        "sm": "8px",
+                        "lg": "16px",
+                        "xs": "4px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Mukta"],
+                        "headline-lg": ["Rozha One"],
+                        "title-lg": ["Mukta"],
+                        "body-lg": ["Mukta"],
+                        "label-lg": ["Mukta"],
+                        "headline-md": ["Rozha One"],
+                        "display-mobile": ["Rozha One"],
+                        "display": ["Rozha One"],
+                        "body-md": ["Mukta"]
+                    },
+                    "fontSize": {
+                        "label-md": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                        "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "26px", "fontWeight": "800" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+                        "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "display-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .bottom-sheet-enter {
+            transform: translateY(100%);
+            animation: slideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        @keyframes slideUp {
+            to { transform: translateY(0); }
+        }
+        .scrim-enter {
+            opacity: 0;
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 0.6; }
+        }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-hidden select-none">
+<!-- Mock Background Content to show scrim effect -->
+<div class="h-screen w-full bg-surface-bright flex flex-col pt-16 pb-20 pointer-events-none filter blur-[2px]">
+<div class="px-margin-side pt-xl space-y-md">
+<div class="h-64 bg-canvas rounded-2xl shadow-lg border border-border"></div>
+<div class="h-32 bg-canvas rounded-2xl shadow-lg border border-border"></div>
+</div>
+</div>
+<!-- Scrim -->
+<div aria-hidden="true" class="fixed inset-0 bg-ink scrim-enter z-40" onclick="history.back()"></div>
+<!-- Share Sheet -->
+<div class="fixed bottom-0 left-0 w-full z-50 flex flex-col bottom-sheet-enter">
+<div class="bg-canvas w-full rounded-t-3xl pt-sm pb-8 px-margin-side shadow-[0_-8px_30px_rgba(32,26,40,0.15)]">
+<!-- Drag Handle -->
+<div class="w-full flex justify-center mb-md">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="flex justify-between items-center mb-xl">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Share this look</h1>
+<button aria-label="Close" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-ink-secondary hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</div>
+<!-- Share Card (WhatsApp aspect ratio roughly 1:1 or slightly vertical) -->
+<div class="w-full aspect-[4/5] bg-surface-bright rounded-2xl mb-xl border border-border overflow-hidden relative shadow-[0_4px_12px_rgba(32,26,40,0.06)]">
+<!-- Flatlay Image -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A highly detailed editorial flat-lay photograph of a modern Indian men's outfit on a pristine white background. The composition features a rich dark floral patterned silk kurta paired with crisp cream-colored chinos and premium brown leather sandals. The items are meticulously arranged with soft, realistic contact shadows giving a sense of depth and high-end retail quality. The lighting is bright and even, enhancing the textures and vibrant colors. The overall aesthetic is loud, stylish, and perfect for a high-energy fashion marketplace." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFS0JD1yXBRqJ_Nd_ccKTgYUoqxWj7z9pKwzckaSEbNMSihDZ_kY30cYbHZao9xU_VyM3VY-M0FZvkt5mh34ZI7Yl9NhrsHvQhKRVNNdgYOzL-TJrmHxQZVHkgV_3cl8fBQ9Uv94Huc_N7Jk7PFgvb9cpg7fTd9PG8Z1pR0Gd_4S4OUOViuw7nR7Y91YveHmfWdaebPt3OUR8pU-uL03ZYhd3OWk8gFQOexzf6e1Ddv9nyLv9OOp6rtChYPR-ZtpNLru1gyAQa32zH')"></div>
+<!-- Brand Overlay -->
+<div class="absolute bottom-4 left-4 bg-canvas/90 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-border flex items-center gap-2 shadow-soft">
+<span class="font-headline-md text-label-lg text-primary tracking-tight">FitCheck.ai</span>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full h-14 bg-primary-container text-on-primary rounded-2xl flex items-center justify-center gap-3 font-title-lg text-title-lg mb-lg active:scale-[0.98] transition-transform shadow-[0_4px_12px_rgba(74,46,91,0.2)]">
+<!-- Custom WhatsApp Icon SVG for exact branding -->
+<svg aria-hidden="true" class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path>
+</svg>
+                Share to WhatsApp
+            </button>
+<!-- Secondary Channels -->
+<div class="flex justify-between items-center px-2 mb-xl">
+<!-- Instagram -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-low border border-border flex items-center justify-center text-ink-secondary group-hover:bg-surface-variant transition-colors group-active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">photo_camera</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Instagram</span>
+</button>
+<!-- Copy Link -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-low border border-border flex items-center justify-center text-ink-secondary group-hover:bg-surface-variant transition-colors group-active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">link</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Copy Link</span>
+</button>
+<!-- Save Image -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-low border border-border flex items-center justify-center text-ink-secondary group-hover:bg-surface-variant transition-colors group-active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">download</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Save</span>
+</button>
+<!-- More -->
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-low border border-border flex items-center justify-center text-ink-secondary group-hover:bg-surface-variant transition-colors group-active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">more_horiz</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">More</span>
+</button>
+</div>
+<!-- Footer Link -->
+<div class="w-full text-center">
+<a onclick="event.stopPropagation(); window.parent.postMessage('referral','*')" class="font-label-lg text-label-lg text-secondary hover:text-primary transition-colors underline-offset-4 decoration-secondary/30 hover:decoration-primary/50 underline" href="#">
+                    Invite a friend — you both get a perk
+                </a>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+</body></html>

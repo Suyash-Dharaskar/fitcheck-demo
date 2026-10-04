@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Lookbook Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#F5F2F8",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "error-container": "#ffdad6",
+                        "cat-travel": "#9A6410",
+                        "primary": "#4A2E5B",
+                        "primary-container": "#4a2e5b",
+                        "surface-variant": "#F5F2F8",
+                        "on-primary": "#ffffff",
+                        "outline": "#6B6472",
+                        "on-secondary-container": "#B01A57",
+                        "outline-variant": "#EEE9F2",
+                        "surface-tint": "#715382",
+                        "on-secondary-fixed": "#3f001a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "surface-container-low": "#FFFFFF",
+                        "tertiary": "#C6A15A",
+                        "cat-office": "#3E5CC0",
+                        "cat-casual": "#0F7A59",
+                        "background": "#FFFFFF",
+                        "surface-bright": "#FFFFFF",
+                        "on-tertiary-container": "#7A5A16",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f6eff3",
+                        "ink": "#201A28",
+                        "on-surface-variant": "#6B6472",
+                        "on-primary-fixed": "#2a0f3b",
+                        "gold-container": "#F6ECD2",
+                        "inverse-surface": "#332f33",
+                        "error": "#D42D2D",
+                        "cat-gym": "#1E7BB0",
+                        "secondary-container": "#E23B7A",
+                        "secondary": "#E23B7A",
+                        "ink-secondary": "#6B6472",
+                        "tertiary-fixed": "#F6ECD2",
+                        "on-background": "#201A28",
+                        "cat-ethnic": "#7A2E4C",
+                        "cat-party": "#E23B7A",
+                        "surface-dim": "#EEE9F2",
+                        "on-tertiary": "#201A28",
+                        "border": "#EEE9F2",
+                        "on-secondary": "#ffffff",
+                        "success": "#147A44",
+                        "on-tertiary-fixed": "#261900",
+                        "inverse-primary": "#EFE9F5",
+                        "on-surface": "#201A28",
+                        "tertiary-container": "#F6ECD2",
+                        "surface-container": "#FFFFFF",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "on-primary-container": "#EFE9F5",
+                        "canvas": "#FFFFFF",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "secondary-fixed": "#F6ECD2",
+                        "on-primary-fixed-variant": "#583b69",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#EFE9F5",
+                        "surface-container-highest": "#F5F2F8",
+                        "hot-text": "#B01A57",
+                        "surface": "#F5F2F8",
+                        "hot-container": "#FDE7EF"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "24px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "margin-side": "16px",
+                        "lg": "16px",
+                        "md": "12px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Rozha One"],
+                        "label-lg": ["Mukta"],
+                        "body-lg": ["Mukta"],
+                        "label-md": ["Mukta"],
+                        "title-lg": ["Mukta"],
+                        "display": ["Rozha One"],
+                        "display-mobile": ["Rozha One"],
+                        "headline-lg": ["Rozha One"],
+                        "body-md": ["Mukta"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-md": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                        "title-lg": ["20px", { "lineHeight": "26px", "fontWeight": "800" }],
+                        "display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "display-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F5F2F8; /* surface */
+        }
+        /* Custom scrollbar for horizontal scrolling if needed, though mostly vertical here */
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #EEE9F2; /* outline-variant */
+            border-radius: 4px;
+        }
+        .contact-shadow {
+            filter: drop-shadow(0 8px 12px rgba(32, 26, 40, 0.08));
+        }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased pb-24 font-body-md text-body-md">
+<!-- TopAppBar (Transactional/Sub-page intent, hidden bottom nav usually, but prompt requests bottom nav) -->
+<header class="w-full top-0 sticky bg-surface z-40">
+<div class="flex justify-between items-center px-margin-side h-16 w-full">
+<button class="text-on-surface-variant hover:bg-surface-variant/20 transition-colors duration-200 active:scale-95 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Wedding Guest</h1>
+<div class="flex items-center gap-2">
+<button onclick="event.stopPropagation(); window.parent.postMessage('share_sheet','*')" class="text-on-surface-variant hover:bg-surface-variant/20 transition-colors duration-200 active:scale-95 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">share</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-variant/20 transition-colors duration-200 active:scale-95 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">more_vert</span>
+</button>
+</div>
+</div>
+</header>
+<main class="px-margin-side py-sm space-y-md">
+<!-- Outfit 1: Add a look -->
+<article class="bg-canvas rounded-2xl shadow-[0_4px_12px_rgba(32,26,40,0.06)] overflow-hidden flex flex-col relative">
+<div class="absolute top-sm right-sm z-10 flex flex-col gap-xs">
+<button class="bg-surface/80 backdrop-blur-sm p-2 rounded-full text-primary hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">favorite_border</span>
+</button>
+</div>
+<div class="relative w-full h-72 bg-surface-container-low flex items-center justify-center p-md">
+<!-- Magazine Flat-lay style image placeholder -->
+<img alt="Add a look flat lay" class="object-contain w-full h-full contact-shadow z-0" data-alt="A high-fidelity editorial flat-lay photograph of a stunning Add a look, paired with intricate antique gold jewelry and a delicate embroidered clutch. The garments are meticulously arranged on a pristine white surface, featuring soft, realistic contact shadows that give depth. The lighting is bright and even, creating a high-end marketplace aesthetic with deep amethyst accents subtly reflecting in the metallic elements. The mood is opulent, crisp, and dense, perfect for an Indian wedding guest look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt0fjgcVksuWsjiaS_QaAiH1lGP_bS-OOLh5gwircyzomtrdMxeL-AS3fiNTtznxDwhjB5i5itNsORgAPaA2jzTAiur6Qk466mgVzKy-81ZlnOowB7qQL9C2rtXoAOhL1f9HiqBjj66xKZc-iBX41uoXjy9edL3rjgkgvj3-WyAcgGAHHYBsl9PIdMpwpqTkBsicxXmSZngCExgFmN8iZUl0_RMWFgngjngd-IgDE-7BTWMytgzS2Ple2rhZ8FGS-qONl2Vi_j1JYR"/>
+</div>
+<div class="p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-title-lg text-title-lg text-primary">Add a look</h2>
+<p class="font-label-lg text-label-lg text-on-surface-variant mt-1">Saree Ensemble</p>
+</div>
+<span class="font-title-lg text-title-lg text-secondary">₹42,500</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2">A timeless classic from Mumbai artisans, featuring rich zari borders and matching unstitched blouse piece. Perfect for evening receptions.</p>
+<div class="flex gap-xs mt-sm flex-wrap">
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full">Silk</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full">Handloom</span>
+<span class="bg-gold-container text-on-tertiary-fixed-variant font-label-md text-label-md px-3 py-1 rounded-full flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">auto_awesome</span> Mumbai Pick</span>
+</div>
+</div>
+</article>
+<!-- Outfit 2: Emerald Green Anarkali -->
+<article class="bg-canvas rounded-2xl shadow-[0_4px_12px_rgba(32,26,40,0.06)] overflow-hidden flex flex-col relative">
+<div class="absolute top-sm right-sm z-10 flex flex-col gap-xs">
+<button class="bg-surface/80 backdrop-blur-sm p-2 rounded-full text-primary hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">favorite_border</span>
+</button>
+</div>
+<div class="relative w-full h-72 bg-surface-container-low flex items-center justify-center p-md">
+<img alt="Emerald Green Anarkali flat lay" class="object-contain w-full h-full contact-shadow z-0" data-alt="A high-fidelity editorial flat-lay photograph of an Emerald Green Anarkali suit with a sheer, intricately embroidered dupatta and delicate pearl accessories. The ensemble is artfully arranged on a clean, bright white canvas, grounded by soft, realistic plum-charcoal contact shadows. The lighting is studio-quality, emphasizing the rich texture of the emerald fabric and the high-contrast aesthetic of a modern fashion marketplace. The vibe is vibrant, elegant, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxKs20_9sAVJrLU60GujQuwgN0pqCcbMYumxYwtbX3ubgg7wJ5q9pLavTGJa7jK_DSK6cw2njd1md7s0fOIBGRiKkryLrME0PD2hCpOSe_aS-1KudDCHvMRY7HxEUUsNknfudczpWZp3V2ZNo6-NUA6haVgL7dfSm5mXYcuGHzaYDL_ea0LzJG-0QIVerLUcbMVg3JbgmZovNNRUA9LF0ugtnivh6EF7Z-HJTo5nFv7pUDGwEMel5_mxyHQhA9crjDxNMgFHEMSbJd"/>
+</div>
+<div class="p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-title-lg text-title-lg text-primary">Emerald Green Anarkali</h2>
+<p class="font-label-lg text-label-lg text-on-surface-variant mt-1">Floor-length Suit</p>
+</div>
+<span class="font-title-lg text-title-lg text-secondary">₹28,999</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2">Flowing georgette fabric with heavy gota patti work on the yoke and border. Includes a matching net dupatta.</p>
+<div class="flex gap-xs mt-sm flex-wrap">
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full">Georgette</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full">Gota Patti</span>
+<span class="border border-secondary text-secondary font-label-md text-label-md px-3 py-1 rounded-full">Bestseller</span>
+</div>
+</div>
+</article>
+<!-- Outfit 3: Peach & Gold Lehenga -->
+<article class="bg-canvas rounded-2xl shadow-[0_4px_12px_rgba(32,26,40,0.06)] overflow-hidden flex flex-col relative">
+<div class="absolute top-sm right-sm z-10 flex flex-col gap-xs">
+<button class="bg-surface/80 backdrop-blur-sm p-2 rounded-full text-primary hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">favorite_border</span>
+</button>
+</div>
+<div class="relative w-full h-72 bg-surface-container-low flex items-center justify-center p-md">
+<img alt="Peach &amp; Gold Lehenga flat lay" class="object-contain w-full h-full contact-shadow z-0" data-alt="A high-fidelity editorial flat-lay photograph showcasing a Peach and Gold Lehenga set, complete with a heavily embellished skirt, a matching blouse, and oversized statement jhumkas. The garments are meticulously laid out on a pristine white surface, producing soft, natural contact shadows that add depth to the composition. The lighting highlights the gold sequin work against the soft peach fabric, creating a loud, bold, and luxurious shopping aesthetic suited for a premium Indian wedding app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtis-BKO9ZHo-vY4i8vdQrGeoFOfPuSdNr48xxiQwp8aJRJDtzL4yUUhPlb0fy5UBpgJ2F9f5bzMpcUzJOxJq5MGar-lriaBqtiB_-VroaOg3HRGE606WJH7x4tHh8jrhlrvom0DURlgtjK-SHWe0ppQSWha-QkZVhm2_8IgRDfGdp7TjnSlStPB7j70cTXcgQBdN7BFLcYQVB6Qfol7gaCwbqj19LMbHqbupa6OUxR4O94hWPAsrQ-vucq5XnxAz7_RydbYjJH1_W"/>
+</div>
+<div class="p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-title-lg text-title-lg text-primary">Peach &amp; Gold Lehenga</h2>
+<p class="font-label-lg text-label-lg text-on-surface-variant mt-1">Lehenga Choli Set</p>
+</div>
+<span class="font-title-lg text-title-lg text-secondary">₹55,000</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2">Intricate zardosi embroidery on a soft net base. Paired with oversized statement jhumkas for a complete sangeet look. Sourced from Delhi's finest boutiques.</p>
+<div class="flex gap-xs mt-sm flex-wrap">
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full">Net Fabric</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full">Zardosi</span>
+<span class="bg-gold-container text-on-tertiary-fixed-variant font-label-md text-label-md px-3 py-1 rounded-full flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">auto_awesome</span> Delhi Pick</span>
+</div>
+</div>
+</article>
+<!-- Outfit 4: Ivory Sherwani -->
+<article class="bg-canvas rounded-2xl shadow-[0_4px_12px_rgba(32,26,40,0.06)] overflow-hidden flex flex-col relative">
+<div class="absolute top-sm right-sm z-10 flex flex-col gap-xs">
+<button class="bg-surface/80 backdrop-blur-sm p-2 rounded-full text-primary hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">favorite_border</span>
+</button>
+</div>
+<div class="relative w-full h-72 bg-surface-container-low flex items-center justify-center p-md">
+<img alt="Ivory Sherwani flat lay" class="object-contain w-full h-full contact-shadow z-0" data-alt="A high-fidelity editorial flat-lay photograph of a classic men's Ivory Sherwani, tastefully paired with a rich maroon stole and embroidered mojari shoes. The ensemble is impeccably styled on a bright white background, creating soft, realistic plum-charcoal contact shadows that ground the items. The lighting is crisp and studio-grade, emphasizing the subtle textures of the ivory fabric and the deep contrast of the maroon, embodying a sophisticated, dense, and high-energy marketplace style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC54UWREs4xLxvKgwI952Ep2fnPR1JQmqS1Zw3dtRoKRXoOUKzliPZWrPZjNaFD-4SrlefiUbfZ5YWAxjcCU7zRzkg-Iq12RLqu7ILPYSl_D9RT7tb9xqiI3ECc1CL-XfSPi81oOCaj0jcs7ivN1wugJ0zkcWqae-X4Dn0Ree1uYgYrdVKCVkX00I1VWMWDZFJZXqmYGVTA_zjr7AGK8HkbYnVpSLWG2_4N_kzxc53uWVGUMiH3J8uLznZblWbZTVOdpeekH_xwTyS"/>
+</div>
+<div class="p-md flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-title-lg text-title-lg text-primary">Ivory Sherwani</h2>
+<p class="font-label-lg text-label-lg text-on-surface-variant mt-1">Men's Ethnic Wear</p>
+</div>
+<span class="font-title-lg text-title-lg text-secondary">₹32,200</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-2">A regal ivory sherwani tailored from premium silk blend, featuring subtle self-embroidery. Accompanied by a contrasting maroon stole for a striking look.</p>
+<div class="flex gap-xs mt-sm flex-wrap">
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full">Silk Blend</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-3 py-1 rounded-full">Menswear</span>
+</div>
+</div>
+</article>
+</main>
+<!-- BottomNavBar (Semantic Match: None direct, but prompt requests it. Hiding logic usually suppresses this on sub-pages, but forcing per instructions "Bottom Nav: Standard app navigation"). -->
+<!-- Assuming "Home" or "Closet" as active, let's use "Home" as default for browsing lookbooks -->
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+<div style="display:none;" aria-hidden="true">Add a look</div>
+</body></html>

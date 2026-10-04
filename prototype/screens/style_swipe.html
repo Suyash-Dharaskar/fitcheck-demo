@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Style Swipe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            future: { hoverOnlyWhenSupported: true },
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#E23B7A",
+                        "gold-container": "#F6ECD2",
+                        "secondary-container": "#E23B7A",
+                        "hot-container": "#FDE7EF",
+                        "surface-bright": "#FFFFFF",
+                        "primary": "#4A2E5B",
+                        "primary-fixed": "#EFE9F5",
+                        "background": "#FFFFFF",
+                        "cat-party": "#E23B7A",
+                        "on-secondary-container": "#B01A57",
+                        "on-surface-variant": "#6B6472",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "surface-tint": "#715382",
+                        "inverse-primary": "#EFE9F5",
+                        "inverse-surface": "#332f33",
+                        "on-primary-fixed": "#2a0f3b",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#3f001a",
+                        "error": "#D42D2D",
+                        "ink": "#201A28",
+                        "cat-office": "#3E5CC0",
+                        "on-primary-container": "#EFE9F5",
+                        "tertiary": "#C6A15A",
+                        "primary-container": "#4a2e5b",
+                        "cat-casual": "#0F7A59",
+                        "on-tertiary-fixed": "#261900",
+                        "cat-ethnic": "#7A2E4C",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "on-tertiary": "#201A28",
+                        "border": "#EEE9F2",
+                        "on-secondary": "#ffffff",
+                        "surface": "#F5F2F8",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "inverse-on-surface": "#f6eff3",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#583b69",
+                        "outline": "#6B6472",
+                        "surface-container-low": "#FFFFFF",
+                        "on-tertiary-container": "#7A5A16",
+                        "tertiary-container": "#F6ECD2",
+                        "on-background": "#201A28",
+                        "outline-variant": "#EEE9F2",
+                        "success": "#147A44",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "hot-text": "#B01A57",
+                        "secondary-fixed": "#F6ECD2",
+                        "ink-secondary": "#6B6472",
+                        "cat-travel": "#9A6410",
+                        "surface-variant": "#F5F2F8",
+                        "canvas": "#FFFFFF",
+                        "surface-container-high": "#F5F2F8",
+                        "on-surface": "#201A28",
+                        "tertiary-fixed": "#F6ECD2",
+                        "surface-dim": "#EEE9F2",
+                        "surface-container": "#FFFFFF",
+                        "cat-gym": "#1E7BB0",
+                        "surface-container-highest": "#F5F2F8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-side": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "12px",
+                        "xl": "24px",
+                        "lg": "16px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "display": ["Rozha One"],
+                        "display-mobile": ["Rozha One"],
+                        "label-lg": ["Mukta"],
+                        "title-lg": ["Mukta"],
+                        "label-md": ["Mukta"],
+                        "headline-md": ["Rozha One"],
+                        "body-lg": ["Mukta"],
+                        "headline-lg": ["Rozha One"],
+                        "body-md": ["Mukta"]
+                    },
+                    "fontSize": {
+                        "display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "display-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "26px", "fontWeight": "800" }],
+                        "label-md": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                        "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { overscroll-behavior-y: none; }
+        .card-stack { perspective: 1000px; }
+        .swipe-card { transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); }
+        .swipe-card.dragging { transition: none; }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface h-screen flex flex-col overflow-hidden pb-[88px]">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim font-headline-md text-headline-md docked full-width top-0 flat no shadows fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-side h-[56px]">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-cat-party to-inverse-primary p-[2px]">
+<img class="w-full h-full rounded-full object-cover border-2 border-surface" data-alt="A detailed headshot photo of a young Indian woman named Aarav, smiling softly. She is wearing a modern casual outfit with a light-mode color palette, featuring bright whites and deep purple accents. The lighting is soft and flattering, highlighting her features against a crisp, clean background. The aesthetic is high-end marketplace, vibrant and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGXJW5iSleHlYtJiWvTG3wIk1j30J-DKJk4LNlTihBNmBdYAbcqaOBK9nJiOD-ObuVlxHv22wzAvypgR0Qr5SDSIoQGaVdnEUkWdzFIAulo6XxI_V4OEnlMUfy3r6OfVoLxf41kIXvHvXBITWlwKAp_uaJpBQ62xwT4HgFVt5Gces3lSVa33D4lntFEQbHru2lF7JYbcKN4L7dR42WC8jFH9EMuz3arPMfm3ldBGKI9pmWlLNwroKVqz-jcRtEQ-NeYuP3JS1_tYba"/>
+</div>
+<span class="font-display-mobile text-display-mobile text-primary dark:text-primary-fixed">Namaste, Aarav</span>
+</div>
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 mt-[56px] mb-[62px] relative overflow-hidden flex flex-col pt-md">
+<!-- Lookbook Teaser -->
+<div class="px-margin-side mb-md flex justify-between items-center z-10">
+<div>
+<h2 class="font-title-lg text-title-lg text-primary">Style Swipe</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">12 fresh looks from your closet</p>
+</div>
+<button class="flex items-center gap-xs px-sm py-xs bg-hot-container text-hot-text rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+                Looks I Love
+            </button>
+</div>
+<!-- Swipe Cards Area -->
+<div class="flex-1 relative mx-margin-side card-stack z-10">
+<!-- Background Card (Next) -->
+<div class="absolute inset-0 bg-canvas rounded-2xl shadow-[0_4px_12px_rgba(32,26,40,0.06)] transform scale-[0.95] translate-y-4 opacity-80 flex flex-col pointer-events-none">
+<div class="flex-1 relative rounded-t-xl overflow-hidden bg-surface-container-low"></div>
+</div>
+<!-- Foreground Card (Current) -->
+<div class="absolute inset-0 bg-canvas rounded-2xl shadow-[0_8px_24px_rgba(32,26,40,0.12)] border border-border flex flex-col overflow-hidden swipe-card cursor-grab active:cursor-grabbing" id="activeCard">
+<!-- Card Image Area -->
+<div class="relative flex-1 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-resolution, magazine-style flat-lay photograph of a stylish outfit. The arrangement includes a crisp white button-down shirt, a pair of tailored deep purple trousers, and bold magenta statement sneakers. The items are neatly arranged on a bright white canvas surface, complete with soft, realistic contact shadows that give a sense of depth and premium quality. The lighting is bright and even, highlighting the textures of the fabrics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQOFuHI7tYIA3IKuh3CvNe5OFlHsG5ch7v1zqgLuBnC9gjnvOPxPTVYAG-MaF6eEs4HdIBm708dks9VzXphBfo27SwTzcP-evDF0OHYEbJQBpKsTZxMvDguUTmXobYbpaa6Gl7d5Jwsn4gkbo3JXOh6faGjSZh8OL8yWrvrXhtXQ1HBnXm6g9DBcaHh9wYVs7jhW4AGfQqMuCDo7PNKOB4R1FyL3Pk10ZsoXcW_egdu5bO4vu1GQxJK_QeXsGLt0Uwk5D6IhIQNUhj"/>
+<!-- Match Badge -->
+<div class="absolute top-md left-md bg-gold-container text-on-tertiary-container px-md py-xs rounded-full font-label-lg text-label-lg flex items-center gap-xs shadow-soft">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" data-icon="auto_awesome">auto_awesome</span>
+                        Great match
+                    </div>
+<!-- Overlay Gradients for Swipe Feedback -->
+<div class="absolute top-8 right-8 bg-success text-white px-4 py-2 rounded-full font-title-lg z-50 transform rotate-[15deg]">SAVE</div>
+
+<div class="absolute inset-0 bg-success/20 opacity-0 transition-opacity duration-200 pointer-events-none" id="likeOverlay"></div>
+<div class="absolute inset-0 bg-error/20 opacity-0 transition-opacity duration-200 pointer-events-none" id="nopeOverlay"></div>
+</div>
+<!-- Card Details -->
+<div class="p-md border-t border-border bg-canvas">
+<div class="flex justify-between items-start mb-xs">
+<div>
+<h3 onclick="window.parent.postMessage('lookbook_detail','*')" class="font-title-lg text-title-lg text-primary" onclick="event.stopPropagation(); window.parent.postMessage('ss_saved','*')" class="cursor-pointer">Saved to Looks I love</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rani pink kurta + black - party-ready</p>
+</div>
+<div class="text-right">
+<span class="font-title-lg text-title-lg text-cat-party">₹4,299</span>
+</div>
+</div>
+<!-- Social Stack -->
+<div class="flex items-center gap-sm mt-sm">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-canvas bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Thumbnail showing a close-up of a white button-down shirt collar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6ssLwb-c54sfwNhaqG2uWq0PKEYIfHYgGs_hSzBhH-Kd1l0zX1dDzP1C4gwyRJv22EmkbG-CAi_5z2IH3LSM6fIa6OBSNNAiJ18Jjy6MH5skBg3EnCM-M6xnOLEEpCKVR8NZhDIICfc3tOOyfMdut7RAQF2UCzAzuRLKWtCAK3c35aGtUuF-73hRTC1T9MdHvSD0yyRJuesfvO-Qtrej9QCKl6EPlGu-qP_vFB6h3nPMbxaOp1H2HA2fp-G3X4ueNvskqpuac2RJu"/>
+</div>
+<div class="w-6 h-6 rounded-full border border-canvas bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Thumbnail showing the texture of deep purple tailored trousers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYTZw2CCOntkl6QqZwQQ6vy_U7HYWxyfDXA-fPWBFBnShLRZVvqP77pHo-5E4VcI_mUjC6CVBDIu7nPQCya96TwkEvjKIgVvZYcW66B_txZSMhFn4HU5f5dVSv3CruI1rPiCej_XHo93sKt3LUnS_SIb7sEGvRaeSkmbZLnw1sXFxvBZvwI2DCvFGVBISaTmi7CPsTSqIHJnEP78KKePjN5fSel76yzPbA34oJX7VD1cnuzoYSLYNYh8ZfmRwgOUx3Jvg8UmEiQZJh"/>
+</div>
+<div class="w-6 h-6 rounded-full border border-canvas bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Thumbnail showing magenta statement sneakers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUheO3GiFmYvDuSNg1t911qZxCWiIihpLQ0LUMizK5zGz0ZiM8EP6JaXRcYap0yVKv3b8VxeVnltPgex3__L4uxLKF9HkvUigyx2n2d8fvyX_C7y87DPmxduOn8XamoLhFzxTiI6mrd9-EMWKk8E1MffcC4O4O3sT9ScWm96ellFgxYZ5DtSCeTxYnCy7k1A72GcMsHouzsO9vaiRuNsD8DmFrsvSvp1nXN0o7bB432mqmZFYmK41jJ04X9ohJMhlIQOILL1tKs3SW"/>
+</div>
+</div>
+<span class="font-label-md text-label-md text-ink-secondary">Includes 3 items</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="h-24 flex justify-center items-center gap-xl px-margin-side z-20">
+<!-- Nope Button -->
+<button onclick="event.stopPropagation(); window.parent.postMessage('lookbooks','*')" aria-label="Back to lookbooks" class="text-primary hover:opacity-80 transition-opacity flex items-center justify-center p-2 active:scale-95 duration-100">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+<!-- Undo Button -->
+<button class="w-10 h-10 rounded-full bg-surface-container-high shadow-soft flex items-center justify-center text-surface-tint hover:bg-surface-variant transition-colors transform hover:scale-105 active:scale-95 translate-y-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="refresh">refresh</span>
+</button>
+<!-- Like Button -->
+<button class="w-16 h-16 rounded-full bg-gradient-to-br from-secondary-container to-cat-party shadow-[0_4px_20px_rgba(226,59,122,0.3)] flex items-center justify-center text-on-primary hover:opacity-90 transition-all transform hover:scale-105 active:scale-95" id="btnLike">
+<span class="material-symbols-outlined text-[36px]" data-icon="favorite" data-weight="fill">favorite</span>
+</button>
+</div>
+<div class="flex justify-center items-center gap-16 px-margin-side mt-2 text-label-md text-outline"><span>Skip</span><span>Undo</span><span>Save</span></div>
+
+</main>
+<!-- BottomNavBar -->
+<script>
+        // Simple swipe interaction logic
+        const card = document.getElementById('activeCard');
+        const likeOverlay = document.getElementById('likeOverlay');
+        const nopeOverlay = document.getElementById('nopeOverlay');
+        const btnLike = document.getElementById('btnLike');
+        const btnNope = document.getElementById('btnNope');
+        
+        let isDragging = false;
+        let startX, currentX;
+        
+        const resetCard = () => {
+            card.style.transform = '';
+            card.classList.remove('dragging');
+            likeOverlay.style.opacity = '0';
+            nopeOverlay.style.opacity = '0';
+        };
+
+        const swipeOut = (direction) => {
+            const x = direction === 'right' ? window.innerWidth : -window.innerWidth;
+            card.style.transition = 'transform 0.4s ease-out';
+            card.style.transform = `translateX(${x}px) rotate(${direction === 'right' ? 20 : -20}deg)`;
+            setTimeout(() => {
+                // In a real app, this would load the next card. 
+                // For this prototype, we just reset it to simulate endless deck.
+                resetCard();
+            }, 400);
+        };
+
+        card.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+            card.classList.add('dragging');
+        });
+
+        card.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
+            const deltaX = currentX - startX;
+            const rotation = deltaX * 0.05;
+            
+            card.style.transform = `translateX(${deltaX}px) rotate(${rotation}deg)`;
+            
+            if (deltaX > 0) {
+                likeOverlay.style.opacity = Math.min(deltaX / 150, 0.6);
+                nopeOverlay.style.opacity = '0';
+            } else {
+                nopeOverlay.style.opacity = Math.min(Math.abs(deltaX) / 150, 0.6);
+                likeOverlay.style.opacity = '0';
+            }
+        });
+
+        card.addEventListener('touchend', (e) => {
+            isDragging = false;
+            card.classList.remove('dragging');
+            
+            const deltaX = currentX - startX;
+            if (deltaX > 100) {
+                swipeOut('right');
+            } else if (deltaX < -100) {
+                swipeOut('left');
+            } else {
+                resetCard();
+            }
+        });
+
+        btnLike.addEventListener('click', () => swipeOut('right'));
+        btnNope.addEventListener('click', () => swipeOut('left'));
+    </script>
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+
+
+</body></html>

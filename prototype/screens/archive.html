@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>FITCHECK.AI - Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#C6A15A",
+                        "secondary": "#E23B7A",
+                        "error-container": "#ffdad6",
+                        "primary": "#4A2E5B",
+                        "on-error-container": "#93000a",
+                        "cat-office": "#3E5CC0",
+                        "tertiary-container": "#F6ECD2",
+                        "success": "#147A44",
+                        "on-primary-fixed-variant": "#583b69",
+                        "cat-party": "#E23B7A",
+                        "hot-text": "#B01A57",
+                        "surface-container-low": "#FFFFFF",
+                        "surface-container-highest": "#F5F2F8",
+                        "cat-gym": "#1E7BB0",
+                        "on-tertiary": "#201A28",
+                        "on-surface": "#201A28",
+                        "outline": "#6B6472",
+                        "background": "#FFFFFF",
+                        "on-tertiary-fixed": "#261900",
+                        "gold-container": "#F6ECD2",
+                        "error": "#D42D2D",
+                        "surface-variant": "#F5F2F8",
+                        "on-tertiary-container": "#7A5A16",
+                        "on-background": "#201A28",
+                        "canvas": "#FFFFFF",
+                        "border": "#EEE9F2",
+                        "surface-tint": "#715382",
+                        "inverse-surface": "#332f33",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f6eff3",
+                        "on-primary-fixed": "#2a0f3b",
+                        "surface-dim": "#EEE9F2",
+                        "on-primary-container": "#EFE9F5",
+                        "surface-container": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "surface-container-lowest": "#ffffff",
+                        "hot-container": "#FDE7EF",
+                        "surface-bright": "#FFFFFF",
+                        "surface-container-high": "#F5F2F8",
+                        "cat-travel": "#9A6410",
+                        "on-secondary-fixed": "#3f001a",
+                        "cat-casual": "#0F7A59",
+                        "on-secondary-container": "#B01A57",
+                        "ink-secondary": "#6B6472",
+                        "surface": "#F5F2F8",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "secondary-fixed": "#F6ECD2",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#E23B7A",
+                        "primary-fixed": "#EFE9F5",
+                        "inverse-primary": "#EFE9F5",
+                        "ink": "#201A28",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "tertiary-fixed": "#F6ECD2",
+                        "cat-ethnic": "#7A2E4C",
+                        "on-surface-variant": "#6B6472",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#4a2e5b",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "outline-variant": "#EEE9F2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "16px",
+                        "margin-side": "16px",
+                        "md": "12px",
+                        "xl": "24px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "safe": "env(safe-area-inset-bottom, 20px)"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Rozha One"],
+                        "label-md": ["Mukta"],
+                        "body-lg": ["Mukta"],
+                        "body-md": ["Mukta"],
+                        "display": ["Rozha One"],
+                        "title-lg": ["Mukta"],
+                        "label-lg": ["Mukta"],
+                        "headline-lg": ["Rozha One"],
+                        "display-mobile": ["Rozha One"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "label-md": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "26px", "fontWeight": "800" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+                        "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }]
+                    },
+                    "boxShadow": {
+                        "soft-plum": "0 4px 12px rgba(32, 26, 40, 0.08)",
+                        "contact": "0 2px 4px rgba(32, 26, 40, 0.15), 0 8px 16px rgba(32, 26, 40, 0.05)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle continuous fade for archive items to imply inactive state */
+        .archive-item {
+            opacity: 0.85;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+        }
+        .archive-item:hover, .archive-item:focus, .archive-item:active {
+            opacity: 1;
+            transform: scale(0.98);
+        }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body-md selection:bg-primary-container selection:text-primary-fixed pb-[88px]">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background shadow-soft shadow-tertiary/10 z-50 flex justify-between items-center px-margin-side h-16 transition-transform">
+<button aria-label="Go back" class="text-primary hover:opacity-80 transition-opacity active:scale-95 flex items-center justify-center p-2 -ml-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-container">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-display-mobile text-[20px] uppercase tracking-tighter text-primary">FITCHECK.AI</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden flex-shrink-0 cursor-pointer shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A highly detailed close-up portrait of a stylish Indian woman with clear glowing skin, wearing subtle modern jewelry and a chic deep purple top. The lighting is soft and flattering, creating a high-end fashion magazine look with a pristine white background. Vibrant, high-contrast, loud aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNryCE-w56M0KdTyde5DE91KrJhv_K409Lvy_GZ4_PD-P5dOJrcqCl7fgQy6usAs_8XERP-mwZchaHnxaFYvbzqrGA0cxSjt_Mf_WOvZDV_iwcFO8imTaXNcXT7wOMT6ckcBUtUUmYkAEYhcQ-13bSb1bPFBm2ABiUuv8s13ZI0c0g2TxYoytehhiVjzEAsn9gN6oz38aX6XcHZmtAZA46A4zHmDucH_R6ExuanW0mr0QgL1aRfFt-eBX-TlASjUoCYY4P3bwX7inj"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col px-margin-side pt-lg pb-32 max-w-2xl mx-auto w-full">
+<div class="mb-xl flex flex-col gap-sm">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">Archive</h2>
+<!-- Note Strip -->
+<div class="bg-primary-fixed text-on-primary-fixed px-lg py-md rounded-lg flex items-start gap-md shadow-soft">
+<span class="material-symbols-outlined text-primary mt-0.5 flex-shrink-0 text-[20px]">info</span>
+<p class="font-body-md text-on-primary-fixed leading-tight">Hidden from daily suggestions. Restore anytime — still available for trips.</p>
+</div>
+</div>
+<!-- Archive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
+<!-- Item 1: Heavy Velvet Sherwani -->
+<div class="archive-item bg-canvas rounded-2xl shadow-soft-plum overflow-hidden flex p-md gap-md items-center cursor-pointer relative" role="button" tabindex="0">
+<div class="w-24 h-32 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 relative shadow-contact">
+<img class="w-full h-full object-cover mix-blend-multiply" data-alt="A meticulously styled flat-lay photograph of a heavy, ornate maroon velvet Sherwani for men, featuring intricate gold zardosi embroidery around the collar and chest. The garment is laid out smoothly on a pure white surface with realistic, soft contact shadows giving it depth. High-fidelity, premium commercial fashion photography style, crisp lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD_aeP1BMBiXtQYquYH5jKUwHcHLzP433QKBzeai10PdCJ_tOPx8EdQFtiEoAcL7lbwN9TL4RYPERcIG6_KuoIpbgtW8ncbD-IAP6dCBie4xJQHSMytIhxc3tfZqDwTv7IuRln272Dn8V2me-VppM2MAzBFcolBkq4HXFP3c_bApmGNM00OnI5pzZgsWb7lrTG1QpK7ap-UZx4XNNcrGVgUwtYMRhA1pQejIj6AChUNLHHDU7bBEpAG98jkjJvjiEvsAEWn_i5eUkl"/>
+</div>
+<div class="flex flex-col justify-center flex-1 py-xs">
+<div class="flex items-center gap-sm mb-1">
+<span class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md px-2 py-0.5 rounded-full uppercase tracking-wider">Occasion</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface leading-tight mb-xs">Maroon Velvet Sherwani</h3>
+<p class="font-body-md text-ink-secondary text-sm">Winter • Wedding</p>
+<div class="mt-auto pt-sm flex justify-between items-end">
+<span class="font-label-md text-label-md text-primary opacity-60">Archived 2 mo ago</span>
+<button aria-label="Restore item" class="text-secondary p-1 rounded-full hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings_backup_restore</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2: Woolen Pashmina Shawl -->
+<div class="archive-item bg-canvas rounded-2xl shadow-soft-plum overflow-hidden flex p-md gap-md items-center cursor-pointer relative" role="button" tabindex="0">
+<div class="w-24 h-32 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 relative shadow-contact">
+<img class="w-full h-full object-cover mix-blend-multiply" data-alt="A premium flat-lay photograph of a folded, luxurious cream-colored woolen Pashmina shawl featuring delicate, intricate Kashmiri embroidery in soft pinks and greens along the border. The texture of the fine wool is clearly visible. Laid on a crisp white surface with gentle, natural contact shadows. High-end, clean, editorial fashion aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY2XCaJHwrbkzXK3NrwY_bp_DSgEy4VibWkiFOxSUV7M3vf65qJTi0qpQ8otaoZxwjSDCDksL6HBWgAeDlNucscMm7COZqJxa3hgEdk2hhT79y84zokDDcE5ehuz9i805x0nEzGOAiI_x6c2deP_2_vtiTN3IvCJVkXdzOjm2wClOlKPVeHYnLZqBN_oFDfqcKVIvxoCCYRmEHS3mJKqqfLnOUL4bipmgvfpWn0LgxUX7fK7vZmYHRI33NwE9SSC6cExmyMbuQ5lN1"/>
+</div>
+<div class="flex flex-col justify-center flex-1 py-xs">
+<div class="flex items-center gap-sm mb-1">
+<span class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md px-2 py-0.5 rounded-full uppercase tracking-wider">Accessory</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface leading-tight mb-xs">Kashmiri Pashmina</h3>
+<p class="font-body-md text-ink-secondary text-sm">Winter • Layer</p>
+<div class="mt-auto pt-sm flex justify-between items-end">
+<span class="font-label-md text-label-md text-primary opacity-60">Archived 3 mo ago</span>
+<button aria-label="Restore item" class="text-secondary p-1 rounded-full hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings_backup_restore</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3: Heavy Silk Saree -->
+<div class="archive-item bg-canvas rounded-2xl shadow-soft-plum overflow-hidden flex p-md gap-md items-center cursor-pointer relative" role="button" tabindex="0">
+<div class="w-24 h-32 rounded-lg bg-surface-container overflow-hidden flex-shrink-0 relative shadow-contact">
+<img class="w-full h-full object-cover mix-blend-multiply" data-alt="A stylized flat-lay image of a heavy, traditional Kanjeevaram silk saree in a rich deep purple shade with a broad gold zari border. The fabric is elegantly folded to show the pallu design, placed on a pristine white background with soft, realistic contact shadows. High-contrast, loud, premium commercial apparel photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmIeBfrcRREO8wdFGhDTcVCw_Xjn3WVTap3DW9ofoRYQQ2ANCx42jxbi63nabt0MdSDiQ5kRm-f-vbpfDsePWgkdxTvaMRH1HPFsGl7uyMXeEkOt_NbQ8-_c-fvVxgHehNDgm6KaziH_7EcWZSOoZdM_0t-Dw5ZmJRO2l8aHLh9jPazHKUaPlhv_pZp05Ykr46_u-Poeg83pc-iZAEiw6JJB2CwqRLJW-MUlGEFc1b8QVNwO5jM3pUw4ZRcO4pCWTNsl-8I3wfSput"/>
+</div>
+<div class="flex flex-col justify-center flex-1 py-xs">
+<div class="flex items-center gap-sm mb-1">
+<span class="bg-surface-container-high text-on-surface-variant font-label-md text-label-md px-2 py-0.5 rounded-full uppercase tracking-wider">Ethnic</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface leading-tight mb-xs">Purple Silk Saree</h3>
+<p class="font-body-md text-ink-secondary text-sm">Festive • Heavy</p>
+<div class="mt-auto pt-sm flex justify-between items-end">
+<span class="font-label-md text-label-md text-primary opacity-60">Archived 5 mo ago</span>
+<button aria-label="Restore item" class="text-secondary p-1 rounded-full hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">settings_backup_restore</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Instructional Footer -->
+<div class="mt-auto text-center py-lg opacity-60">
+<p class="font-body-md text-ink-secondary flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+                Long-press an item to restore
+            </p>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<script>
+        // Simple long-press logic simulation for visual feedback
+        document.querySelectorAll('.archive-item').forEach(item => {
+            let pressTimer;
+            
+            item.addEventListener('touchstart', (e) => {
+                item.style.transform = 'scale(0.95)';
+                pressTimer = window.setTimeout(() => {
+                    item.style.opacity = '0.5';
+                    // Trigger haptic if supported
+                    if (navigator.vibrate) navigator.vibrate(50);
+                }, 500);
+            }, {passive: true});
+            
+            item.addEventListener('touchend', () => {
+                clearTimeout(pressTimer);
+                item.style.transform = '';
+                item.style.opacity = '';
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+</body></html>

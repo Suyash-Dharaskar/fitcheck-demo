@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>FitCheck.ai - Capture Camera</title>
+<!-- Material Symbols -->
+<!-- Google Fonts -->
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Tailwind CSS Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            future: { hoverOnlyWhenSupported: true },
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#F6ECD2",
+                        "canvas": "#FFFFFF",
+                        "gold-container": "#F6ECD2",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "cat-office": "#3E5CC0",
+                        "primary": "#4A2E5B",
+                        "error": "#D42D2D",
+                        "on-surface": "#201A28",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#F6ECD2",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "cat-casual": "#0F7A59",
+                        "surface-container-high": "#F5F2F8",
+                        "error-container": "#ffdad6",
+                        "border": "#EEE9F2",
+                        "inverse-primary": "#EFE9F5",
+                        "on-tertiary-container": "#7A5A16",
+                        "on-primary-fixed": "#2a0f3b",
+                        "surface-bright": "#FFFFFF",
+                        "cat-party": "#E23B7A",
+                        "background": "#FFFFFF",
+                        "surface-variant": "#F5F2F8",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "on-tertiary-fixed": "#261900",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#EFE9F5",
+                        "surface-dim": "#EEE9F2",
+                        "surface-tint": "#715382",
+                        "surface": "#F5F2F8",
+                        "on-surface-variant": "#6B6472",
+                        "tertiary": "#C6A15A",
+                        "on-background": "#201A28",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "cat-travel": "#9A6410",
+                        "tertiary-container": "#F6ECD2",
+                        "surface-container-highest": "#F5F2F8",
+                        "inverse-on-surface": "#f6eff3",
+                        "on-secondary-fixed": "#3f001a",
+                        "on-primary-fixed-variant": "#583b69",
+                        "primary-fixed": "#EFE9F5",
+                        "surface-container-low": "#FFFFFF",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#332f33",
+                        "outline": "#6B6472",
+                        "ink-secondary": "#6B6472",
+                        "hot-text": "#B01A57",
+                        "cat-ethnic": "#7A2E4C",
+                        "on-error": "#ffffff",
+                        "success": "#147A44",
+                        "secondary": "#E23B7A",
+                        "primary-container": "#4a2e5b",
+                        "ink": "#201A28",
+                        "on-secondary-container": "#B01A57",
+                        "secondary-container": "#E23B7A",
+                        "outline-variant": "#EEE9F2",
+                        "on-error-container": "#93000a",
+                        "hot-container": "#FDE7EF",
+                        "cat-gym": "#1E7BB0",
+                        "surface-container": "#FFFFFF",
+                        "on-tertiary": "#201A28"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "md": "12px",
+                        "xs": "4px",
+                        "margin-side": "16px",
+                        "lg": "16px",
+                        "xl": "24px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Rozha One"],
+                        "headline-lg": ["Rozha One"],
+                        "display": ["Rozha One"],
+                        "body-lg": ["Mukta"],
+                        "label-md": ["Mukta"],
+                        "display-mobile": ["Rozha One"],
+                        "title-lg": ["Mukta"],
+                        "label-lg": ["Mukta"],
+                        "body-md": ["Mukta"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-md": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                        "display-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "26px", "fontWeight": "800" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 16px)
+    }
+.pt-safe {
+    padding-top: env(safe-area-inset-top, 16px)
+    }
+/* Camera Viewport Specifics */
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000
+    }
+.camera-feed {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCmmRzkTcSq-vpll9IiZpLIT3Cpr2vUN7Hw7epD6ZoJKzhAScQCHm2dXJMAbxrSOCRK5Wq09ZtE4miBdIIVk8KLAbfUIAlomGozUpvihOvaaBbRkLpOb7ODJNrH0O3aW8LZHr57UlIerCK6lQyvEQDeNCuems0OAHA2EI2K7ZbHtO4csAwRbjOVID5DExqgbMzdnNe_hK-i0N43yxjIdaPAiVReFsRX6Jg71PkniHQSkAs9z4wzk4kAYv_YUHQMO82RzprvpgQR2FDu);
+    /* Represents live feed */
+    background-color: #111
+    }</style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="relative w-full h-full text-canvas antialiased selection:bg-secondary selection:text-white flex flex-col">
+<!-- Camera Feed Background (Full Screen) -->
+<div class="absolute inset-0 w-full h-full z-0 camera-feed bg-cover bg-center" data-alt="A dark, slightly blurry, cinematic view through a smartphone camera lens aimed at a flat surface, anticipating a garment photo. The lighting is focused on the center, fading to deep shadows at the edges, creating a dramatic, high-end studio feel suitable for fashion photography.">
+</div>
+<!-- Ghost Mannequin Framing Guide -->
+<div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+<svg class="w-2/3 h-2/3 max-w-sm text-white/30" fill="none" stroke="currentColor" stroke-dasharray="8 8" stroke-width="2" viewbox="0 0 200 400">
+<path d="M100 20 C120 20, 140 40, 150 70 C160 100, 170 150, 170 200 C170 250, 160 300, 150 350 C140 380, 120 380, 100 380 C80 380, 60 380, 50 350 C40 300, 30 250, 30 200 C30 150, 40 100, 50 70 C60 40, 80 20, 100 20 Z"></path>
+<path d="M100 20 L100 380" stroke-width="1"></path>
+<path d="M30 200 L170 200" stroke-width="1"></path>
+</svg>
+</div>
+<!-- Transparent Top App Bar (Modified for Camera) -->
+<header class="fixed top-0 w-full h-[56px] z-50 flex items-center justify-between px-margin-side pt-safe bg-transparent">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm text-white hover:opacity-80 transition-opacity active:scale-95" onclick="history.back()">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm text-white hover:opacity-80 transition-opacity active:scale-95">
+<span class="material-symbols-outlined text-[24px]">flash_off</span>
+</button>
+</header>
+<!-- Main Content Area (Overlays) -->
+<main class="relative z-20 flex-1 flex flex-col justify-between pt-[76px] pb-[100px] pointer-events-none">
+<!-- Top Badges -->
+<div class="flex flex-col items-center gap-sm mt-4 px-margin-side">
+<div class="bg-black/50 backdrop-blur-md px-4 py-2 rounded-full pointer-events-auto">
+<span class="font-label-lg text-label-lg text-white">Leave space around the garment</span>
+</div>
+<div class="bg-primary px-4 py-2 rounded-full pointer-events-auto">
+<span class="font-label-lg text-label-lg text-white">3 of 5 added</span>
+</div>
+<div class="bg-error-container px-4 py-3 rounded-2xl pointer-events-auto flex items-start gap-2 max-w-[320px]" id="contact-warning">
+<span class="material-symbols-outlined text-[20px] text-on-error-container shrink-0" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div class="flex flex-col text-left">
+<span class="font-label-lg text-label-lg text-on-error-container">Two garments are touching</span>
+<span class="font-body-md text-body-md text-on-error-container">Move them apart. Overlapping items are added as one, and that cannot be undone later.</span>
+</div>
+</div>
+</div>
+<!-- Bottom Controls Area -->
+<div class="flex flex-col items-center w-full px-margin-side pointer-events-auto gap-xl cursor-pointer" onclick="window.parent.postMessage('batch_review', '*')">
+<!-- Thumbnail Strip -->
+<div class="w-full overflow-x-auto flex gap-md py-2 snap-x scrollbar-hide" style="scrollbar-width: none; -ms-overflow-style: none;">
+<!-- Thumbnail 1: Kurti -->
+<div class="relative w-16 h-16 rounded-lg bg-white shrink-0 snap-start shadow-[0_4px_12px_rgba(32,26,40,0.12)] border border-white/20">
+<img class="w-full h-full object-contain p-1 rounded-lg" data-alt="A meticulously cut-out, high-fidelity image of an elegant, vibrant mustard yellow Indian kurti with intricate mirror work and embroidery, laid perfectly flat against a pure white background. The fabric shows subtle, realistic folds and soft, natural contact shadows that ground it." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0ttKYZwpd-aayKgC7qzbflNUaigi2-3KpZ-BNTrII56wO4qkbwr-ifY8wZDEzYFVA4oa3j4i4bK5F2v_Og-_I3m6nYRsswuGABUv_6nHNB3-P7ySJZ2q2yL78f9yk845CZfZHu_r4pXClDj_p3o31JFBPG_TVuVGW_U0O4nuXrVWo2wzeuh4zAlohc51KBG96IY86Epqi1Herwt75-yv00gTFKAtUJjcObYVjnVqeS90IF5SSlWHbWW1Qdc9grDIY2SlPbL0-I56-"/>
+<button class="absolute -top-1 -right-1 bg-surface w-5 h-5 rounded-full flex items-center justify-center shadow-soft border border-border">
+<span class="material-symbols-outlined text-[14px] text-ink-secondary">close</span>
+</button>
+</div>
+<!-- Thumbnail 2: Dupatta -->
+<div class="relative w-16 h-16 rounded-lg bg-white shrink-0 snap-start shadow-[0_4px_12px_rgba(32,26,40,0.12)] border border-white/20">
+<img class="w-full h-full object-contain p-1 rounded-lg" data-alt="A meticulously cut-out, high-fidelity image of a flowing, sheer magenta organza dupatta with golden zari borders, neatly draped and flat-laid against a pure white background. The sheer texture is clearly visible with soft, realistic contact shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSoJ8wAgG6Oc28JQDXBEFPtljWm78Om0jvM8foSTDAmyX2HPceJUn0bt30VSb-YkQy598EKOuaUvv2lJP_YHh7ErwFnTkxx4zLg0AGY61bzaKc984vBlkHxeXl3yP5mL_Wvyre94UaKkfqkH8pqo2F3Zoz6DZm-rDs4GSWUTSoygLwd8b1fPhuzE3U1-0hUTCxzR9SgWDhciuFDCj8cJmBpLex2RpVLN6KnIU-FbWyw3O8lDPy_a2lBRBYYqYWlNjL8AMaHxjAlO3h"/>
+<button class="absolute -top-1 -right-1 bg-surface w-5 h-5 rounded-full flex items-center justify-center shadow-soft border border-border">
+<span class="material-symbols-outlined text-[14px] text-ink-secondary">close</span>
+</button>
+</div>
+<!-- Thumbnail 3: Juttis -->
+<div class="relative w-16 h-16 rounded-lg bg-white shrink-0 snap-start shadow-[0_4px_12px_rgba(32,26,40,0.12)] border border-white/20">
+<img class="w-full h-full object-contain p-1 rounded-lg" data-alt="A meticulously cut-out, high-fidelity image of a pair of handcrafted, traditional Indian juttis embellished with vibrant thread work and tiny pearls. They are positioned flat against a pure white background, capturing their curved shape with soft, grounded contact shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmhfVlKv3R339IsQso_okhywXnzoGuCGMJO67Qb8zDKGLLhS9OBUAbQWdXqPDlDAXOoXpgutZIRTkBa4GwshJ3lfan9ofyTHu_bLVT8XUc0ib50Sm92iEF3LsvD3uQRoRNH6yjDHKgcH5bp0A7Cq73L-VwCHDSoJUAuw_HNqsjPqIpajJEFSGTTDEj-baQyION4R4lH8lJWP3TpUNnfvLGwLxrknFzFwVRsFUshorpp-vZ2eJ7jfsX-SeL2fF7f7sZs6taVWBr5e18"/>
+<button class="absolute -top-1 -right-1 bg-surface w-5 h-5 rounded-full flex items-center justify-center shadow-soft border border-border">
+<span class="material-symbols-outlined text-[14px] text-ink-secondary">close</span>
+</button>
+</div>
+</div>
+<!-- Shutter & Done -->
+<div class="flex flex-col items-center gap-md mb-8">
+<button class="w-[72px] h-[72px] rounded-full bg-secondary border-4 border-white flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shadow-[0_4px_20px_rgba(226,29,96,0.4)]" onclick="window.parent.postMessage('batch_review', '*')">
+<div class="w-14 h-14 rounded-full bg-white/20"></div>
+</button>
+<button class="font-body-lg text-body-lg text-white font-bold hover:opacity-80 transition-opacity">
+                    Done
+                </button>
+</div>
+</div>
+</main>
+<!-- Suppressed Navigation Shells (Transactional Screen) -->
+<!-- Navigation is intentionally omitted per 'Shell Visibility & Relevance (THE FILTER)' rules for a linear/task-focused capture screen with a 'Close' action. -->
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+</body></html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Your Taste</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#EEE9F2",
+                    "surface-container-highest": "#F5F2F8",
+                    "cat-party": "#E23B7A",
+                    "surface-variant": "#F5F2F8",
+                    "gold-container": "#F6ECD2",
+                    "error-container": "#ffdad6",
+                    "ink": "#201A28",
+                    "surface-container-high": "#F5F2F8",
+                    "on-error": "#ffffff",
+                    "error": "#D42D2D",
+                    "on-surface": "#201A28",
+                    "on-primary-fixed": "#2a0f3b",
+                    "on-primary": "#ffffff",
+                    "secondary": "#E23B7A",
+                    "on-tertiary-fixed-variant": "#5d4201",
+                    "inverse-primary": "#EFE9F5",
+                    "primary-fixed": "#EFE9F5",
+                    "on-secondary-fixed": "#3f001a",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#332f33",
+                    "on-error-container": "#93000a",
+                    "border": "#EEE9F2",
+                    "on-tertiary-container": "#7A5A16",
+                    "success": "#147A44",
+                    "background": "#FFFFFF",
+                    "tertiary-fixed": "#F6ECD2",
+                    "outline": "#6B6472",
+                    "cat-ethnic": "#7A2E4C",
+                    "on-surface-variant": "#6B6472",
+                    "on-secondary-container": "#B01A57",
+                    "cat-travel": "#9A6410",
+                    "hot-container": "#FDE7EF",
+                    "tertiary-container": "#F6ECD2",
+                    "primary-fixed-dim": "#EFE9F5",
+                    "on-primary-container": "#EFE9F5",
+                    "inverse-on-surface": "#f6eff3",
+                    "cat-gym": "#1E7BB0",
+                    "surface": "#F5F2F8",
+                    "secondary-fixed-dim": "#FDE7EF",
+                    "canvas": "#FFFFFF",
+                    "surface-container": "#FFFFFF",
+                    "secondary-container": "#E23B7A",
+                    "on-tertiary-fixed": "#261900",
+                    "secondary-fixed": "#F6ECD2",
+                    "cat-casual": "#0F7A59",
+                    "surface-tint": "#715382",
+                    "surface-bright": "#FFFFFF",
+                    "tertiary-fixed-dim": "#C6A15A",
+                    "outline-variant": "#EEE9F2",
+                    "on-tertiary": "#201A28",
+                    "on-secondary-fixed-variant": "#B01A57",
+                    "hot-text": "#B01A57",
+                    "tertiary": "#C6A15A",
+                    "primary-container": "#4a2e5b",
+                    "primary": "#4A2E5B",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#FFFFFF",
+                    "ink-secondary": "#6B6472",
+                    "on-primary-fixed-variant": "#583b69",
+                    "on-background": "#201A28",
+                    "cat-office": "#3E5CC0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "sm": "8px",
+                    "lg": "16px",
+                    "margin-side": "16px",
+                    "xl": "24px",
+                    "md": "12px"
+            },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+            "fontFamily": {
+                    "body-md": ["Mukta"],
+                    "headline-md": ["Rozha One"],
+                    "display": ["Rozha One"],
+                    "label-md": ["Mukta"],
+                    "title-lg": ["Mukta"],
+                    "headline-lg": ["Rozha One"],
+                    "display-mobile": ["Rozha One"],
+                    "label-lg": ["Mukta"],
+                    "body-lg": ["Mukta"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                    "display": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                    "label-md": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "title-lg": ["20px", {"lineHeight": "26px", "fontWeight": "800"}],
+                    "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "display-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                    "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface-bright text-on-surface font-body-md min-h-screen pb-24 selection:bg-primary-fixed selection:text-primary">
+<!-- TopAppBar JSON Executed -->
+<header class="w-full top-0 sticky bg-background flex items-center justify-between px-margin-side h-16 max-w-screen-xl mx-auto z-40 flat no shadows">
+<button aria-label="Go back" class="flex items-center justify-center p-sm -ml-sm rounded-full hover:bg-surface-container-low transition-colors text-primary">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="font-headline-lg text-headline-lg text-primary tracking-tight">FitCheck.ai</div>
+<div class="w-10"></div> <!-- Spacer to balance flex layout -->
+</header>
+<main class="max-w-screen-md mx-auto px-margin-side pt-md">
+<h1 class="font-display-mobile text-[20px] text-primary mb-xl mt-sm">Your taste</h1>
+<!-- Insight Card -->
+<section class="bg-gold-container rounded-2xl overflow-hidden shadow-[0_8px_20px_rgba(32,26,40,0.08)] mb-10 relative">
+<div class="h-56 w-full relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="A meticulously styled, top-down editorial flat-lay photograph of a crisp, beige linen button-down shirt paired with tailored olive green chinos. The garments rest on a bright, pure white backdrop, featuring very soft, realistic contact shadows that provide subtle depth and a premium marketplace feel. The lighting is high-key and diffused, highlighting the natural textures of the fabric in an earthy, minimalist color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC1rIKjOTMAm7TMeHw37WeJgmacRIWnxZ6b09Bnv8uj9knaGDD1VBkGgJRQ2icbm_SnHxVBRCC5rMLWzk2Kc-vbw9HuzhJCHIq_87JZYPqIvvA-ECtLRIYofqipbl_IbdlPqlDoGXeY-lBK-HbArye9exlQoHyOrn6SMotU6dMPQ9BHIsI7YABPnNiHlPSYVtafxE9sKxy23rJctsQdU7M2PhKLareHjIm37reuDfBaHiudgXAi1jtEwcdtHy7mE5AVcV-GdYRgsEjx')"></div>
+<!-- Vibe Badge -->
+<div class="absolute top-md left-md bg-canvas/90 backdrop-blur-sm px-md py-xs rounded-full font-label-md text-label-md text-on-tertiary-container uppercase tracking-widest shadow-soft">
+                    What we've learned
+                </div>
+</div>
+<div class="p-lg">
+<p class="font-body-lg text-body-lg text-on-tertiary-container leading-relaxed">
+                    We've noticed you lean towards <span class="font-title-lg text-title-lg text-primary">Minimalist Chic</span> with a preference for Earthy Tones.
+                </p>
+</div>
+</section>
+<!-- Preferences Section -->
+<h2 class="font-headline-md text-headline-md text-primary mb-lg">Adjust</h2>
+<div class="flex flex-col gap-sm mb-xl">
+<!-- Toggle Row 1 -->
+<label class="bg-canvas rounded-2xl p-lg flex justify-between items-center shadow-[0_2px_12px_rgba(32,26,40,0.04)] cursor-pointer hover:bg-surface-container-lowest transition-colors group">
+<span class="font-body-lg text-body-lg text-on-surface">Suggest bolder colours</span>
+<div class="w-12 h-6 rounded-full bg-surface-container-highest relative transition-colors duration-200 ease-in-out group-hover:bg-outline-variant">
+<div class="w-5 h-5 bg-canvas rounded-full absolute top-[2px] left-[2px] shadow-[0_1px_3px_rgba(0,0,0,0.2)] transition-transform duration-200 ease-in-out"></div>
+</div>
+</label>
+<!-- Toggle Row 2 (Active) -->
+<label class="bg-canvas rounded-2xl p-lg flex justify-between items-center shadow-[0_2px_12px_rgba(32,26,40,0.04)] cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<span class="font-body-lg text-body-lg text-on-surface">Include ethnic wear daily</span>
+<div class="w-12 h-6 rounded-full bg-primary relative transition-colors duration-200 ease-in-out">
+<div class="w-5 h-5 bg-canvas rounded-full absolute top-[2px] left-[26px] shadow-[0_1px_3px_rgba(0,0,0,0.2)] transition-transform duration-200 ease-in-out"></div>
+</div>
+</label>
+<!-- Toggle Row 3 (Active) -->
+<label class="bg-canvas rounded-2xl p-lg flex justify-between items-center shadow-[0_2px_12px_rgba(32,26,40,0.04)] cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<span class="font-body-lg text-body-lg text-on-surface">Weather-first picks</span>
+<div class="w-12 h-6 rounded-full bg-primary relative transition-colors duration-200 ease-in-out">
+<div class="w-5 h-5 bg-canvas rounded-full absolute top-[2px] left-[26px] shadow-[0_1px_3px_rgba(0,0,0,0.2)] transition-transform duration-200 ease-in-out"></div>
+</div>
+</label>
+</div>
+<!-- Information Note -->
+<div class="bg-surface-container-low border border-border rounded-2xl p-md flex gap-md items-start mb-xl">
+<span class="material-symbols-outlined text-primary mt-xs shrink-0">info</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">
+                Style changed? Recalibrate clears your profile and retakes the quiz to start fresh.
+            </p>
+</div>
+<!-- Action Button -->
+<button onclick="event.stopPropagation(); window.parent.postMessage('style_quiz','*')" class="w-full border-2 border-primary text-primary font-label-lg text-label-lg uppercase tracking-[1px] rounded-2xl py-lg flex items-center justify-center gap-sm hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container transition-all active:scale-95 duration-150 shadow-[0_4px_12px_rgba(51,24,68,0.1)]">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'wght' 600;">restart_alt</span>
+            Recalibrate Style
+        </button>
+</main>
+<!-- BottomNavBar JSON Executed -->
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+
+</body></html>

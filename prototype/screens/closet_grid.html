@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Digital Closet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#E23B7A",
+                        "gold-container": "#F6ECD2",
+                        "secondary-container": "#E23B7A",
+                        "hot-container": "#FDE7EF",
+                        "surface-bright": "#FFFFFF",
+                        "primary": "#4A2E5B",
+                        "primary-fixed": "#EFE9F5",
+                        "background": "#FFFFFF",
+                        "cat-party": "#E23B7A",
+                        "on-secondary-container": "#B01A57",
+                        "on-surface-variant": "#6B6472",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "surface-tint": "#715382",
+                        "inverse-primary": "#EFE9F5",
+                        "inverse-surface": "#332f33",
+                        "on-primary-fixed": "#2a0f3b",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#3f001a",
+                        "error": "#D42D2D",
+                        "ink": "#201A28",
+                        "cat-office": "#3E5CC0",
+                        "on-primary-container": "#EFE9F5",
+                        "tertiary": "#C6A15A",
+                        "primary-container": "#4a2e5b",
+                        "cat-casual": "#0F7A59",
+                        "on-tertiary-fixed": "#261900",
+                        "cat-ethnic": "#7A2E4C",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "on-tertiary": "#201A28",
+                        "border": "#EEE9F2",
+                        "on-secondary": "#ffffff",
+                        "surface": "#F5F2F8",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "inverse-on-surface": "#f6eff3",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#583b69",
+                        "outline": "#6B6472",
+                        "surface-container-low": "#FFFFFF",
+                        "on-tertiary-container": "#7A5A16",
+                        "tertiary-container": "#F6ECD2",
+                        "on-background": "#201A28",
+                        "outline-variant": "#EEE9F2",
+                        "success": "#147A44",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "hot-text": "#B01A57",
+                        "secondary-fixed": "#F6ECD2",
+                        "ink-secondary": "#6B6472",
+                        "cat-travel": "#9A6410",
+                        "surface-variant": "#F5F2F8",
+                        "canvas": "#FFFFFF",
+                        "surface-container-high": "#F5F2F8",
+                        "on-surface": "#201A28",
+                        "tertiary-fixed": "#F6ECD2",
+                        "surface-dim": "#EEE9F2",
+                        "surface-container": "#FFFFFF",
+                        "cat-gym": "#1E7BB0",
+                        "surface-container-highest": "#F5F2F8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-side": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "12px",
+                        "xl": "24px",
+                        "lg": "16px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "display": ["Rozha One"],
+                        "display-mobile": ["Rozha One"],
+                        "label-lg": ["Mukta"],
+                        "title-lg": ["Mukta"],
+                        "label-md": ["Mukta"],
+                        "headline-md": ["Rozha One"],
+                        "body-lg": ["Mukta"],
+                        "headline-lg": ["Rozha One"],
+                        "body-md": ["Mukta"]
+                    },
+                    "fontSize": {
+                        "display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "display-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "26px", "fontWeight": "800" }],
+                        "label-md": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                        "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface pb-[88px] md:hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-side h-[56px] bg-surface"><button class="w-10 h-10 flex items-center justify-center text-primary hover:opacity-80 transition-opacity" onclick="window.history.back()">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-secondary-container to-inverse-primary p-[2px]">
+<img class="w-full h-full rounded-full object-cover border-2 border-surface" data-alt="A high-quality, close-up portrait of a young Indian woman with glowing skin, smiling warmly. She is wearing a modern, vibrant magenta top. The lighting is soft and studio-quality, emphasizing her energetic vibe. Background is a clean, neutral tone to make her pop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCid-QMnAFKpzmDgNQpvqkbfVxzEGG0Gc1QG8pyvsqoc9QRPzYAnoWPb09RMxu1_D3ZMpfCUNBwBDo8cY1dEu_ONWLaYIHGOVfj_ka6Pa-wk2IM_ocpTd5rt-zevMtHtk3gM7FZlDPAhtiz33F8k0XaNGiBOSGcbYI_TxTZEuea_Z1J78jtGoWH9CfBEQMFIAZEhIvTxm5fgXgc7z8kjq0fvfrSDtPD6M2sIQ_3JMqFzXQ_wWYh8iIRELEZK3BVJexJi_3e1VkN7gSL"/>
+</div>
+<div class="flex flex-col items-center"><h1 class="font-headline-md text-headline-md text-primary font-display-mobile">Namaste, Aarav</h1><p class="font-body-md text-outline">42 items</p></div>
+<div class="flex items-center">
+<button aria-label="Select multiple items" class="w-10 h-10 flex items-center justify-center text-primary hover:opacity-80 transition-opacity" onclick="window.parent.postMessage('closet_multiselect', '*')">
+<span class="material-symbols-outlined">checklist</span>
+</button>
+<button onclick="event.stopPropagation(); window.parent.postMessage('closet_search','*')" class="w-10 h-10 flex items-center justify-center text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="mt-[56px] pt-sm">
+<!-- Search and Filters Section -->
+<section class="px-margin-side flex flex-col gap-md sticky top-[56px] bg-surface/95 backdrop-blur-sm z-40 py-sm">
+<div class="relative w-full shadow-soft rounded-2xl">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="border-0 focus:ring-0 w-full bg-canvas border border-border rounded-2xl pl-[44px] pr-sm py-[10px] font-body-md text-body-md text-on-surface focus:outline-none focus:border-surface-tint focus:ring-1 focus:ring-surface-tint transition-all placeholder:text-outline-variant" placeholder="Search closet..." type="text"/>
+</div>
+<div class="flex overflow-x-auto gap-sm pb-[2px] no-scrollbar -mx-margin-side px-margin-side">
+<button class="bg-secondary text-on-secondary rounded-full px-md py-[6px] font-label-md text-label-md whitespace-nowrap shadow-soft">All</button>
+<button class="bg-canvas border border-border text-on-surface-variant rounded-full px-md py-[6px] font-label-md text-label-md whitespace-nowrap">Tops</button>
+<button class="bg-canvas border border-border text-on-surface-variant rounded-full px-md py-[6px] font-label-md text-label-md whitespace-nowrap">Bottoms</button>
+<button class="bg-canvas border border-border text-on-surface-variant rounded-full px-md py-[6px] font-label-md text-label-md whitespace-nowrap">Ethnic</button>
+<button class="bg-canvas border border-border text-on-surface-variant rounded-full px-md py-[6px] font-label-md text-label-md whitespace-nowrap">Unavailable (2)</button>
+</div>
+</section>
+<!-- Garment Grid -->
+<section class="px-margin-side mt-sm pb-xl grid grid-cols-2 gap-x-4 gap-y-7">
+<!-- Card 1: Active -->
+<article class="flex flex-col">
+<div class="relative aspect-[3/4] bg-white rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional flat-lay photograph of a vibrant, hot pink cropped top resting on a pure white surface. The fabric texture is visible, and soft, realistic contact shadows ground the garment, preventing it from looking like it's floating. The lighting is bright, even, and marketplace-ready." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAoTJ8Lmyw1zIqijgJZ9SwtL9NNGjKKm1GAIjXjhf0Z1GeOKI8j0mhhKUVwe9kBpagUHj6RdC41mfSd-XkhUoqRY2zgZiq0pMI0fXBzmrjeU2RuZdJatkPHhNq7CMg4pCHa6qMmfwvTsLsLECnrTlCGmIxsK6NZtitmgzwUqABbfTWwWTmB78a3nWby_BQj7aZguNQvQflPY-GyrBaOaVgkwn-o9womUOotv5wDE4LUEtF5dPGURYbxKkq16XyHf8zzweJBYeKgesd"/>
+</div>
+<div class="pt-3 pb-1 flex flex-col gap-xs">
+<span class="font-headline-md text-[17px] leading-none text-on-surface line-clamp-1">Fuchsia Crop Top</span>
+<!-- Social Stack -->
+<div class="flex items-center mt-xs">
+<div class="flex -space-x-[8px]">
+<img class="w-[20px] h-[20px] rounded-full border border-canvas object-cover shadow-soft z-30" data-alt="A tight crop of a high-fashion editorial flat-lay showing high-waisted black denim jeans with subtle distressing. The lighting is crisp and the background is pure white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuglcA5Vipsyd8V-2t_AE0Un9afOWb8VT_j7cIF_zlPXv6bpA6ZGIiTtE0O2gxCpeJA5I25IvparAe3PmzthpDiie70ofFhwfFkRDIcPXnSpqT4W11rCg-LPy7FK7o0FgRnahs9AKMMdlySNEB-pFdnRV5FkkscVrk_OrS5MXpsrvNGMU_sy3kCCkidHb0-RMovLoAySyQ4cIxz4L_cDMohtCvjNmi8YLfy5mDYaBQG9gtM0ztBmT6U_LAuuatsU2Y7qK_F3V6aQ18"/>
+<img class="w-[20px] h-[20px] rounded-full border border-canvas object-cover shadow-soft z-20" data-alt="A tight crop of a chic white linen blazer laid flat against a stark white background. Soft shadows define the edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdxqqFQpy65-1AxbbCnQ46jRif8i08gu34T33nVX6cG5tFgxw9vNVdD-AieBl_bV9JB5qTwGEmYgsAyT4Vec33-hhyIYOrIBVo-vWofcgQNb1Ux9kxJ6mZNQAoeSUWU7rKp9U3bZyL5QkRrlvDQjZTGscHY5DUjVlH-HZK73orLthmOuo6Xwrvoo0KLBOTheEuPlUII2ZEM8IcJHzCaxBXN1Oox5GQSuTMdhaK1w5Dk0JZNELrjaoHTwPipZgP6B1H0NBhdqYvK21h"/>
+<div class="w-[20px] h-[20px] rounded-full border border-canvas bg-surface-container-highest flex items-center justify-center z-10">
+<span class="font-label-md text-[8px] text-on-surface-variant">+3</span>
+</div>
+</div>
+<span class="font-label-md text-[10px] text-surface-tint ml-xs">Goes with 5</span>
+</div>
+</div>
+</article>
+<!-- Card 2: Dimmed (Unavailable) -->
+<article class="flex flex-col relative group">
+<!-- Overlay for dimmed state -->
+<div class="absolute inset-0 bg-surface/70 z-10 backdrop-blur-[1px] flex flex-col items-center justify-center p-md text-center opacity-100">
+<span class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-md py-xs rounded-full shadow-soft mb-md flex items-center gap-[4px]">
+<span class="material-symbols-outlined text-[14px]">local_laundry_service</span>
+                        In the wash
+                    </span>
+<button class="w-full py-[8px] rounded-lg border border-secondary text-secondary font-label-md text-label-md bg-canvas shadow-soft active:scale-95 transition-transform">
+                        Mark available
+                    </button>
+</div>
+<div class="relative aspect-[3/4] bg-white rounded-2xl overflow-hidden opacity-40 grayscale">
+<img class="w-full h-full object-cover" data-alt="A professional flat-lay photograph of a classic indigo denim jacket resting on a pure white surface. The jacket is slightly wrinkled for a casual look. Soft, realistic contact shadows fall naturally around the edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJFjmY-xIjPyBuMUdhtx-goUZ_aQB00KYH1nFNDWj_aMVQuY4aJZP057QWb9GLQHEcHfC4-6e3XlzIQ5ND9byUpQNp6tOyHBPrYjWjMetUoDxkNqV4G4XLoZfnmnqLm4xq7Pe3UpEMSa6Mvgyfk6YCX5jbBWECoZSa1cC2Xya1GTVl_39R53XnVZxyet02JOKPQJpeeSWPAPB5Ewmc-1qvoVpSHUeWzrpOl8aBj4_kRJkFufbfP2KpzLOFM82VjuWW2huYy6eRvRtF"/>
+</div>
+<div class="pt-3 pb-1 flex flex-col gap-xs opacity-40">
+<span class="font-label-md text-label-md text-on-surface line-clamp-1">Classic Denim Jacket</span>
+<div class="flex items-center mt-xs">
+<div class="flex -space-x-[8px]">
+<div class="w-[20px] h-[20px] rounded-full border border-canvas bg-surface-variant z-20"></div>
+</div>
+<span class="font-label-md text-[10px] text-outline ml-xs">Goes with 12</span>
+</div>
+</div>
+</article>
+<!-- Card 3: Active -->
+<article class="flex flex-col">
+<div class="relative aspect-[3/4] bg-white rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stunning flat-lay of an emerald green silk saree with intricate gold border embroidery, neatly folded and presented on a bright white studio surface. The fabric shimmers slightly under even, high-quality lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl4k6rjX-YAoBdz6xRU5SWeh46oG00Pe1qAINN41VWoVUJYkszv1qI-oAaoTFPnqeoYXmSdDCcummcJmsg9PAd7m-xahr2yHtly47YP8_2_yzSWUQKOXh6TPMS05J4vvDd8J-cMxMMkEWo38WmeUpsFrXHJWpdXbRzMgN6wwj64moi-iRDPMsccBSp7ddgPiy50xbEXWao_q9lKOrYHL9ezS_m0SQo2_FZDz1r_zCjGB905tBytjBUGvfuSVpvsHGL-RKRFVTIwkN1"/>
+</div>
+<div class="pt-3 pb-1 flex flex-col gap-xs">
+<span class="font-headline-md text-[17px] leading-none text-on-surface line-clamp-1">Emerald Silk Saree</span>
+<div class="flex items-center mt-xs">
+<div class="flex -space-x-[8px]">
+<img class="w-[20px] h-[20px] rounded-full border border-canvas object-cover shadow-soft z-30" data-alt="A tight crop showing a delicate gold and pearl choker necklace lying flat on a pristine white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAP88XR5eMX2Pz-D439KG5GANS6LyvgYHvcXD6zayoN9ErQXPdQxkIALc0VnrVLUTVmQF2XvZPN-VQtmJdVFNsmJWuap5YeoEDwCgRBF7yXoJbFshiYgUJ0upb2A6iQhtkVVxHtj2utIDpibDnrTYqy5lgPwLPh2SbZjqSI5iHftxMELqePcWY1yoTi22VGJlPBbKu9AjE_ym4_uGUL4gBkJ7J47ljvX114Vn3kaKokzhOYRV0i7eT9WJUnH5yC6mC_vz_hcpv60C0"/>
+<div class="w-[20px] h-[20px] rounded-full border border-canvas bg-surface-container-highest flex items-center justify-center z-10">
+<span class="font-label-md text-[8px] text-on-surface-variant">+1</span>
+</div>
+</div>
+<span class="font-label-md text-[10px] text-surface-tint ml-xs">Goes with 2</span>
+</div>
+</div>
+</article>
+<!-- Card 4: Active -->
+<article class="flex flex-col">
+<div class="relative aspect-[3/4] bg-white rounded-2xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A flat-lay image of relaxed-fit beige cargo pants laid out cleanly on a stark white background. Pockets and seams are clearly visible. Realistic, subtle drop shadows anchor the pants to the bright background surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcTimP73UAiQtmURy8h14gUEGewXFBX1Yw48O_memHN6XOS8QV7YKDInQcW32z7ly595nsswkgCaTZ_6ylp59Cr6wxjHoahlW0DadRuZp3qiaMK3SoJgGi3M1CGTLXp7LQEgo-XT6uLHu0GF9b5lVHo4T8AqZTCHdMcZ9BC_JMtXZQBE8OP3iUGwmYCf3CanOiXB0HfTTOqVsGxhc3BQf-xnsQq3BcHixrel2BDdEepHoqyTfymzOF0kJo7lvZ6tgJsrOn8FJPQJVJ"/>
+</div>
+<div class="pt-3 pb-1 flex flex-col gap-xs">
+<span class="font-headline-md text-[17px] leading-none text-on-surface line-clamp-1">Beige Cargo Pants</span>
+<div class="flex items-center mt-xs">
+<div class="flex -space-x-[8px]">
+<img class="w-[20px] h-[20px] rounded-full border border-canvas object-cover shadow-soft z-30" data-alt="A close-up flat-lay of a casual black oversized t-shirt on a white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJcjhmV1Lzs0WWpHRZDs_FlU-yX1SLQdXt5wPWIhW3smUD2T-P93L5mbb2zD5juh6EjgzV8_7ixhjp1IC2rnzeEFWmutVgt37SdKHEtnTa8RWC2ivInQG8ZD_fW5Un6FodO_bg08mXAMtUFI3JLXCQLD0Cz_zs13RfkuM_02cJ_JbNalOkJobZ4RhAbSi-kgZexeOPPpTQ9At5LumDaui9seBgwjDjILpT7q6w4cOjF0ZYMqiJ0a755dpKbcIPG66P9L0s250CAhQ4"/>
+<img class="w-[20px] h-[20px] rounded-full border border-canvas object-cover shadow-soft z-20" data-alt="A close-up flat-lay of chunky white sneakers resting horizontally on a white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxjEDognyDjrwI7FJz1izfDWKd69o0-BfugESKhr4Spcxmjm7u0_LopWJ3lIV19YJFQDShSZxcdsJiyaclX-VJeykgn9jZWyTvLMemewEhm_YcQgj_UUROKSVprEmrWrTuOq56Dm_X-cE7cef-BptY6q9cU0mrMBlIS_XBZQBxH0l9kzVhCif-VJh8HIdRPXyfOl0x0c6CpweTT_FzfRV9fKs0j_03lO_U2w25xvRXBoIwWVje1G9Sd9VaqgAWtzZ7x2FONhyTE6TH"/>
+<div class="w-[20px] h-[20px] rounded-full border border-canvas bg-surface-container-highest flex items-center justify-center z-10">
+<span class="font-label-md text-[8px] text-on-surface-variant">+6</span>
+</div>
+</div>
+<span class="font-label-md text-[10px] text-surface-tint ml-xs">Goes with 8</span>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar -->
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+</body></html>

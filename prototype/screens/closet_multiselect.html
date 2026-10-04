@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Closet Multiselect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#FFFFFF",
+                        "on-primary-fixed-variant": "#583b69",
+                        "error": "#D42D2D",
+                        "surface-variant": "#F5F2F8",
+                        "error-container": "#ffdad6",
+                        "background": "#FFFFFF",
+                        "canvas": "#FFFFFF",
+                        "secondary": "#E23B7A",
+                        "inverse-surface": "#332f33",
+                        "success": "#147A44",
+                        "primary-container": "#4a2e5b",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "border": "#EEE9F2",
+                        "primary": "#4A2E5B",
+                        "inverse-primary": "#EFE9F5",
+                        "tertiary": "#C6A15A",
+                        "outline": "#6B6472",
+                        "on-tertiary": "#201A28",
+                        "surface": "#F5F2F8",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#B01A57",
+                        "tertiary-container": "#F6ECD2",
+                        "surface-container-high": "#F5F2F8",
+                        "cat-travel": "#9A6410",
+                        "cat-party": "#E23B7A",
+                        "secondary-container": "#E23B7A",
+                        "surface-container": "#FFFFFF",
+                        "cat-ethnic": "#7A2E4C",
+                        "hot-container": "#FDE7EF",
+                        "ink-secondary": "#6B6472",
+                        "on-primary-fixed": "#2a0f3b",
+                        "cat-casual": "#0F7A59",
+                        "on-tertiary-fixed": "#261900",
+                        "on-primary-container": "#EFE9F5",
+                        "on-surface-variant": "#6B6472",
+                        "on-background": "#201A28",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#715382",
+                        "surface-dim": "#EEE9F2",
+                        "cat-office": "#3E5CC0",
+                        "on-secondary-fixed": "#3f001a",
+                        "secondary-fixed": "#F6ECD2",
+                        "on-surface": "#201A28",
+                        "on-tertiary-container": "#7A5A16",
+                        "on-primary": "#ffffff",
+                        "ink": "#201A28",
+                        "cat-gym": "#1E7BB0",
+                        "tertiary-fixed": "#F6ECD2",
+                        "surface-container-highest": "#F5F2F8",
+                        "surface-bright": "#FFFFFF",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f6eff3",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "hot-text": "#B01A57",
+                        "primary-fixed": "#EFE9F5",
+                        "gold-container": "#F6ECD2",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "outline-variant": "#EEE9F2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "12px",
+                        "xl": "24px",
+                        "xs": "4px",
+                        "margin-side": "16px",
+                        "sm": "8px",
+                        "lg": "16px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Mukta"],
+                        "body-lg": ["Mukta"],
+                        "headline-md": ["Rozha One"],
+                        "label-lg": ["Mukta"],
+                        "display-mobile": ["Rozha One"],
+                        "label-md": ["Mukta"],
+                        "headline-lg": ["Rozha One"],
+                        "display": ["Rozha One"],
+                        "body-md": ["Mukta"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", { "lineHeight": "26px", "fontWeight": "800" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+                        "display-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "label-md": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                        "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-on-background fixed top-0 w-full z-50 flex justify-between items-center px-margin-side h-16 w-full">
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-[20px] text-primary dark:text-primary-fixed-dim">Multi-select / bulk tag</h1>
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-margin-side">
+<!-- Page Header -->
+<div class="flex justify-between items-center mb-6 mt-4">
+<h2 class="font-headline-md text-headline-md text-primary">3 selected</h2>
+<button class="font-body-md text-body-md text-primary font-semibold hover:opacity-80 transition-opacity">Select All</button>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-2 gap-md">
+<!-- Selected Card 1: Kurti -->
+<div class="relative bg-canvas rounded-2xl shadow-[0_4px_12px_rgba(32,26,40,0.06)] aspect-[3/4] overflow-hidden border border-primary">
+<div class="absolute top-2 right-2 z-10 w-6 h-6 bg-secondary rounded-full flex items-center justify-center shadow-soft">
+<span class="material-symbols-outlined text-white text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<img class="w-full h-full object-cover object-center p-4" data-alt="A high-fidelity editorial flat-lay photo of a vibrant Indian Kurti on a pristine white background. The Kurti is a deep amethyst purple with intricate silver embroidery around the neckline. The lighting is soft and even, casting realistic, subtle contact shadows that give the garment a premium, magazine-quality feel. The overall aesthetic is clean, modern, and highly commercial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANrmH6qNuadVGmfQYgnVXi1PRoXj7GI9G9-Xz44dlCyY-n4diZkAOv9elBfKFqWsFx5cCWKlVPQf48xO5OpQoLUIPvsUyz18gGfdMMLcY5pL2YrDH9CDGAJcjwxRw3-QezYQ6gBiAQ_dzVcrNcUStcss5XNLPddeTzggb_v99ItdTlvTb5bAHbYOgBJpYoeppsBYug45w-N4nRVeUPKWnb_Um4Mf67miAtsQoM2rN6KLaN6Gy2sjrkSgzn8sm-Nmjlkke1WNLSOcDs"/>
+</div>
+<!-- Selected Card 2: Saree -->
+<div class="relative bg-canvas rounded-2xl shadow-[0_4px_12px_rgba(32,26,40,0.06)] aspect-[3/4] overflow-hidden border border-primary">
+<div class="absolute top-2 right-2 z-10 w-6 h-6 bg-secondary rounded-full flex items-center justify-center shadow-soft">
+<span class="material-symbols-outlined text-white text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<img class="w-full h-full object-cover object-center p-4" data-alt="A high-fidelity editorial flat-lay photo of an elegant silk Saree neatly folded on a pure white surface. The Saree features a rich gold border contrasting with a deep magenta body. Soft, diffused lighting creates realistic contact shadows, anchoring the garment to the background. The style is sophisticated, high-contrast, and evokes a luxury Indian fashion marketplace aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQBuif0wjmQAJuBpB3asPI6_K6Zi4wX8kuAKUGym7SHQSIZpLnXwsJe8Fo11lesM537At2sheeMUeTXSDZECKim7ZMZrIuUD9_xRQtnCV5xlSwV_4DoTF2oV8rwhEtXOXXqmEWaTIeHra6tZgtRXm0xPT3D3Gmc9PWr5BZlsCKxhTNQGSL-Ied2Qx0kYQXF20NV1Q_ZvuFjt0mF11NJFaxxmEjxSGbn5ttBS8MKqSSqCsePpbyPTjNrQ5NOgQoNDFMToYX0WooidrU"/>
+</div>
+<!-- Unselected Card 3: Shirt -->
+<div class="relative bg-canvas rounded-2xl shadow-[0_4px_12px_rgba(32,26,40,0.06)] aspect-[3/4] overflow-hidden">
+<div class="absolute top-2 right-2 z-10 w-6 h-6 border-2 border-outline-variant rounded-full flex items-center justify-center bg-canvas bg-opacity-50"></div>
+<img class="w-full h-full object-cover object-center p-4" data-alt="A high-fidelity editorial flat-lay photo of a crisp, white linen men's shirt on a bright white background. The shirt is perfectly ironed and styled with slightly rolled sleeves. The lighting is bright and clean, producing very soft contact shadows beneath the collar and sleeves. The image embodies a minimal, high-end commercial fashion photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBExPG5VrNvGZpaWhAHup9pU3Xi-muice_4XgOjddJi7jYz3jD1fkzrXmtp2lf8MI3e99U9oUnGyZicOjHSXnTQJwK_NYiuHPWzDgkINHGDjnhsACUMT24q7duj0-LYowsZ5MsAcSE7p8gcd0-COhstYjFcizB9BpNArpR5mb1ABOU1NSn-5Fv9ovS-gGsFr16UvoJKs0Kc_XDDa8B7TroigimAh68blrIf4PxeiUxDXGKWk7mOPHb_ckwIZL9Hvjfl70_IGOETro1J"/>
+</div>
+<!-- Selected Card 4: Chinos -->
+<div class="relative bg-canvas rounded-2xl shadow-[0_4px_12px_rgba(32,26,40,0.06)] aspect-[3/4] overflow-hidden border border-primary">
+<div class="absolute top-2 right-2 z-10 w-6 h-6 bg-secondary rounded-full flex items-center justify-center shadow-soft">
+<span class="material-symbols-outlined text-white text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<img class="w-full h-full object-cover object-center p-4" data-alt="A high-fidelity editorial flat-lay photo of a pair of tailored navy blue chinos on a seamless white backdrop. The pants are laid out flat to show their slim cut and texture. Gentle, soft-box lighting ensures true-to-life color representation and casts natural, subtle contact shadows. The visual approach is crisp, modern, and aligned with premium fashion e-commerce standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWnRDuFP3yMujFTQmvC15_t0PUrFae0MO9SGJOa5DcP2Dw0p0v_-jU5galoRhRH2t3OLK7LgRBEYYSQmk6jbUJJlJmZ0jJqq22MGQgKiUAa76QMLRMLdXQ43cBT-nSanNXCW8uURi0IZkO71QVVvGKEmKCM8Bq3gnGq_hqi0GE9r1nWMZr1AWUkmWKf9ShD12ig7x0niKH5LSrQtzhpo10JvQrYMnL1ptJFuz696JNK0xFAbl5z-ghcQ2FQQfeD3iXWGl1Se8MEisA"/>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Docked above Nav Bar) -->
+<div class="fixed bottom-[72px] left-0 w-full px-margin-side z-40 pb-4">
+<div class="bg-canvas rounded-2xl shadow-[0_4px_24px_rgba(32,26,40,0.12)] p-2 flex justify-around items-center border border-border">
+<button class="flex flex-col items-center justify-center p-2 text-primary hover:opacity-80 transition-opacity flex-1">
+<span class="material-symbols-outlined mb-1 text-[24px]">label</span>
+<span class="font-label-md text-label-md">Tag</span>
+</button>
+<div class="w-[1px] h-8 bg-border"></div>
+<button class="flex flex-col items-center justify-center p-2 text-primary hover:opacity-80 transition-opacity flex-1">
+<span class="material-symbols-outlined mb-1 text-[24px]">archive</span>
+<span class="font-label-md text-label-md">Archive</span>
+</button>
+<div class="w-[1px] h-8 bg-border"></div>
+<button class="flex flex-col items-center justify-center p-2 text-error hover:opacity-80 transition-opacity flex-1">
+<span class="material-symbols-outlined mb-1 text-[24px]">delete</span>
+<span class="font-label-md text-label-md">Delete</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+</body></html>

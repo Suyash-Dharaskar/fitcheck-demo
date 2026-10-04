@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help &amp; Support | FitCheck.ai</title>
+<!-- Fonts -->
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Material Icons -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        /* Specific Font Overrides for Brand Identity */
+        .font-rozha { font-family: 'Rozha One', serif; }
+        .font-mukta { font-family: 'Mukta', sans-serif; }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom Scrollbar for better UX */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #EEE9F2;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#F5F2F8",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "inverse-primary": "#EFE9F5",
+                        "cat-ethnic": "#7A2E4C",
+                        "secondary-fixed": "#F6ECD2",
+                        "primary-container": "#4a2e5b",
+                        "surface-container-low": "#FFFFFF",
+                        "surface-variant": "#F5F2F8",
+                        "surface-dim": "#EEE9F2",
+                        "outline": "#6B6472",
+                        "on-secondary-fixed": "#3f001a",
+                        "cat-party": "#E23B7A",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "secondary-container": "#E23B7A",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#EFE9F5",
+                        "surface-container": "#FFFFFF",
+                        "hot-container": "#FDE7EF",
+                        "surface-container-high": "#F5F2F8",
+                        "on-primary-fixed-variant": "#583b69",
+                        "on-background": "#201A28",
+                        "on-surface-variant": "#6B6472",
+                        "surface": "#F5F2F8",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "tertiary-container": "#F6ECD2",
+                        "error-container": "#ffdad6",
+                        "cat-gym": "#1E7BB0",
+                        "primary-fixed": "#EFE9F5",
+                        "on-tertiary-fixed": "#261900",
+                        "on-tertiary": "#201A28",
+                        "on-error-container": "#93000a",
+                        "ink": "#201A28",
+                        "inverse-surface": "#332f33",
+                        "on-tertiary-container": "#7A5A16",
+                        "ink-secondary": "#6B6472",
+                        "on-primary-fixed": "#2a0f3b",
+                        "cat-casual": "#0F7A59",
+                        "error": "#D42D2D",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "surface-bright": "#FFFFFF",
+                        "secondary": "#E23B7A",
+                        "on-error": "#ffffff",
+                        "cat-travel": "#9A6410",
+                        "success": "#147A44",
+                        "border": "#EEE9F2",
+                        "background": "#FFFFFF",
+                        "surface-tint": "#715382",
+                        "hot-text": "#B01A57",
+                        "on-surface": "#201A28",
+                        "primary": "#4A2E5B",
+                        "tertiary-fixed": "#F6ECD2",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "outline-variant": "#EEE9F2",
+                        "inverse-on-surface": "#f6eff3",
+                        "canvas": "#FFFFFF",
+                        "on-primary": "#ffffff",
+                        "gold-container": "#F6ECD2",
+                        "tertiary": "#C6A15A",
+                        "on-secondary-container": "#B01A57",
+                        "cat-office": "#3E5CC0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-side": "16px",
+                        "xs": "4px",
+                        "xl": "24px",
+                        "lg": "16px",
+                        "md": "12px",
+                        "sm": "8px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Rozha One"],
+                        "title-lg": ["Mukta"],
+                        "label-lg": ["Mukta"],
+                        "display": ["Rozha One"],
+                        "display-mobile": ["Rozha One"],
+                        "label-md": ["Mukta"],
+                        "body-lg": ["Mukta"],
+                        "body-md": ["Mukta"],
+                        "headline-lg": ["Rozha One"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "title-lg": ["20px", {"lineHeight": "26px", "fontWeight": "800"}],
+                        "label-lg": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700"}],
+                        "display": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "display-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "label-md": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface font-mukta text-on-surface antialiased overflow-x-hidden pb-[88px]">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-background h-16 shadow-soft shadow-[#201A28]/10 flex items-center px-margin-side">
+<div class="flex items-center w-full max-w-7xl mx-auto">
+<button class="mr-4 p-2 rounded-full hover:bg-surface-container active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-rozha text-[20px] text-primary tracking-tight">Help &amp; support</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-28 px-margin-side max-w-lg mx-auto">
+<!-- Search Field -->
+<div class="mb-8">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline-variant">search</span>
+</div>
+<input class="border-0 focus:ring-0 w-full bg-canvas border border-outline-variant/30 rounded-full py-4 pl-12 pr-6 text-body-md font-mukta focus:ring-2 focus:ring-primary-container focus:border-transparent outline-none transition-all placeholder:text-outline-variant/60" placeholder="Search help…" type="text"/>
+</div>
+</div>
+<!-- FAQ Section -->
+<section class="mb-10">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-rozha text-headline-md text-primary uppercase tracking-wide font-headline-md">COMMON QUESTIONS</h2>
+<span class="px-3 py-1 bg-gold-container text-on-tertiary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Pune Hub</span>
+</div>
+<div class="bg-canvas rounded-2xl overflow-hidden shadow-soft shadow-[#201A28]/05">
+<div class="divide-y divide-outline-variant/20">
+<!-- FAQ Item 1 -->
+<button class="w-full flex items-center justify-between p-5 text-left hover:bg-surface-container-low transition-colors group active:bg-surface-container-high">
+<span class="font-mukta font-semibold text-ink">How do I add clothes fast?</span>
+<span class="material-symbols-outlined text-primary-container group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<!-- FAQ Item 2 -->
+<button class="w-full flex items-center justify-between p-5 text-left hover:bg-surface-container-low transition-colors group active:bg-surface-container-high">
+<span class="font-mukta font-semibold text-ink">Is my photo stored?</span>
+<span class="material-symbols-outlined text-primary-container group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+<!-- FAQ Item 3 -->
+<button class="w-full flex items-center justify-between p-5 text-left hover:bg-surface-container-low transition-colors group active:bg-surface-container-high">
+<span class="font-mukta font-semibold text-ink">Why is shopping off?</span>
+<span class="material-symbols-outlined text-primary-container group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bug Report Section -->
+<section class="mb-8">
+<h2 class="font-rozha text-[20px] text-primary uppercase tracking-wide mb-4">Report a bug</h2>
+<div class="bg-canvas rounded-2xl p-5 shadow-soft shadow-[#201A28]/05">
+<div class="mb-4">
+<textarea class="border-0 focus:ring-0 w-full bg-surface-container-low border border-outline-variant/30 rounded-lg p-4 font-mukta text-body-md focus:ring-1 focus:ring-primary-container outline-none resize-none transition-all" placeholder="Describe what happened..." rows="4"></textarea>
+</div>
+<!-- Attachment Area -->
+<div class="relative mb-6">
+<label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-outline-variant/50 rounded-lg cursor-pointer hover:bg-surface-container-low transition-all">
+<div class="flex flex-col items-center justify-center pt-5 pb-6">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-2">add_a_photo</span>
+<p class="text-label-md text-ink-secondary font-mukta">Attach screenshot</p>
+</div>
+<input class="border-0 focus:ring-0 hidden" type="file"/>
+</label>
+</div>
+<!-- Primary Action -->
+<button class="bg-secondary text-white font-title-lg text-title-lg w-full py-4 rounded-2xl active:scale-[0.98] transition-all shadow-lift">
+                    Send report
+                </button>
+</div>
+</section>
+<!-- Aesthetic Footer Placeholder for Spacing -->
+<div class="flex flex-col items-center justify-center py-6 opacity-30">
+<div class="w-12 h-1 bg-outline-variant rounded-full mb-2"></div>
+<p class="text-[10px] uppercase font-bold tracking-widest text-ink">FitCheck v0.9 (Beta)</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<!-- Floating Bubble Script for Interactivity -->
+<script>
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const ripple = document.createElement('div');
+                ripple.className = 'absolute bg-white/20 rounded-full animate-ping';
+                ripple.style.width = '20px';
+                ripple.style.height = '20px';
+                ripple.style.left = `${e.offsetX}px`;
+                ripple.style.top = `${e.offsetY}px`;
+                btn.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 1000);
+            });
+        });
+    </script>
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+
+
+</body></html>

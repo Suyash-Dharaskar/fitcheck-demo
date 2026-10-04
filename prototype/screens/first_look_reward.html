@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Your first 3 looks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#EFE9F5",
+                      "surface-container": "#FFFFFF",
+                      "cat-casual": "#0F7A59",
+                      "on-tertiary-container": "#7A5A16",
+                      "on-surface": "#201A28",
+                      "inverse-primary": "#EFE9F5",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#EEE9F2",
+                      "on-tertiary-fixed-variant": "#5d4201",
+                      "hot-container": "#FDE7EF",
+                      "error": "#D42D2D",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#4A2E5B",
+                      "surface-bright": "#FFFFFF",
+                      "surface": "#F5F2F8",
+                      "background": "#FFFFFF",
+                      "gold-container": "#F6ECD2",
+                      "hot-text": "#B01A57",
+                      "tertiary-container": "#F6ECD2",
+                      "secondary-fixed-dim": "#FDE7EF",
+                      "surface-variant": "#F5F2F8",
+                      "cat-party": "#E23B7A",
+                      "outline": "#6B6472",
+                      "on-secondary-fixed-variant": "#B01A57",
+                      "primary-fixed-dim": "#EFE9F5",
+                      "on-surface-variant": "#6B6472",
+                      "cat-travel": "#9A6410",
+                      "on-primary-container": "#EFE9F5",
+                      "on-primary-fixed-variant": "#583b69",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#201A28",
+                      "canvas": "#FFFFFF",
+                      "on-primary-fixed": "#2a0f3b",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#332f33",
+                      "success": "#147A44",
+                      "surface-container-high": "#F5F2F8",
+                      "on-secondary-container": "#B01A57",
+                      "secondary-container": "#E23B7A",
+                      "tertiary": "#C6A15A",
+                      "surface-tint": "#715382",
+                      "tertiary-fixed": "#F6ECD2",
+                      "cat-office": "#3E5CC0",
+                      "on-error-container": "#93000a",
+                      "border": "#EEE9F2",
+                      "secondary-fixed": "#F6ECD2",
+                      "on-tertiary": "#201A28",
+                      "inverse-on-surface": "#f6eff3",
+                      "ink-secondary": "#6B6472",
+                      "surface-container-low": "#FFFFFF",
+                      "ink": "#201A28",
+                      "surface-container-highest": "#F5F2F8",
+                      "tertiary-fixed-dim": "#C6A15A",
+                      "primary-container": "#4a2e5b",
+                      "on-secondary-fixed": "#3f001a",
+                      "on-tertiary-fixed": "#261900",
+                      "on-error": "#ffffff",
+                      "cat-ethnic": "#7A2E4C",
+                      "outline-variant": "#EEE9F2",
+                      "cat-gym": "#1E7BB0",
+                      "secondary": "#E23B7A"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-side": "16px",
+                      "xl": "24px",
+                      "lg": "16px",
+                      "sm": "8px",
+                      "md": "12px",
+                      "xs": "4px"
+              },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+              "fontFamily": {
+                      "title-lg": [
+                              "Mukta"
+                      ],
+                      "display-mobile": [
+                              "Rozha One"
+                      ],
+                      "label-md": [
+                              "Mukta"
+                      ],
+                      "display": [
+                              "Rozha One"
+                      ],
+                      "headline-lg": [
+                              "Rozha One"
+                      ],
+                      "label-lg": [
+                              "Mukta"
+                      ],
+                      "body-md": [
+                              "Mukta"
+                      ],
+                      "body-lg": [
+                              "Mukta"
+                      ],
+                      "headline-md": [
+                              "Rozha One"
+                      ]
+              },
+              "fontSize": {
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "26px",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "display-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "36px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-lg": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.5px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "30px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Confetti Animation CSS */
+        .confetti-piece {
+            position: absolute;
+            width: 8px;
+            height: 16px;
+            background: #E23B7A;
+            top: -20px;
+            opacity: 0;
+            animation: makeItRain 3000ms infinite ease-out;
+        }
+        
+        .confetti-piece:nth-child(1) { left: 7%; transform: rotate(-40deg); animation-delay: 182ms; animation-duration: 2116ms; background: #C6A15A; }
+        .confetti-piece:nth-child(2) { left: 14%; transform: rotate(4deg); animation-delay: 161ms; animation-duration: 2076ms; }
+        .confetti-piece:nth-child(3) { left: 21%; transform: rotate(-51deg); animation-delay: 481ms; animation-duration: 2903ms; background: #4A2E5B; }
+        .confetti-piece:nth-child(4) { left: 28%; transform: rotate(61deg); animation-delay: 334ms; animation-duration: 2008ms; }
+        .confetti-piece:nth-child(5) { left: 35%; transform: rotate(-52deg); animation-delay: 302ms; animation-duration: 2776ms; background: #C6A15A; }
+        .confetti-piece:nth-child(6) { left: 42%; transform: rotate(38deg); animation-delay: 180ms; animation-duration: 2168ms; }
+        .confetti-piece:nth-child(7) { left: 49%; transform: rotate(11deg); animation-delay: 395ms; animation-duration: 2200ms; background: #4A2E5B; }
+        .confetti-piece:nth-child(8) { left: 56%; transform: rotate(49deg); animation-delay: 14ms; animation-duration: 2887ms; }
+        .confetti-piece:nth-child(9) { left: 63%; transform: rotate(-72deg); animation-delay: 149ms; animation-duration: 2805ms; background: #C6A15A; }
+        .confetti-piece:nth-child(10) { left: 70%; transform: rotate(10deg); animation-delay: 351ms; animation-duration: 2059ms; }
+        .confetti-piece:nth-child(11) { left: 77%; transform: rotate(4deg); animation-delay: 307ms; animation-duration: 2132ms; background: #4A2E5B; }
+        .confetti-piece:nth-child(12) { left: 84%; transform: rotate(42deg); animation-delay: 464ms; animation-duration: 2773ms; }
+        .confetti-piece:nth-child(13) { left: 91%; transform: rotate(-72deg); animation-delay: 429ms; animation-duration: 2818ms; background: #C6A15A; }
+
+        @keyframes makeItRain {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(250px) rotate(360deg); opacity: 0; }
+        }
+      </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased pb-[88px]">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background dark:bg-background flex items-center justify-between px-margin-side h-16 z-50">
+<div class="flex items-center gap-4">
+<button role="button" tabindex="0" onclick="event.stopPropagation(); window.parent.postMessage('item_confirm','*')" class="hover:opacity-80 transition-opacity active:scale-95 transition-transform p-2 -ml-2 rounded-full text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-[20px] text-primary dark:text-primary-fixed">FitCheck.ai</h1>
+</div>
+<div>
+<!-- Trailing actions could go here -->
+</div>
+</header>
+<main class="w-full max-w-[360px] mx-auto px-margin-side pt-6 pb-24 relative overflow-hidden flex flex-col items-center text-center">
+<!-- Confetti -->
+<div class="absolute top-0 left-0 w-full h-32 pointer-events-none z-0">
+<div class="confetti-piece rounded-sm"></div>
+<div class="confetti-piece rounded-full"></div>
+<div class="confetti-piece rounded-sm"></div>
+<div class="confetti-piece rounded-full"></div>
+<div class="confetti-piece rounded-sm"></div>
+<div class="confetti-piece rounded-full"></div>
+<div class="confetti-piece rounded-sm"></div>
+<div class="confetti-piece rounded-full"></div>
+<div class="confetti-piece rounded-sm"></div>
+<div class="confetti-piece rounded-full"></div>
+<div class="confetti-piece rounded-sm"></div>
+<div class="confetti-piece rounded-full"></div>
+<div class="confetti-piece rounded-sm"></div>
+</div>
+<h2 class="font-display-mobile text-display-mobile text-primary mb-2 relative z-10">Your first 3 looks 🎉</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 relative z-10">From just 5 items. Add more to unlock even more.</p>
+<!-- Cards Container (Horizontal Scroll for Looks) -->
+<div class="w-full flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 relative z-10" style="scrollbar-width: none;">
+<!-- Look 1 -->
+<div class="snap-center shrink-0 w-[280px] bg-canvas rounded-2xl shadow-[0_4px_24px_rgba(32,26,40,0.08)] p-4 flex flex-col items-center border border-border">
+<div class="flex gap-2 w-full h-[200px] mb-4">
+<div class="flex-1 bg-surface-container rounded-2xl overflow-hidden relative shadow-[0_2px_8px_rgba(32,26,40,0.05)]">
+<img class="w-full h-full object-cover" data-alt="A high-quality, top-down editorial flat-lay photo of a vibrant emerald green silk Kurta with delicate gold embroidery on a crisp white surface. Soft natural lighting creates gentle contact shadows, giving the garment a realistic sense of depth and volume, adhering to a high-end fashion catalog aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJp1L0DEA5CG0u_VyYU0R53wPFxwpvb0e1WiiZtA3RArjlqLJEY0OggLmk1jiph67MdouerxvxjC0IJLT_RZ0UDlVw2l2eeQi_0O9zdVQLmInspQ-jTESMg8GZw6STWSm4mvTat3pZiVJwb_MW_l7UMKsGhlXw3TZMAPDe1vlZUyn4LmtTYvmqbPnoDJ8fiXW9vSJRD797LNi9Hf2SClFk1d_zD8Aw28EcK06uDKinr9NKNGwxamPN3EjIycf0zvgTEeaKZZrvzGRj"/>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex-1 bg-surface-container rounded-2xl overflow-hidden relative shadow-[0_2px_8px_rgba(32,26,40,0.05)]">
+<img class="w-full h-full object-cover" data-alt="A high-quality, top-down editorial flat-lay photo of a sheer cream Dupatta with subtle gold threading neatly folded on a crisp white surface. Soft natural lighting creates gentle contact shadows, giving the garment a realistic sense of depth and volume, adhering to a high-end fashion catalog aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqO0Emu8opFxSkbQ7_AReNMgSWZ7PUPYgEMVzLtskMM85L7yezAa-_MHTH2PZLKHjtiiJ5CnzvtkgIeHirPNMAHWvxHRbDfmrZvfpsuObkKthseOM0Kd7qPRGOF3-KlSB_7BynB8zH2i3DifvBJ63yHuaEDhN2I-ZqTQ6pfsUWDnz_zcdGK9YFy-fArJxrfXhTpoxG2eMuqSENw02G4IgQGeeTDWIw9DI0YtJy_klrUXYeCYAFSQ2AAybOt9BJtPeVQcjHKCso6op4"/>
+</div>
+<div class="flex-1 bg-surface-container rounded-2xl overflow-hidden relative shadow-[0_2px_8px_rgba(32,26,40,0.05)]">
+<img class="w-full h-full object-cover" data-alt="A high-quality, top-down editorial flat-lay photo of a pair of intricately beaded Champagne Gold Juttis placed perfectly side-by-side on a crisp white surface. Soft natural lighting creates gentle contact shadows, giving the shoes a realistic sense of depth and volume, adhering to a high-end fashion catalog aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZzSGcQuLDtib0kW1dAnzhBvnE8CPJn8k3nvvTgL8-byRgGE4P-bXSs9F1uX3HbREh9LmoL7Iyen2au7PDTGKNXsKwwdc7P3v4EIkE8ClXo7Y6FvX6364mPeM6m9KPTVqgHdbmaUv-c5mZXzpCGWXKe-ql3t2oMzJqNywKXUFdOISh2kERZ3IvK3LryriP6Jwamm9BJ-6Ay5bzc1er6tUHy_XGLWBMby-XmFn6ySL05fww7P9dv3P07YkHzVZiwZ1MYi_rEBZQIbW9"/>
+</div>
+</div>
+</div>
+<!-- Match Badge -->
+<div class="bg-gold-container text-on-tertiary-container px-3 py-1 rounded-full font-label-md text-label-md uppercase tracking-wide flex items-center gap-1 mb-2">
+                    Great match
+                </div>
+<h3 class="font-title-lg text-title-lg text-primary">The Festive Classic</h3>
+</div>
+<!-- Look 2 -->
+<div class="snap-center shrink-0 w-[280px] bg-canvas rounded-2xl shadow-[0_4px_24px_rgba(32,26,40,0.08)] p-4 flex flex-col items-center border border-border">
+<div class="flex gap-2 w-full h-[200px] mb-4">
+<div class="flex-1 bg-surface-container rounded-2xl overflow-hidden relative shadow-[0_2px_8px_rgba(32,26,40,0.05)]">
+<img class="w-full h-full object-cover" data-alt="A high-quality, top-down editorial flat-lay photo of a contemporary deep amethyst Anarkali tunic with minimal silver accents on a crisp white surface. Soft natural lighting creates gentle contact shadows, giving the garment a realistic sense of depth and volume, adhering to a high-end fashion catalog aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRRt1vR976Hh8LXqd9DU9MlkrcHKLgBKUC2fQA3mTAxy-AZR4-3NJXyZsAUDV-qyKYOTLwYETzGNWW6AAOvdFzRTGQapO01Ft2N8rF4DEe9RtTtz10_5Qy8yZQlALVvnMFhPk7jiUTitqeF9qfnzlFLDTmEZOYeJ-RC8o8AateAy63Ui3g0bZrBbkQscjUTlYWkUdvUAwUx_PxVwdOR6CZPzNInpGe5sreSaD_pCHykZHw4lpUQ9Gg4ccKJGV9c02_XjW5hU4wkhCR"/>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex-1 bg-surface-container rounded-2xl overflow-hidden relative shadow-[0_2px_8px_rgba(32,26,40,0.05)]">
+<img class="w-full h-full object-cover" data-alt="A high-quality, top-down editorial flat-lay photo of sleek silver oxidized jhumkas and a matching cuff bracelet arranged artfully on a crisp white surface. Soft natural lighting creates gentle contact shadows, giving the jewelry a realistic sense of depth and volume, adhering to a high-end fashion catalog aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqrnoJhLuyZwLCRNSGKLB7HX6HRc-Ha9F--y614KUEsw2KC3sI_kyiBhuLpRi5TW6cYJ8j4h3HuyfkqoXAnreeriGRkqqhUhnuuoGrlT0sn-0gT_hJXaXyRoCJsTfiyfftmCiRLqBS7cbTRwEjgZB3Dfy2qfd1hnfneDCEtpHfiJQ5uNq_pWWZ2fNmcIEuP8WJot17XrI_vbRwYUaAz8rFqCzcc8FPX025PXr4MrlNH_CumNS2qxP9HkPlacP77AV82Zs2T8aeuaOt"/>
+</div>
+<div class="flex-1 bg-surface-container rounded-2xl overflow-hidden relative shadow-[0_2px_8px_rgba(32,26,40,0.05)]">
+<img class="w-full h-full object-cover" data-alt="A high-quality, top-down editorial flat-lay photo of a small, structured silver evening clutch bag placed neatly on a crisp white surface. Soft natural lighting creates gentle contact shadows, giving the bag a realistic sense of depth and volume, adhering to a high-end fashion catalog aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqqWYDt0JO9b6VGI9BRYanETv0lyXBpba4WY5_z2tlGu8CQ1tw1rMXqHxCW209JRy4POPC7dINQBzaf9IU282Kk_cOVlhsXtgyreNYIyUvwuihA2VSeBCZnD3DlBBdDHgygg6PUYgl5UD4RscbRTogPpmubD3QI70h3LSNqXBXjFW09DVIs67KbmPrVb-BbBOVvlP-St845KHY3QDGUOMaGB2aTDFKdRdus8h6qyvGAqt3ZEZs71J0tDL82t55CMEZS0DSuVjqimFO"/>
+</div>
+</div>
+</div>
+<!-- Match Badge -->
+<div class="bg-gold-container text-on-tertiary-container px-3 py-1 rounded-full font-label-md text-label-md uppercase tracking-wide flex items-center gap-1 mb-2">
+                    Good match
+                </div>
+<h3 class="font-title-lg text-title-lg text-primary">Evening Elegance</h3>
+</div>
+<!-- Spacer for scroll -->
+<div class="shrink-0 w-4"></div>
+</div>
+<!-- Pager Dots -->
+<div class="flex gap-2 justify-center mb-10 relative z-10">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col gap-4 px-2 relative z-10">
+<button role="button" tabindex="0" onclick="event.stopPropagation(); window.parent.postMessage('today_dashboard','*')" class="bg-secondary text-white font-title-lg text-title-lg w-full py-4 rounded-2xl hover:opacity-90 active:scale-95 transition-all shadow-[0_4px_12px_rgba(226,59,122,0.3)]">
+                See today's look
+            </button>
+<button role="button" tabindex="0" onclick="event.stopPropagation(); window.parent.postMessage('add_sheet','*')" class="w-full text-primary font-body-lg text-body-lg py-2 hover:opacity-80 active:scale-95 transition-all">
+                Add more items
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+
+<script>
+        // Inline script to handle horizontal scroll snap indicators if needed, kept minimal.
+    </script>
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+</body></html>

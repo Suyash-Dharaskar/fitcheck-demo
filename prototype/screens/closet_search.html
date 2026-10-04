@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Closet Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#B01A57",
+                        "surface-container": "#FFFFFF",
+                        "ink": "#201A28",
+                        "error": "#D42D2D",
+                        "on-surface-variant": "#6B6472",
+                        "on-secondary-fixed": "#3f001a",
+                        "surface-container-low": "#FFFFFF",
+                        "on-tertiary-fixed": "#261900",
+                        "surface-dim": "#EEE9F2",
+                        "surface": "#F5F2F8",
+                        "secondary": "#E23B7A",
+                        "tertiary-container": "#F6ECD2",
+                        "on-tertiary-container": "#7A5A16",
+                        "inverse-on-surface": "#f6eff3",
+                        "success": "#147A44",
+                        "canvas": "#FFFFFF",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#583b69",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#715382",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "hot-container": "#FDE7EF",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "cat-casual": "#0F7A59",
+                        "gold-container": "#F6ECD2",
+                        "surface-container-highest": "#F5F2F8",
+                        "cat-travel": "#9A6410",
+                        "inverse-surface": "#332f33",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#EFE9F5",
+                        "on-surface": "#201A28",
+                        "cat-party": "#E23B7A",
+                        "cat-gym": "#1E7BB0",
+                        "secondary-container": "#E23B7A",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#EFE9F5",
+                        "primary": "#4A2E5B",
+                        "surface-variant": "#F5F2F8",
+                        "secondary-fixed": "#F6ECD2",
+                        "on-error": "#ffffff",
+                        "cat-office": "#3E5CC0",
+                        "tertiary-fixed": "#F6ECD2",
+                        "surface-bright": "#FFFFFF",
+                        "cat-ethnic": "#7A2E4C",
+                        "surface-container-high": "#F5F2F8",
+                        "border": "#EEE9F2",
+                        "on-tertiary": "#201A28",
+                        "tertiary": "#C6A15A",
+                        "ink-secondary": "#6B6472",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "outline": "#6B6472",
+                        "on-primary-fixed": "#2a0f3b",
+                        "on-primary-container": "#EFE9F5",
+                        "outline-variant": "#EEE9F2",
+                        "background": "#FFFFFF",
+                        "hot-text": "#B01A57",
+                        "primary-container": "#4a2e5b",
+                        "on-background": "#201A28"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "12px",
+                        "lg": "16px",
+                        "margin-side": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "xl": "24px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Rozha One"],
+                        "title-lg": ["Mukta"],
+                        "body-md": ["Mukta"],
+                        "headline-md": ["Rozha One"],
+                        "label-md": ["Mukta"],
+                        "display-mobile": ["Rozha One"],
+                        "body-lg": ["Mukta"],
+                        "display": ["Rozha One"],
+                        "label-lg": ["Mukta"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["36px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "26px", "fontWeight": "800" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["30px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "label-md": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                        "display-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "display": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "label-lg": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Hide scrollbar for horizontal scrolling but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+<style>
+/* Blueprint 054. A rotated decorative image with an outward offset pushes this
+   page 12-108px wider than the viewport. `body { overflow-x: hidden }` alone
+   only propagates a clip to the viewport, which stops a desktop scrollbar but
+   NOT touch-panning on iOS - the founder's phone scrolled this screen sideways.
+   `clip` rather than `hidden`: hidden would make the root a scroll container and
+   break `position: sticky` for any descendant. clip does not, and it also blocks
+   programmatic scrollLeft. The bleed is deliberate design and is preserved. */
+html { overflow-x: clip; }
+</style>
+</head>
+<body class="bg-surface text-ink font-body-md min-h-screen relative overflow-x-hidden md:hidden pb-[88px]">
+<!-- Background Garment Decoration (Grounded High-Fidelity Cutout) -->
+<div class="absolute top-48 right-[-20%] w-64 h-80 opacity-10 pointer-events-none z-0 transform rotate-12">
+<img alt="Decorative garment" class="w-full h-full object-contain filter grayscale" data-alt="A high-fidelity flat-lay cutout of an elegant off-white Indian ethnic kurta with subtle, intricate embroidery. The garment is isolated on a pure white background with a very soft, realistic contact shadow beneath it. The lighting is crisp, bright, and evenly distributed, highlighting the premium fabric texture. The overall style is clean, modern, and high-end fashion marketplace editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwt02vxb6SjM2PmD_X8l-XI4BeyLB6mURgNL9EBuuhYn9jRGmG2im4OP8QI8VcXkelbp3tEuWwa0f3y059Da5gXXc1HH65mL7mw2uXAiGPtW52kl7tSRldHarAfTIX3pYEa2EhEbCZpPLkI6B7pXGCZ4hdLBBnkQsNRX0SwQNo_TRXFCeAiXr2vzYf_aAyIBfRor8DUTC6TQtC3z6BsPeTMLIkO5NbuGT4_uqsYZ3hPc601Fo5AtPP5mhH8bcbmp3vNz50-An4N75K"/>
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface-container-low flex justify-between items-center h-16 px-margin-side max-w-screen-xl mx-auto shadow-soft">
+<button aria-label="Back" class="w-10 h-10 flex items-center justify-center text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="text-[20px] font-headline-md text-primary dark:text-primary-fixed italic flex-1 text-center truncate pr-10">Search</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[80px] pb-[100px] px-margin-side relative z-10 space-y-xl">
+<!-- Search Bar Section -->
+<section class="flex items-center gap-sm">
+<div class="relative flex-1">
+<span class="absolute left-md top-1/2 -translate-y-1/2 text-outline material-symbols-outlined pointer-events-none" style="font-size: 20px;">search</span>
+<input class="border-0 focus:ring-0 w-full bg-canvas border border-border rounded-full py-md pl-10 pr-md text-body-md text-ink placeholder-outline focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary shadow-[0_2px_8px_rgba(32,26,40,0.04)] transition-colors" placeholder="Search your closet..." type="text"/>
+</div>
+<button class="text-secondary font-label-lg text-label-lg active:scale-95 transition-transform whitespace-nowrap px-sm">Cancel</button>
+</section>
+<!-- Filter Section -->
+<section class="space-y-md">
+<h2 class="text-headline-md font-headline-md text-primary">Filter</h2>
+<div class="flex overflow-x-auto no-scrollbar gap-sm pb-xs">
+<button class="flex-shrink-0 bg-canvas border border-border rounded-full px-lg py-sm text-body-md font-body-md text-on-surface-variant hover:bg-surface-variant transition-colors shadow-[0_2px_4px_rgba(32,26,40,0.02)]">Colour</button>
+<button class="flex-shrink-0 bg-canvas border border-border rounded-full px-lg py-sm text-body-md font-body-md text-on-surface-variant hover:bg-surface-variant transition-colors shadow-[0_2px_4px_rgba(32,26,40,0.02)]">Occasion</button>
+<button class="flex-shrink-0 bg-canvas border border-border rounded-full px-lg py-sm text-body-md font-body-md text-on-surface-variant hover:bg-surface-variant transition-colors shadow-[0_2px_4px_rgba(32,26,40,0.02)]">Season</button>
+<button class="flex-shrink-0 bg-canvas border border-border rounded-full px-lg py-sm text-body-md font-body-md text-on-surface-variant hover:bg-surface-variant transition-colors shadow-[0_2px_4px_rgba(32,26,40,0.02)]">Brand</button>
+</div>
+</section>
+<!-- Recent Section -->
+<section class="space-y-md">
+<h2 class="text-headline-md font-headline-md text-primary">Recent</h2>
+<ul class="space-y-xs">
+<li>
+<button class="w-full flex items-center justify-between bg-canvas rounded-2xl p-md border border-border/50 shadow-[0_2px_8px_rgba(32,26,40,0.03)] active:scale-[0.98] transition-transform text-left">
+<span class="text-body-lg font-body-lg text-ink">Office</span>
+<span class="material-symbols-outlined text-outline text-sm">north_west</span>
+</button>
+</li>
+<li>
+<button class="w-full flex items-center justify-between bg-canvas rounded-2xl p-md border border-border/50 shadow-[0_2px_8px_rgba(32,26,40,0.03)] active:scale-[0.98] transition-transform text-left">
+<span class="text-body-lg font-body-lg text-ink">White</span>
+<span class="material-symbols-outlined text-outline text-sm">north_west</span>
+</button>
+</li>
+<li>
+<button class="w-full flex items-center justify-between bg-canvas rounded-2xl p-md border border-border/50 shadow-[0_2px_8px_rgba(32,26,40,0.03)] active:scale-[0.98] transition-transform text-left">
+<span class="text-body-lg font-body-lg text-ink">Festive</span>
+<span class="material-symbols-outlined text-outline text-sm">north_west</span>
+</button>
+</li>
+</ul>
+</section>
+</main>
+<!-- BottomNavBar -->
+<script>
+        // Auto-focus input on load for immediate interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.querySelector('input[type="text"]');
+            if (searchInput) {
+                // slight delay to ensure render is complete
+                setTimeout(() => searchInput.focus(), 100);
+            }
+        });
+    </script>
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+</body></html>

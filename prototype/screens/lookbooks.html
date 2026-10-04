@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Lookbooks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#F6ECD2",
+                      "tertiary": "#C6A15A",
+                      "surface-bright": "#FFFFFF",
+                      "on-tertiary-container": "#7A5A16",
+                      "on-primary-fixed": "#2a0f3b",
+                      "surface-dim": "#EEE9F2",
+                      "surface-container-highest": "#F5F2F8",
+                      "error-container": "#ffdad6",
+                      "cat-gym": "#1E7BB0",
+                      "secondary-fixed-dim": "#FDE7EF",
+                      "outline-variant": "#EEE9F2",
+                      "secondary-container": "#E23B7A",
+                      "primary-fixed-dim": "#EFE9F5",
+                      "on-secondary-container": "#B01A57",
+                      "on-tertiary-fixed": "#261900",
+                      "hot-container": "#FDE7EF",
+                      "surface-variant": "#F5F2F8",
+                      "outline": "#6B6472",
+                      "primary": "#4A2E5B",
+                      "primary-container": "#4a2e5b",
+                      "on-surface-variant": "#6B6472",
+                      "tertiary-container": "#F6ECD2",
+                      "primary-fixed": "#EFE9F5",
+                      "secondary-fixed": "#F6ECD2",
+                      "secondary": "#E23B7A",
+                      "on-secondary-fixed-variant": "#B01A57",
+                      "gold-container": "#F6ECD2",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "success": "#147A44",
+                      "tertiary-fixed-dim": "#C6A15A",
+                      "inverse-surface": "#332f33",
+                      "on-error-container": "#93000a",
+                      "surface": "#F5F2F8",
+                      "cat-travel": "#9A6410",
+                      "cat-casual": "#0F7A59",
+                      "on-error": "#ffffff",
+                      "border": "#EEE9F2",
+                      "surface-container-low": "#FFFFFF",
+                      "on-primary-fixed-variant": "#583b69",
+                      "background": "#FFFFFF",
+                      "surface-tint": "#715382",
+                      "surface-container-high": "#F5F2F8",
+                      "on-surface": "#201A28",
+                      "inverse-on-surface": "#f6eff3",
+                      "ink-secondary": "#6B6472",
+                      "cat-party": "#E23B7A",
+                      "cat-office": "#3E5CC0",
+                      "on-background": "#201A28",
+                      "canvas": "#FFFFFF",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#201A28",
+                      "on-tertiary-fixed-variant": "#5d4201",
+                      "inverse-primary": "#EFE9F5",
+                      "on-primary-container": "#EFE9F5",
+                      "ink": "#201A28",
+                      "cat-ethnic": "#7A2E4C",
+                      "on-secondary-fixed": "#3f001a",
+                      "error": "#D42D2D",
+                      "hot-text": "#B01A57",
+                      "surface-container": "#FFFFFF"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "24px",
+                      "sm": "8px",
+                      "md": "12px",
+                      "lg": "16px",
+                      "xs": "4px",
+                      "margin-side": "16px"
+              },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+              "fontFamily": {
+                      "label-lg": [
+                              "Mukta"
+                      ],
+                      "title-lg": [
+                              "Mukta"
+                      ],
+                      "display": [
+                              "Rozha One"
+                      ],
+                      "body-lg": [
+                              "Mukta"
+                      ],
+                      "headline-md": [
+                              "Rozha One"
+                      ],
+                      "display-mobile": [
+                              "Rozha One"
+                      ],
+                      "body-md": [
+                              "Mukta"
+                      ],
+                      "label-md": [
+                              "Mukta"
+                      ],
+                      "headline-lg": [
+                              "Rozha One"
+                      ]
+              },
+              "fontSize": {
+                      "label-lg": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.5px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "26px",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "display": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "30px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "36px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            background-color: #FFFFFF;
+        }
+        
+        .masonry-grid {
+            column-count: 2;
+            column-gap: 16px;
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+        }
+
+        .shadow-soft {
+            box-shadow: 0 4px 12px rgba(32, 26, 40, 0.06);
+        }
+        
+        .shadow-contact {
+            filter: drop-shadow(0 8px 6px rgba(32, 26, 40, 0.12));
+        }
+    </style>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background fixed top-0 w-full z-50 flex justify-between items-center h-16 px-margin-side">
+<button class="w-10 h-10 flex items-center justify-center text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined text-label-lg" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Lookbooks</h1>
+<button class="w-10 h-10 flex items-center justify-center text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined text-label-lg" style="font-variation-settings: 'FILL' 0;">add</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-margin-side">
+<div class="mb-4 cursor-pointer" onclick="window.parent.postMessage('style_swipe', '*')">
+<div class="w-full bg-[#EFE9F5] rounded-[16px] p-5 flex justify-between items-center shadow-[0_2px_8px_rgba(32,26,40,0.06)]">
+<span class="font-['Mukta'] font-bold text-[16px] text-[#4A2E5B]">Build a lookbook - swipe</span>
+<span class="material-symbols-outlined text-[#4A2E5B]">style</span>
+</div>
+</div>
+<!-- Masonry Grid for Lookbooks -->
+<div class="masonry-grid">
+<!-- Lookbook Card 1: Monsoon Commute -->
+<div class="masonry-item bg-canvas rounded-2xl shadow-soft overflow-hidden relative group cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="flex flex-col h-full bg-surface-container-lowest">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A flat-lay of a white linen shirt, beige cargo trousers and tan leather sandals on a pristine white surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACml_x62X7Z1pDIVtcphvDo_pSVma2oELaY56l-4-w-4u7A5ePfRmlBwBa9thlCphvAhKKiAKI_yOsxQg8KpoX6boNsVhh6pRdmmSQxhdBCRfl5ZC680De4CZGbMVNwEHsNqNmZJOgzoVjrNZp-P_25h4LqSmKUDkfHV3NCxacOipob8FPGmlMubwoJ7PhUOpw1iddeacJ33lZYPn7nxjldkYcnd61tP5xPqhlr4zO2aUY9G_qhNzF8gZdnRQZ6u7AYnbl8G825roR"/>
+</div>
+<div class="mt-auto px-4 pt-3 pb-4">
+<h2 class="font-body-lg text-body-lg text-on-surface mb-1">Monsoon Commute</h2>
+<p class="font-label-md text-label-md text-outline">12 outfits</p>
+</div>
+</div>
+</div>
+<!-- Lookbook Card 2: Wedding Guest -->
+<div class="masonry-item bg-canvas rounded-2xl shadow-soft overflow-hidden relative group cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="flex flex-col h-full bg-surface-container-lowest">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A luxurious, high-fidelity flat-lay featuring a heavy, vibrant silk saree paired with intricate traditional gold jewelry laid out on a pure white background. Soft, natural contact shadows provide depth. The lighting highlights the rich textures and deep colors, aligning with a loud, premium Indian fashion marketplace aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7NbZI4dr1W3tGqJovhMEjC5mKA69S1ejlMHHiIpdhruvDQM9vYzu5Fy8YZSlTfUNtK-Gxu2eSw9X2bkhE6GBvZGZZeUzQLm1FvDGOAyS59yT8JoxTJONdx3OehLW954jHC9iTHVtx0f6MPcgQbQUbTN71hHmCmn-LBFhMV2DugF346VAsrtJAt6ZTI6UtjN6FoWKt0gANSP5KaulE7xv_ZuWg7ab5pvwFhinvHr1BzGJVtgszTSRIa1Kvl6ZyATo4_5o5vA2IHkSa"/>
+</div>
+<div class="mt-auto px-4 pt-3 pb-4">
+<h2 class="font-body-lg text-body-lg text-on-surface mb-1">Wedding Guest</h2>
+<p class="font-label-md text-label-md text-outline">8 outfits</p>
+</div>
+</div>
+</div>
+<!-- Lookbook Card 3: Weekend -->
+<div class="masonry-item bg-canvas rounded-2xl shadow-soft overflow-hidden relative group cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="flex flex-col h-full bg-surface-container-lowest">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stylish, high-fidelity flat-lay of pastel-colored linen clothing and a pair of oversized designer sunglasses resting on a solid white surface. The items are grounded with soft, realistic contact shadows. Bright, clear lighting enhances the fresh, casual weekend vibe within a high-energy marketplace design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtrvJ4-OvGr9S1YqBYUyp6fmcQYzJ8iuYz3g44m25_Zzk_yfwt-vtUH_4nMclNp0DMvTsOqLR3jWz1WSotI_zo1CDKiL47IxlrvVjt48uwX0plxnSzeawJtGZLCXG5szCd2_objWjkLi_eUYGW68Y67lQurjG60o6sCb6Y8EqTFQ460WpQ8QcMSfwV1hgxj4w9rT35R-f-emrCN2ttovq300EP9FbiQXMuVxyQ4hrn56pKrtjP1BerXja_qJPgXfNftDKd17wOZ6vD"/>
+</div>
+<div class="mt-auto px-4 pt-3 pb-4">
+<h2 class="font-body-lg text-body-lg text-on-surface mb-1">Weekend</h2>
+<p class="font-label-md text-label-md text-outline">15 outfits</p>
+</div>
+</div>
+</div>
+<!-- Lookbook Card 4: New collection -->
+<div class="masonry-item bg-canvas rounded-2xl shadow-soft overflow-hidden relative group cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="flex flex-col h-full bg-surface-container-lowest">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An eclectic, high-fidelity flat-lay showing a richly textured brocade jacket stylishly arranged alongside modern denim jeans on a stark white background. Realistic contact shadows anchor the pieces. The lighting is bright and crisp, highlighting the contrast in textures for a loud, bold fashion app aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTeceNti2eJCXdM3GjB9Ed8hR1gUAlHmuz_8m1Ri4e-MrF4XESs3Ig3sG1TZvc1lKdsHbWzEOp0oHbNWQf8G7Cgyp2Jd7mGIR3tYlqAS9kYfR2s2Tj4jq148cn3txpMfNI3G6iU50WPKCVEdRnprEAw_DqA6UbRXqeMrPxIcP54IuFxYg9AiXiabPB6C4TELSDWe9gOS92OlrbrcjzHnj9VKIaDIHiGapfQMj0sBT9Bj_pQM6InKHFote6zOowUVmtV5wNTkZFU4Xj"/>
+</div>
+<div class="mt-auto px-4 pt-3 pb-4">
+<h2 class="font-body-lg text-body-lg text-on-surface mb-1">New collection</h2>
+<p class="font-label-md text-label-md text-outline">22 outfits</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+<div class="fixed bottom-0 w-full max-w-[390px] bg-[#FFFFFF] border-t border-[#EEE9F2] px-6 py-3 flex justify-between items-center z-[9999]" id="unified-bottom-nav" style="max-width: 390px; margin: 0 auto; left: 0; right: 0;">
+<a class="flex flex-col items-center gap-1 text-[#4A2E5B] cursor-pointer" href="#" onclick="window.parent.postMessage('today_dashboard', '*'); return false;" style="text-decoration:none;">
+<div class="relative flex flex-col items-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<div class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#E23B7A]"></div>
+</div>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('closet_grid', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Closet</span>
+</a>
+<a class="flex items-center justify-center w-14 h-14 rounded-[18px] shadow-[0_4px_12px_rgba(32,26,40,0.12)] -mt-6 cursor-pointer" href="#" onclick="window.parent.postMessage('add_sheet', '*'); return false;" style="background: linear-gradient(135deg, #4A2E5B, #E23B7A); text-decoration:none;">
+<span class="material-symbols-outlined text-white text-[28px]">add</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('trips_list', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">luggage</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">Trips</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#6B6472] cursor-pointer" href="#" onclick="window.parent.postMessage('you_profile', '*'); return false;" style="text-decoration:none;">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[11px] font-semibold leading-tight font-['Mukta'] tracking-wide">You</span>
+</a>
+</div>
+</body></html>

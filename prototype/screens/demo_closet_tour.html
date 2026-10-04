@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#F5F2F8",
+                        "hot-text": "#B01A57",
+                        "ink": "#201A28",
+                        "cat-gym": "#1E7BB0",
+                        "primary-container": "#4a2e5b",
+                        "hot-container": "#FDE7EF",
+                        "on-secondary-fixed": "#3f001a",
+                        "outline": "#6B6472",
+                        "on-tertiary": "#201A28",
+                        "inverse-primary": "#EFE9F5",
+                        "on-primary-fixed-variant": "#583b69",
+                        "primary": "#4A2E5B",
+                        "on-secondary-container": "#B01A57",
+                        "on-primary": "#ffffff",
+                        "success": "#147A44",
+                        "primary-fixed": "#EFE9F5",
+                        "secondary-container": "#E23B7A",
+                        "cat-party": "#E23B7A",
+                        "canvas": "#FFFFFF",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "inverse-on-surface": "#f6eff3",
+                        "on-tertiary-fixed": "#261900",
+                        "surface": "#F5F2F8",
+                        "border": "#EEE9F2",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "on-tertiary-container": "#7A5A16",
+                        "on-error": "#ffffff",
+                        "cat-travel": "#9A6410",
+                        "on-surface-variant": "#6B6472",
+                        "tertiary-container": "#F6ECD2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "ink-secondary": "#6B6472",
+                        "cat-casual": "#0F7A59",
+                        "on-surface": "#201A28",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#EEE9F2",
+                        "background": "#FFFFFF",
+                        "outline-variant": "#EEE9F2",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "surface-container": "#FFFFFF",
+                        "surface-tint": "#715382",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "secondary": "#E23B7A",
+                        "cat-office": "#3E5CC0",
+                        "on-error-container": "#93000a",
+                        "on-background": "#201A28",
+                        "surface-variant": "#F5F2F8",
+                        "on-primary-fixed": "#2a0f3b",
+                        "gold-container": "#F6ECD2",
+                        "secondary-fixed": "#F6ECD2",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "surface-bright": "#FFFFFF",
+                        "tertiary-fixed": "#F6ECD2",
+                        "cat-ethnic": "#7A2E4C",
+                        "inverse-surface": "#332f33",
+                        "surface-container-low": "#FFFFFF",
+                        "tertiary": "#C6A15A",
+                        "on-primary-container": "#EFE9F5",
+                        "surface-container-high": "#F5F2F8",
+                        "error": "#D42D2D"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "24px",
+                        "sm": "8px",
+                        "md": "12px",
+                        "lg": "16px",
+                        "margin-side": "16px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "display-mobile": [
+                            "Rozha One", "serif"
+                        ],
+                        "title-lg": [
+                            "Mukta", "sans-serif"
+                        ],
+                        "label-lg": [
+                            "Mukta", "sans-serif"
+                        ],
+                        "headline-lg": [
+                            "Rozha One", "serif"
+                        ],
+                        "body-md": [
+                            "Mukta", "sans-serif"
+                        ],
+                        "label-md": [
+                            "Mukta", "sans-serif"
+                        ],
+                        "headline-md": [
+                            "Rozha One", "serif"
+                        ],
+                        "display": [
+                            "Rozha One", "serif"
+                        ],
+                        "body-lg": [
+                            "Mukta", "sans-serif"
+                        ]
+                    },
+                    "fontSize": {
+                        "display-mobile": [
+                            "32px",
+                            {
+                                "lineHeight": "38px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "title-lg": [
+                            "20px",
+                            {
+                                "lineHeight": "26px",
+                                "fontWeight": "800"
+                            }
+                        ],
+                        "label-lg": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.5px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-lg": [
+                            "36px",
+                            {
+                                "lineHeight": "38px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "body-md": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-md": [
+                            "11px",
+                            {
+                                "lineHeight": "14px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "headline-md": [
+                            "30px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "display": [
+                            "40px",
+                            {
+                                "lineHeight": "48px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "body-lg": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "600"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    
+</script>
+<style>
+    body { min-height: 100dvh; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface text-ink min-h-screen flex flex-col font-sans selection:bg-cat-party selection:text-white">
+
+<script>
+    const data = {
+        personas: [{"key": "isha", "name": "Isha", "city": "Delhi", "wardrobe": "seedData.wardrobeAlt", "items": 18, "outfits": 40, "forgottenGems": 3, "nextLooksFree": 12, "goesWith": {"item": "Indigo straight jeans", "count": 17}, "blurb": "Festive-contemporary. A real closet, three pieces almost forgotten.", "default": true}, {"key": "aarav", "name": "Aarav", "city": "Pune", "wardrobe": "seedData.wardrobe", "items": 18, "outfits": 40, "forgottenGems": 3, "nextLooksFree": 12, "goesWith": {"item": "White sneakers", "count": 18}, "blurb": "Smart-casual minimalist. A real closet, three pieces almost forgotten."}],
+        wardrobe: [{"id": "w01", "name": "White oxford shirt", "cat": "Tops", "color": "White", "occasion": ["Office", "Smart-casual"], "wears": 12, "renderMode": "cutout"}, {"id": "w02", "name": "Olive linen shirt", "cat": "Tops", "color": "Olive", "occasion": ["Casual", "Travel"], "wears": 7, "renderMode": "cutout"}, {"id": "w03", "name": "Navy polo", "cat": "Tops", "color": "Navy", "occasion": ["Casual"], "wears": 9, "renderMode": "cutout"}, {"id": "w04", "name": "Kurta (cream)", "cat": "Tops", "color": "Cream", "occasion": ["Festive", "Office-ethnic"], "wears": 3, "renderMode": "cutout"}, {"id": "w05", "name": "Indigo slim jeans", "cat": "Bottoms", "color": "Indigo", "occasion": ["Casual", "Smart-casual"], "wears": 20, "renderMode": "cutout"}, {"id": "w06", "name": "Beige chinos", "cat": "Bottoms", "color": "Beige", "occasion": ["Office", "Smart-casual"], "wears": 15, "renderMode": "cutout"}, {"id": "w07", "name": "Black trousers", "cat": "Bottoms", "color": "Black", "occasion": ["Office", "Festive"], "wears": 8, "renderMode": "cutout"}, {"id": "w08", "name": "White sneakers", "cat": "Footwear", "color": "White", "occasion": ["Casual", "Smart-casual"], "wears": 25, "renderMode": "cutout"}, {"id": "w09", "name": "Tan loafers", "cat": "Footwear", "color": "Tan", "occasion": ["Office", "Festive"], "wears": 6, "renderMode": "cutout"}, {"id": "w10", "name": "Brown leather belt", "cat": "Accessories", "color": "Brown", "occasion": ["Office"], "wears": 14, "renderMode": "cutout"}, {"id": "w11", "name": "Charcoal blazer", "cat": "Tops", "color": "Charcoal", "occasion": ["Office", "Festive"], "wears": 4, "renderMode": "cutout"}, {"id": "w12", "name": "Analog watch", "cat": "Accessories", "color": "Silver", "occasion": ["Office", "Festive"], "wears": 30, "renderMode": "cutout"}, {"id": "w13", "name": "Ivory silk stole", "cat": "Accessories", "color": "Ivory", "occasion": ["Festive", "Wedding"], "wears": 3, "renderMode": "fabricTile"}, {"id": "w14", "name": "Cream cotton dhoti", "cat": "Bottoms", "color": "Cream", "occasion": ["Festive", "Puja"], "wears": 2, "renderMode": "fabricTile"}, {"id": "w15", "name": "Navy bandhgala jacket", "cat": "Outerwear", "color": "Navy", "occasion": ["Wedding", "Festive"], "wears": 4, "renderMode": "cutout"}, {"id": "w16", "name": "Black wayfarer sunglasses", "cat": "Accessories", "color": "Black", "occasion": ["Casual", "Travel"], "wears": 16, "renderMode": "cutout"}, {"id": "w17", "name": "Woven straw fedora", "cat": "Accessories", "color": "Straw", "occasion": ["Casual", "Travel"], "wears": 4, "renderMode": "cutout"}, {"id": "w18", "name": "Navy silk pocket square", "cat": "Accessories", "color": "Navy", "occasion": ["Office", "Wedding"], "wears": 6, "renderMode": "fabricTile"}],
+        wardrobeAlt: [{"id": "a01", "name": "Amethyst embroidered kurti", "cat": "Tops", "color": "#4A2E5B", "occasion": ["Festive", "Office-ethnic"], "wears": 9, "renderMode": "cutout"}, {"id": "a02", "name": "White cotton shirt", "cat": "Tops", "color": "White", "occasion": ["Office", "Smart-casual"], "wears": 16, "renderMode": "cutout"}, {"id": "a03", "name": "Black ribbed top", "cat": "Tops", "color": "Black", "occasion": ["Casual", "Evening"], "wears": 11, "renderMode": "cutout"}, {"id": "a04", "name": "Rust silk blouse", "cat": "Tops", "color": "Rust", "occasion": ["Festive", "Evening"], "wears": 2, "renderMode": "cutout"}, {"id": "a05", "name": "Teal cotton kurti", "cat": "Tops", "color": "Teal", "occasion": ["Casual", "Office-ethnic"], "wears": 7, "renderMode": "cutout"}, {"id": "a06", "name": "Beige linen overshirt", "cat": "Tops", "color": "Beige", "occasion": ["Casual", "Travel"], "wears": 5, "renderMode": "cutout"}, {"id": "a07", "name": "Indigo straight jeans", "cat": "Bottoms", "color": "Indigo", "occasion": ["Casual", "Smart-casual"], "wears": 22, "renderMode": "cutout"}, {"id": "a08", "name": "Black tailored trousers", "cat": "Bottoms", "color": "Black", "occasion": ["Office", "Evening"], "wears": 13, "renderMode": "cutout"}, {"id": "a09", "name": "Ivory palazzo", "cat": "Bottoms", "color": "Ivory", "occasion": ["Festive", "Office-ethnic"], "wears": 3, "renderMode": "cutout"}, {"id": "a10", "name": "Maroon banarasi skirt", "cat": "Bottoms", "color": "Maroon", "occasion": ["Wedding", "Festive"], "wears": 1, "renderMode": "fabricTile"}, {"id": "a11", "name": "White sneakers", "cat": "Footwear", "color": "White", "occasion": ["Casual", "Travel"], "wears": 24, "renderMode": "cutout"}, {"id": "a12", "name": "Gold juttis", "cat": "Footwear", "color": "Gold", "occasion": ["Festive", "Wedding"], "wears": 6, "renderMode": "cutout"}, {"id": "a13", "name": "Ivory silk dupatta", "cat": "Accessories", "color": "Ivory", "occasion": ["Festive", "Wedding"], "wears": 4, "renderMode": "fabricTile"}, {"id": "a14", "name": "Oxidised silver jhumkas", "cat": "Accessories", "color": "Silver", "occasion": ["Festive", "Evening"], "wears": 8, "renderMode": "cutout"}, {"id": "a15", "name": "Tan leather sling bag", "cat": "Accessories", "color": "Tan", "occasion": ["Office", "Casual"], "wears": 10, "renderMode": "cutout"}, {"id": "a16", "name": "Gold pearl choker", "cat": "Accessories", "color": "Gold", "occasion": ["Festive", "Wedding"], "wears": 5, "renderMode": "cutout"}, {"id": "a17", "name": "Magenta organza dupatta", "cat": "Accessories", "color": "Magenta", "occasion": ["Festive", "Evening"], "wears": 3, "renderMode": "fabricTile"}, {"id": "a18", "name": "Tortoiseshell sunglasses", "cat": "Accessories", "color": "Brown", "occasion": ["Casual", "Travel"], "wears": 11, "renderMode": "cutout"}],
+        imgMap: {"w01": "https://lh3.googleusercontent.com/aida-public/AB6AXuAENPVDqLZ2d3-D_ljpV20FdzLlDyEX7I_JA6wL5suTyx5Cjf1v_CoWxFgVmJgvNZbg3eSyPCRLdLNB3m4-jXv_k8-WilteShf1TbjSen1paaogPOhhvWq41nNpxwKqNci8wtzGJf5oQnSVkRTNxWPBWA3nwqBV_7L3B12yuOh8GoRu3uiQGe1m2CZMzf8aAf0sR2t7qbve41Fnsn6HISFk1CI7jxAiOJKereLRlvToEMEOSl4-JF7T7lgHbZPoxYSje9qHVvS5nVjw", "w02": "https://lh3.googleusercontent.com/aida-public/AB6AXuAg6OdAemxvF8qZjy_lJv7hMULtRIiCirztlhxgr8SYGXU3HeQtWRJmghyD1tsppEFnOrCbkCLJXTlYOl9L30FRI50whfAVKHwO6x845uxQ7FFecYcS0AgM_lCHsTZxm6jMqD5FoZlG3iKSODp2BRckjQqM39r1cPm9vQVoNtGBFcFEqNguavSdEXVM6OFekDl_LV2bRv0BeCXLxD3tRMykwgn-q9i66UTpl4K4AoVCyMBTzvs63UO97vuKNqzzmgVBxUEZhsFYQpO2", "w03": "https://lh3.googleusercontent.com/aida-public/AB6AXuA64bBncRnlU6LjrSu2lKg25cVlDY8mpUSI2Pa9VdgiY-3F3VSI1iuEnU_Oi9uk1EznXxEimxLxeZpwKZPbVlKk8WMKgiJtSao6l2O2xVanJBulCqCKc-W2ZYD7Ohp7mWOsButngnCk3bvowih9vWx8fat0g4GlZ_nYcs-H7TsU7OzsB9CfiU9KnqIUabr5cIaYsyPdeUWpf8RjFLyDKsE7yL75Hc24FpKGT6r4j2LzPsMIaImIUsgkVoaekVLQeoBA0EyrHuSAGtAZ", "w04": "https://lh3.googleusercontent.com/aida-public/AB6AXuANrmH6qNuadVGmfQYgnVXi1PRoXj7GI9G9-Xz44dlCyY-n4diZkAOv9elBfKFqWsFx5cCWKlVPQf48xO5OpQoLUIPvsUyz18gGfdMMLcY5pL2YrDH9CDGAJcjwxRw3-QezYQ6gBiAQ_dzVcrNcUStcss5XNLPddeTzggb_v99ItdTlvTb5bAHbYOgBJpYoeppsBYug45w-N4nRVeUPKWnb_Um4Mf67miAtsQoM2rN6KLaN6Gy2sjrkSgzn8sm-Nmjlkke1WNLSOcDs", "w05": "https://lh3.googleusercontent.com/aida-public/AB6AXuBS8JE-TRB_BYPrrbHPOmzkY01LGHe1Mn9OiK41Dq3VTChqcOstQkNanqhGw-ipu4OeNmQ5hGv2BJqT9SP_6P7H_uLBkkAGxOgMMCZuPoTqn2YkwGjwworv6TsIi-JWFgcxM2XEkeXn3Ai0UfC_7uHGMtcDx2HG2DhJ2deGPbchmbNJg3hlrhVUe4PoW4P5LnahIz-UTcwwlV6vlgEthefUIU-fIUwQfPokQJHW2sAhb8NpFDXhubsdjiojOmSnDYef8JXbvarfm01B", "w06": "https://lh3.googleusercontent.com/aida-public/AB6AXuCcTimP73UAiQtmURy8h14gUEGewXFBX1Yw48O_memHN6XOS8QV7YKDInQcW32z7ly595nsswkgCaTZ_6ylp59Cr6wxjHoahlW0DadRuZp3qiaMK3SoJgGi3M1CGTLXp7LQEgo-XT6uLHu0GF9b5lVHo4T8AqZTCHdMcZ9BC_JMtXZQBE8OP3iUGwmYCf3CanOiXB0HfTTOqVsGxhc3BQf-xnsQq3BcHixrel2BDdEepHoqyTfymzOF0kJo7lvZ6tgJsrOn8FJPQJVJ", "w07": "https://lh3.googleusercontent.com/aida-public/AB6AXuANto3pCNvtmE4b38MWkqTcLq6B_yGuAqfFr9L-38i3y8YtQaXTHZVbsvLoSkkvBw3ldVjuylynGQVGz9hkrIzeHZPjLGDSuFW12237ldJdddXwyOw9m6Yi4rRYpFHOAmvj2H8_t0EMXhhDP5Ai0JBg3SksoHtqAUzUxCZJeH4br6qQ2Y2fW_9eECfzTBOf8dJEjXrbsapWhP0cxuCsFTNHnlSYnVjn8B-15CRqQE3Gemz7wTP-uKr5vNcPF7jO_7WiKBT1CoCmIgax", "w08": "https://lh3.googleusercontent.com/aida-public/AB6AXuCxjEDognyDjrwI7FJz1izfDWKd69o0-BfugESKhr4Spcxmjm7u0_LopWJ3lIV19YJFQDShSZxcdsJiyaclX-VJeykgn9jZWyTvLMemewEhm_YcQgj_UUROKSVprEmrWrTuOq56Dm_X-cE7cef-BptY6q9cU0mrMBlIS_XBZQBxH0l9kzVhCif-VJh8HIdRPXyfOl0x0c6CpweTT_FzfRV9fKs0j_03lO_U2w25xvRXBoIwWVje1G9Sd9VaqgAWtzZ7x2FONhyTE6TH", "w09": "https://lh3.googleusercontent.com/aida-public/AB6AXuCT0HjfMWdBnch2q3Zjz4HOIjHUicPJGrkJh3iExoqUNgR6ACtjET1U9-09_I9qcJqT4KdAgPs-RbzRFC7wOLF_M0LoBizFx9v34J49GhXpj0O037eK6xt0XmNS_QWsYIAM97p9liiWPPXxj0Z0E4NtJEY6eKwErZl-Bo0HCDrH6zAEMuGBa4-kN7BgItIi_hndoCas06GOWzj4asWW3-JLH87DQ149vn9aL3ijD1u5JA6qekXTt53T94H-NYdld15TG-mVCrYWt0ts", "w10": "https://lh3.googleusercontent.com/aida-public/AB6AXuAJJ4N8poazAi1uF8qKj9F53L4PFBiQII40ThZ-vg2ZpYWILH5oB7kxmxyr0bEyd7tnpzaNtXErks0b3y3iMKWVHbwOZDlKJAvkIndst4N6GO_rUzj3J77X2HGRuZQhyFubYdRuexT2nnb5ifYJjFptREWaCYJSDButoQzTUTfEnne1KGllW9iuazuEW3yrLmN6hpwMj3OP2Z8_VMDfr5btpe3iSxMftBXZc0mWHz0NynoGq5UldoPTr7tlHM9DPpnEGoilFt3TjDMU", "w11": "https://lh3.googleusercontent.com/aida-public/AB6AXuCdxqqFQpy65-1AxbbCnQ46jRif8i08gu34T33nVX6cG5tFgxw9vNVdD-AieBl_bV9JB5qTwGEmYgsAyT4Vec33-hhyIYOrIBVo-vWofcgQNb1Ux9kxJ6mZNQAoeSUWU7rKp9U3bZyL5QkRrlvDQjZTGscHY5DUjVlH-HZK73orLthmOuo6Xwrvoo0KLBOTheEuPlUII2ZEM8IcJHzCaxBXN1Oox5GQSuTMdhaK1w5Dk0JZNELrjaoHTwPipZgP6B1H0NBhdqYvK21h", "w12": "https://lh3.googleusercontent.com/aida-public/AB6AXuAENPVDqLZ2d3-D_ljpV20FdzLlDyEX7I_JA6wL5suTyx5Cjf1v_CoWxFgVmJgvNZbg3eSyPCRLdLNB3m4-jXv_k8-WilteShf1TbjSen1paaogPOhhvWq41nNpxwKqNci8wtzGJf5oQnSVkRTNxWPBWA3nwqBV_7L3B12yuOh8GoRu3uiQGe1m2CZMzf8aAf0sR2t7qbve41Fnsn6HISFk1CI7jxAiOJKereLRlvToEMEOSl4-JF7T7lgHbZPoxYSje9qHVvS5nVjw", "w13": "https://lh3.googleusercontent.com/aida-public/AB6AXuBExPG5VrNvGZpaWhAHup9pU3Xi-muice_4XgOjddJi7jYz3jD1fkzrXmtp2lf8MI3e99U9oUnGyZicOjHSXnTQJwK_NYiuHPWzDgkINHGDjnhsACUMT24q7duj0-LYowsZ5MsAcSE7p8gcd0-COhstYjFcizB9BpNArpR5mb1ABOU1NSn-5Fv9ovS-gGsFr16UvoJKs0Kc_XDDa8B7TroigimAh68blrIf4PxeiUxDXGKWk7mOPHb_ckwIZL9Hvjfl70_IGOETro1J", "w14": "https://lh3.googleusercontent.com/aida-public/AB6AXuAWnRDuFP3yMujFTQmvC15_t0PUrFae0MO9SGJOa5DcP2Dw0p0v_-jU5galoRhRH2t3OLK7LgRBEYYSQmk6jbUJJlJmZ0jJqq22MGQgKiUAa76QMLRMLdXQ43cBT-nSanNXCW8uURi0IZkO71QVVvGKEmKCM8Bq3gnGq_hqi0GE9r1nWMZr1AWUkmWKf9ShD12ig7x0niKH5LSrQtzhpo10JvQrYMnL1ptJFuz696JNK0xFAbl5z-ghcQ2FQQfeD3iXWGl1Se8MEisA", "w15": "https://lh3.googleusercontent.com/aida-public/AB6AXuAP2gOW1sFv51ZR83A385bNF81kOqYEV414Jb0clF52U0pzo5XXN-5OpceF0aGOk0fclJTd8mE5W9AnsJ6noKKSDZLNE5XoFN7A_6PO118DUud8WGmiJUHa_4010RoNx4uxllJ8BymHz35JRZWecM0yWUB14cfCgQnzKiUROLRuPQubzzFAOoi739SKLv9v7OwW7MFKP74AKdCIUvSPuJfeN81U6Ctpsc9s9FABm_qyO3r1MOYYzzz8XrQ_8XC8hPqJ8QIAjKGinZhC"}
+    };
+// Blueprint 042: only genuinely unisex reuse survives. a02/a07/a08 previously showed
+// MEN'S garments in a woman's closet — removed; they now fall back to the designed
+// placeholder, which is honest rather than misleading. a13 gets a real dupatta below.
+data.imgMap.a11 = data.imgMap.w08;   // White sneakers — genuinely the same unisex item
+// Blueprint 042: single-garment flat-lays already present elsewhere in the prototype,
+// every URL fetch-verified 200 image/jpeg by the planner. Style-consistent with the
+// existing set because they come from it.
+data.imgMap.a13 = "https://lh3.googleusercontent.com/aida-public/AB6AXuDqO0Emu8opFxSkbQ7_AReNMgSWZ7PUPYgEMVzLtskMM85L7yezAa-_MHTH2PZLKHjtiiJ5CnzvtkgIeHirPNMAHWvxHRbDfmrZvfpsuObkKthseOM0Kd7qPRGOF3-KlSB_7BynB8zH2i3DifvBJ63yHuaEDhN2I-ZqTQ6pfsUWDnz_zcdGK9YFy-fArJxrfXhTpoxG2eMuqSENw02G4IgQGeeTDWIw9DI0YtJy_klrUXYeCYAFSQ2AAybOt9BJtPeVQcjHKCso6op4";   // sheer cream dupatta, gold threading
+data.imgMap.a12 = "https://lh3.googleusercontent.com/aida-public/AB6AXuCmhfVlKv3R339IsQso_okhywXnzoGuCGMJO67Qb8zDKGLLhS9OBUAbQWdXqPDlDAXOoXpgutZIRTkBa4GwshJ3lfan9ofyTHu_bLVT8XUc0ib50Sm92iEF3LsvD3uQRoRNH6yjDHKgcH5bp0A7Cq73L-VwCHDSoJUAuw_HNqsjPqIpajJEFSGTTDEj-baQyION4R4lH8lJWP3TpUNnfvLGwLxrknFzFwVRsFUshorpp-vZ2eJ7jfsX-SeL2fF7f7sZs6taVWBr5e18";   // traditional juttis, thread work + pearls
+data.imgMap.a14 = "https://lh3.googleusercontent.com/aida-public/AB6AXuCqrnoJhLuyZwLCRNSGKLB7HX6HRc-Ha9F--y614KUEsw2KC3sI_kyiBhuLpRi5TW6cYJ8j4h3HuyfkqoXAnreeriGRkqqhUhnuuoGrlT0sn-0gT_hJXaXyRoCJsTfiyfftmCiRLqBS7cbTRwEjgZB3Dfy2qfd1hnfneDCEtpHfiJQ5uNq_pWWZ2fNmcIEuP8WJot17XrI_vbRwYUaAz8rFqCzcc8FPX025PXr4MrlNH_CumNS2qxP9HkPlacP77AV82Zs2T8aeuaOt";   // oxidised silver jhumkas + cuff
+data.imgMap.a01 = "https://lh3.googleusercontent.com/aida-public/AB6AXuBHJU66_UuF92RhFx8TGsyUKc6yGnDaMINBfhqi73WoMtzEpEdI6AqXcsFpjrSsD95VNlsRQZsUnlb38IHn037AoS23kZ_nBREzbvp8sNgA-4rp7ea0fduq_e2blP3lZuhn-xOsHlf7iMRhIjFptMsT-c0q_VhggpjAOnfukxMs9-DL9iP5dAkWihqcBjbqPqnrQbv40cGKlcrczx0Rhu8GDn0bi9uRNfHu2vX_0bp-JMqXrIGoYatGyM5nngqQ9aV8PxNldVHjgZtD";   // amethyst kurti, gold embroidery
+data.imgMap.a16 = "https://lh3.googleusercontent.com/aida-public/AB6AXuBAP88XR5eMX2Pz-D439KG5GANS6LyvgYHvcXD6zayoN9ErQXPdQxkIALc0VnrVLUTVmQF2XvZPN-VQtmJdVFNsmJWuap5YeoEDwCgRBF7yXoJbFshiYgUJ0upb2A6iQhtkVVxHtj2utIDpibDnrTYqy5lgPwLPh2SbZjqSI5iHftxMELqePcWY1yoTi22VGJlPBbKu9AjE_ym4_uGUL4gBkJ7J47ljvX114Vn3kaKokzhOYRV0i7eT9WJUnH5yC6mC_vz_hcpv60C0";   // gold + pearl choker (new item, Step 4)
+data.imgMap.a17 = "https://lh3.googleusercontent.com/aida-public/AB6AXuCSoJ8wAgG6Oc28JQDXBEFPtljWm78Om0jvM8foSTDAmyX2HPceJUn0bt30VSb-YkQy598EKOuaUvv2lJP_YHh7ErwFnTkxx4zLg0AGY61bzaKc984vBlkHxeXl3yP5mL_Wvyre94UaKkfqkH8pqo2F3Zoz6DZm-rDs4GSWUTSoygLwd8b1fPhuzE3U1-0hUTCxzR9SgWDhciuFDCj8cJmBpLex2RpVLN6KnIU-FbWyw3O8lDPy_a2lBRBYYqYWlNjL8AMaHxjAlO3h";   // magenta organza dupatta (new item, Step 4)
+
+    
+    function getCategoryIcon(name) {
+        name = name.toLowerCase();
+        if (name.includes('shoe') || name.includes('sneaker') || name.includes('loafer') || name.includes('sandal') || name.includes('heel') || name.includes('pump')) return 'footprint';
+        if (name.includes('necklace') || name.includes('earring') || name.includes('bracelet') || name.includes('watch') || name.includes('belt') || name.includes('bag') || name.includes('stole')) return 'diamond';
+        if (name.includes('jean') || name.includes('pant') || name.includes('trouser') || name.includes('skirt') || name.includes('short') || name.includes('chino') || name.includes('salwar')) return 'apparel';
+        return 'checkroom';
+    }
+
+    function setPersona(key) {
+        try { localStorage.setItem('fc_demo_persona', key); } catch(e) { window.name = key; }
+        render(key);
+    }
+    
+    function getPersona() {
+        try { return localStorage.getItem('fc_demo_persona') || 'isha'; } catch(e) { return window.name || 'isha'; }
+    }
+
+    function render(key) {
+        const persona = data.personas.find(p => p.key === key) || data.personas[0];
+        document.getElementById('header-title').innerText = persona.name + "'s closet";
+        
+        const tabs = document.getElementById('persona-tabs');
+        tabs.innerHTML = '';
+        data.personas.forEach((p) => {
+            const active = p.key === key;
+            const btn = document.createElement('button');
+            btn.className = `flex-1 py-2 px-3 rounded-lg flex items-center justify-center gap-2 font-label-lg text-label-lg transition-colors min-h-[48px] ${active ? 'bg-ink text-white' : 'bg-surface text-ink-secondary'}`;
+            btn.onclick = (e) => { e.stopPropagation(); setPersona(p.key); };
+            btn.innerHTML = active ? `<span class="material-symbols-outlined text-[16px]">check</span> ${p.name}` : `${p.name}`;
+            tabs.appendChild(btn);
+        });
+        
+        document.getElementById('stat-items').innerText = persona.items;
+        document.getElementById('stat-outfits').innerText = persona.outfits;
+        document.getElementById('blurb').innerText = persona.blurb;
+        document.getElementById('goes-with').innerText = `Goes with ${persona.goesWith.count}`;
+        document.getElementById('goes-with-item').innerText = persona.goesWith.item;
+        
+        const grid = document.getElementById('item-grid');
+        grid.innerHTML = '';
+        const items = key === 'isha' ? data.wardrobeAlt : data.wardrobe;
+        
+        let itemsWithWears = items.map(item => ({...item, wears: item.wears || 0})).sort((a,b) => a.wears - b.wears);
+        const barelyWornIds = itemsWithWears.slice(0, 3).map(i => i.id);
+
+        items.forEach(item => {
+            const isBarely = barelyWornIds.includes(item.id);
+            const div = document.createElement('div');
+            div.className = "aspect-[3/4] bg-surface-container-lowest rounded-md relative flex flex-col items-center justify-center border border-border shadow-soft overflow-hidden";
+            
+            let contentHTML = '';
+            let pill = isBarely ? `<div class="absolute top-2 left-2 bg-gold-container text-ink font-label-md text-[10px] px-2 py-0.5 rounded-full z-20">Barely worn</div>` : '';
+            
+            if (data.imgMap[item.id]) {
+                contentHTML = `<img src="${data.imgMap[item.id]}" alt="${item.name}" class="w-full h-full object-cover z-10" />`;
+            } else {
+                // Designed placeholder for Isha (or missing images)
+                let icon = getCategoryIcon(item.name);
+                contentHTML = `
+                <div class="flex-grow w-full rounded flex flex-col items-center justify-center bg-surface p-2 gap-2 z-10">
+                    <span class="material-symbols-outlined text-outline text-2xl">${icon}</span>
+                    <div class="text-xs text-outline font-label-md text-center line-clamp-2">${item.name}</div>
+                    <div class="w-3 h-3 rounded-full mt-1 border border-border shadow-soft" style="background-color: ${item.color || '#ccc'}"></div>
+                </div>`;
+            }
+            
+            div.innerHTML = pill + contentHTML;
+            grid.appendChild(div);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', () => render(getPersona()));
+</script>
+<header class="w-full flex justify-between items-center px-margin-side h-[56px] z-50 bg-surface border-b border-border">
+    <button class="font-body-lg text-ink hover:opacity-80 transition-opacity p-2 min-w-[48px] min-h-[48px] flex items-center" onclick="event.stopPropagation(); window.parent.postMessage('value_intro_demo', '*')">
+        <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <div class="font-title-lg text-ink" id="header-title">Isha's closet</div>
+    <button class="font-body-lg text-primary-container p-2 min-w-[48px] min-h-[48px] flex items-center justify-end" onclick="event.stopPropagation(); window.parent.postMessage('style_quiz', '*')">
+        Skip
+    </button>
+</header>
+<main class="flex-grow flex flex-col pb-safe pt-4 bg-surface px-margin-side overflow-y-auto no-scrollbar">
+    <div class="flex bg-surface-container-lowest rounded-2xl p-1 mb-6 shadow-soft border border-border" id="persona-tabs"></div>
+    <div class="flex justify-between items-end mb-2">
+        <h2 class="font-headline-md text-ink" id="stat-items">15</h2>
+        <h2 class="font-headline-md text-ink" id="stat-outfits">40</h2>
+    </div>
+    <div class="flex justify-between items-start mb-4">
+        <p class="font-label-md text-outline uppercase tracking-wider">Items</p>
+        <p class="font-label-md text-outline uppercase tracking-wider">Outfits</p>
+    </div>
+    <p class="font-body-md text-ink-secondary mb-6" id="blurb"></p>
+    <div class="grid grid-cols-3 gap-2 mb-6" id="item-grid"></div>
+    <div class="bg-surface-container-lowest p-4 rounded-2xl border border-border shadow-soft flex items-center gap-4 mb-8">
+        <span class="material-symbols-outlined text-primary-container">lightbulb</span>
+        <div class="flex-grow">
+            <p class="font-label-md text-primary-container" id="goes-with"></p>
+            <p class="font-body-md text-ink" id="goes-with-item"></p>
+        </div>
+    </div>
+</main>
+<footer class="p-margin-side bg-surface border-t border-border w-full">
+    <button class="bg-secondary text-white font-title-lg text-title-lg w-full py-3 rounded-2xl shadow-soft hover:opacity-90 active:scale-95 transition-all duration-200 min-h-[48px]" onclick="event.stopPropagation(); window.parent.postMessage('demo_occasion_result', '*')">
+        Ask the closet
+    </button>
+</footer>
+
+</body>
+</html>

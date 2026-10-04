@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FitCheck.ai</title>
+
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="FitCheck.ai — India-first AI wardrobe stylist. Interactive prototype.">
+<meta property="og:title" content="FitCheck.ai">
+<meta property="og:description" content="Your AI stylist for the clothes you already own. Tap through the app — or type an occasion and watch it style a real fifteen-item closet.">
+<meta property="og:type" content="website">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4A2E5B">
+<link rel="icon" type="image/png" sizes="64x64" href="icons/favicon-64.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FitCheck.ai">
+
+<style>
+  :root { color-scheme: light; }
+
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: #18131E;
+    overscroll-behavior: none;          /* no pull-to-refresh bounce once installed */
+  }
+  body { overflow: hidden; }
+
+  /* Phone and installed PWA: the screen IS the app. Edge to edge, no chrome. */
+  #frame {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    border: 0; display: block; background: #FFFFFF;
+  }
+
+  /* Desktop browser: a phone-shaped frame centred on the dark canvas, because a
+     360dp design stretched across a laptop reads as broken rather than deliberate.
+     Installed on a phone this rule never applies. */
+  @media (min-width: 801px) {
+    body { display: flex; align-items: center; justify-content: center; }
+    #frame {
+      position: static; inset: auto;
+      width: 390px; height: 844px;
+      border: 12px solid #000;
+      border-radius: 44px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+  }
+</style>
+</head>
+<body>
+<iframe id="frame" src="screens/splash_language.html" title="FitCheck.ai prototype"></iframe>
+
+<script>
+  var frame = document.getElementById('frame');
+
+  // Screens navigate by posting their target id to the shell.
+  window.addEventListener('message', function (e) {
+    if (typeof e.data === 'string' && /^[a-z_]+$/.test(e.data)) {
+      frame.src = 'screens/' + e.data + '.html';
+    }
+  });
+
+  // Deep link for demoing a specific screen: ?s=screen_id
+  var q = new URLSearchParams(location.search).get('s');
+  if (q && /^[a-z_]+$/.test(q)) { frame.src = 'screens/' + q + '.html'; }
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+    });
+  }
+</script>
+</body>
+</html>

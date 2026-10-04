@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Your Style</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+            future: { hoverOnlyWhenSupported: true },
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "error-container": "#ffdad6",
+                  "cat-gym": "#1E7BB0",
+                  "surface-container-highest": "#F5F2F8",
+                  "surface-container": "#FFFFFF",
+                  "on-secondary": "#ffffff",
+                  "surface-variant": "#F5F2F8",
+                  "ink-secondary": "#6B6472",
+                  "hot-container": "#FDE7EF",
+                  "on-tertiary-container": "#7A5A16",
+                  "inverse-primary": "#EFE9F5",
+                  "on-primary-container": "#EFE9F5",
+                  "tertiary": "#C6A15A",
+                  "background": "#FFFFFF",
+                  "on-tertiary-fixed-variant": "#5d4201",
+                  "on-secondary-fixed-variant": "#B01A57",
+                  "inverse-surface": "#332f33",
+                  "error": "#D42D2D",
+                  "surface-container-high": "#F5F2F8",
+                  "cat-ethnic": "#7A2E4C",
+                  "on-secondary-container": "#B01A57",
+                  "surface-dim": "#EEE9F2",
+                  "canvas": "#FFFFFF",
+                  "primary-container": "#4a2e5b",
+                  "cat-travel": "#9A6410",
+                  "tertiary-fixed-dim": "#C6A15A",
+                  "tertiary-container": "#F6ECD2",
+                  "border": "#EEE9F2",
+                  "cat-office": "#3E5CC0",
+                  "primary-fixed-dim": "#EFE9F5",
+                  "on-surface": "#201A28",
+                  "on-secondary-fixed": "#3f001a",
+                  "surface": "#F5F2F8",
+                  "primary-fixed": "#EFE9F5",
+                  "on-primary-fixed": "#2a0f3b",
+                  "on-error-container": "#93000a",
+                  "secondary-container": "#E23B7A",
+                  "secondary-fixed": "#F6ECD2",
+                  "surface-tint": "#715382",
+                  "secondary": "#E23B7A",
+                  "on-surface-variant": "#6B6472",
+                  "cat-casual": "#0F7A59",
+                  "on-primary-fixed-variant": "#583b69",
+                  "gold-container": "#F6ECD2",
+                  "secondary-fixed-dim": "#FDE7EF",
+                  "on-error": "#ffffff",
+                  "ink": "#201A28",
+                  "on-tertiary": "#201A28",
+                  "surface-container-low": "#FFFFFF",
+                  "outline": "#6B6472",
+                  "on-primary": "#ffffff",
+                  "outline-variant": "#EEE9F2",
+                  "inverse-on-surface": "#f6eff3",
+                  "surface-container-lowest": "#ffffff",
+                  "primary": "#4A2E5B",
+                  "tertiary-fixed": "#F6ECD2",
+                  "surface-bright": "#FFFFFF",
+                  "success": "#147A44",
+                  "hot-text": "#B01A57",
+                  "on-background": "#201A28",
+                  "on-tertiary-fixed": "#261900",
+                  "cat-party": "#E23B7A"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "sm": "8px",
+                  "lg": "16px",
+                  "xs": "4px",
+                  "xl": "24px",
+                  "margin-side": "16px",
+                  "md": "12px"
+          },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+          "fontFamily": {
+                  "display": [
+                          "Rozha One"
+                  ],
+                  "display-mobile": [
+                          "Rozha One"
+                  ],
+                  "body-md": [
+                          "Mukta"
+                  ],
+                  "headline-md": [
+                          "Rozha One"
+                  ],
+                  "title-lg": [
+                          "Mukta"
+                  ],
+                  "body-lg": [
+                          "Mukta"
+                  ],
+                  "label-lg": [
+                          "Mukta"
+                  ],
+                  "label-md": [
+                          "Mukta"
+                  ],
+                  "headline-lg": [
+                          "Rozha One"
+                  ]
+          },
+          "fontSize": {
+                  "display": [
+                          "40px",
+                          {
+                                  "lineHeight": "48px",
+                                  "fontWeight": "700"
+                          }
+                  ],
+                  "display-mobile": [
+                          "32px",
+                          {
+                                  "lineHeight": "38px",
+                                  "fontWeight": "700"
+                          }
+                  ],
+                  "body-md": [
+                          "14px",
+                          {
+                                  "lineHeight": "20px",
+                                  "fontWeight": "400"
+                          }
+                  ],
+                  "headline-md": [
+                          "30px",
+                          {
+                                  "lineHeight": "32px",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "title-lg": [
+                          "20px",
+                          {
+                                  "lineHeight": "26px",
+                                  "fontWeight": "800"
+                          }
+                  ],
+                  "body-lg": [
+                          "16px",
+                          {
+                                  "lineHeight": "24px",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "label-lg": [
+                          "12px",
+                          {
+                                  "lineHeight": "16px",
+                                  "letterSpacing": "0.5px",
+                                  "fontWeight": "700"
+                          }
+                  ],
+                  "label-md": [
+                          "11px",
+                          {
+                                  "lineHeight": "14px",
+                                  "fontWeight": "600"
+                          }
+                  ],
+                  "headline-lg": [
+                          "36px",
+                          {
+                                  "lineHeight": "38px",
+                                  "fontWeight": "700"
+                          }
+                  ]
+          }
+  },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-background min-h-screen text-on-surface font-body-md antialiased overflow-x-hidden flex flex-col items-center">
+<div class="w-full bg-canvas min-h-[100dvh] flex flex-col relative shadow-[0_0_24px_rgba(32,26,40,0.08)]">
+<!-- Top App Bar & Progress -->
+<header class="sticky top-0 z-50 bg-canvas/90 backdrop-blur-sm border-b border-border">
+<!-- Progress Bar -->
+<div class="w-full h-1 bg-surface-variant flex">
+<div class="h-full bg-primary w-1/3 rounded-r-full"></div>
+</div>
+<!-- App Bar Content -->
+<div class="flex items-center justify-between px-margin-side h-14">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center text-primary rounded-full hover:bg-surface-container-low transition-colors" onclick="history.back()">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-[20px] text-primary truncate flex-1 text-center px-4">
+          Your style
+        </h1>
+<button aria-label="Skip this step" class="font-label-lg text-label-lg text-primary uppercase tracking-wider hover:text-cat-party transition-colors px-2">
+          Skip
+        </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-margin-side pt-xl pb-32 flex flex-col">
+<!-- Header -->
+<div class="mb-xl text-center">
+<h2 class="font-display-mobile text-display-mobile text-primary mb-xs">
+          Which vibe is most you?
+        </h2>
+<p class="font-body-lg text-body-lg text-ink-secondary">
+          Pick one or more
+        </p>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-2 gap-md auto-rows-fr">
+<!-- Option 1: Minimalist -->
+<label class="group relative cursor-pointer flex flex-col h-full rounded-2xl bg-canvas shadow-[0_4px_12px_rgba(32,26,40,0.06)] hover:shadow-[0_8px_24px_rgba(32,26,40,0.12)] transition-shadow border border-transparent overflow-hidden">
+<input checked="" class="border-0 focus:ring-0 peer sr-only" name="style_vibe" type="checkbox" value="minimalist"/>
+<!-- Active State Border & Background Tint -->
+<div class="absolute inset-0 border-2 border-cat-party rounded-2xl opacity-0 peer-checked:opacity-100 transition-opacity z-10 pointer-events-none"></div>
+<div class="absolute top-2 right-2 z-20 w-6 h-6 rounded-full bg-cat-party text-white flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity scale-50 peer-checked:scale-100 shadow-lift">
+<span class="material-symbols-outlined text-[16px] font-bold" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-2 flex items-center justify-center overflow-hidden">
+<img class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform duration-500 ease-out shadow-[0_2px_8px_rgba(32,26,40,0.04)]" data-alt="A highly stylized, flat-lay editorial photograph of a minimalist Indian outfit. The ensemble features a crisp, unbleached linen kurta paired with tailored cotton trousers. The palette is strictly neutral with shades of white, cream, and soft beige. High-key, diffused natural lighting casts realistic, soft contact shadows, grounding the garments on a pristine white backdrop. The composition is clean, modern, and embodies a sophisticated 'less is more' aesthetic common in high-end fashion marketplaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDABxZYNDNcGwQmZW_LuEolKZSKq5sKV4dMA4D0CJFIzefYjZuMkCrrtPGK2coE0I_qnACiM7d-Bo81ulULm3dbkwXVgFGG1FZCqItGAEbAKtRf7D5yBTdKCPh-RxzY0mekFy61J0Kz1djN6nkH6t8SfHhinG6RGP02lLVYaiYeEC3kax-iK-y7w0Mz0rhpkp9qXZxeV3CW7uiOzmIJslIYfyht8X9AgQuAX4smVkLIcMpLa6PyAy5OlV4WrFDrs1YRLtbVK5S45zp_"/>
+</div>
+<div class="p-3 text-center border-t border-border bg-canvas relative z-10">
+<span class="font-title-lg text-title-lg text-primary peer-checked:text-cat-party transition-colors block leading-tight">Minimalist</span>
+</div>
+</label>
+<!-- Option 2: Street -->
+<label class="group relative cursor-pointer flex flex-col h-full rounded-2xl bg-canvas shadow-[0_4px_12px_rgba(32,26,40,0.06)] hover:shadow-[0_8px_24px_rgba(32,26,40,0.12)] transition-shadow border border-transparent overflow-hidden">
+<input class="border-0 focus:ring-0 peer sr-only" name="style_vibe" type="checkbox" value="boho_chic"/>
+<div class="absolute inset-0 border-2 border-cat-party rounded-2xl opacity-0 peer-checked:opacity-100 transition-opacity z-10 pointer-events-none"></div>
+<div class="absolute top-2 right-2 z-20 w-6 h-6 rounded-full bg-cat-party text-white flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity scale-50 peer-checked:scale-100 shadow-lift">
+<span class="material-symbols-outlined text-[16px] font-bold" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-2 flex items-center justify-center overflow-hidden">
+<img class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform duration-500 ease-out shadow-[0_2px_8px_rgba(32,26,40,0.04)]" data-alt="An editorial flat-lay photograph showcasing a Street Indian outfit. The look includes a flowing, block-printed cotton skirt in earthy rust and ochre tones, paired with an embroidered mirror-work blouse. Accessories like oxidized silver jewelry are arranged casually around the main garments. Soft, realistic contact shadows give the clothing depth against the bright white surface. The lighting is warm and inviting, capturing the intricate textures and vibrant, free-spirited aesthetic of contemporary Indian bohemian fashion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcOrticYMs-Tu8eZqrK-2mEJiJ4OJ4bX8h0apBuOxION57AdtlSxUqLnNFM7UJpSzgedRLFO9iJsXHviNCuWt-TowW9LQDmuDDOCLAN3EExnlGRB_ra2_luRcCW-DT5BJfTxT08DMu57uiNmrA-JyCpJX8-6hIbwrXWguUjZtNURKihA7OZW0cTSCteSfJHAd1O1z2n5OHy_K29q6mdLZVnAkVu73B-ydx8SpdOhiuQTPYFTXbp5nBxbbnp3fzgnfHjCUidG9hcDIX"/>
+</div>
+<div class="p-3 text-center border-t border-border bg-canvas relative z-10">
+<span class="font-title-lg text-title-lg text-primary peer-checked:text-cat-party transition-colors block leading-tight">Street</span>
+</div>
+</label>
+<!-- Option 3: Festive-contemporary -->
+<label class="group relative cursor-pointer flex flex-col h-full rounded-2xl bg-canvas shadow-[0_4px_12px_rgba(32,26,40,0.06)] hover:shadow-[0_8px_24px_rgba(32,26,40,0.12)] transition-shadow border border-transparent overflow-hidden">
+<input class="border-0 focus:ring-0 peer sr-only" name="style_vibe" type="checkbox" value="streetwear"/>
+<div class="absolute inset-0 border-2 border-cat-party rounded-2xl opacity-0 peer-checked:opacity-100 transition-opacity z-10 pointer-events-none"></div>
+<div class="absolute top-2 right-2 z-20 w-6 h-6 rounded-full bg-cat-party text-white flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity scale-50 peer-checked:scale-100 shadow-lift">
+<span class="material-symbols-outlined text-[16px] font-bold" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-2 flex items-center justify-center overflow-hidden">
+<img class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform duration-500 ease-out shadow-[0_2px_8px_rgba(32,26,40,0.04)]" data-alt="A bold, magazine-style flat-lay photo of Indian Festive-contemporary. The outfit features an oversized, graphic-printed graphic tee with vibrant, saturated colors layered over dark, distressed cargo pants. Chunky sneakers and a sleek bum-bag sit alongside. The background is a clean white canvas, offset by deep plum-charcoal contact shadows that ground the elements. The lighting is crisp and directional, emphasizing the edgy, high-energy, youth-culture vibe typical of modern streetwear marketplaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWJBVfAqIPDgwCcPQ07KhgxSwJXdUNgZgz8pNqMWqeUDZPFTva3OZ0Hq9iSXnlHHVFkpL6hAnF6Mr3LTzpGaX04RK1CD4q35UfZXk0gUIZm6xDZqX-p4pXx5W0z9D6HFtSA6-YFTuc17ti1UMns75UYpGLw1cJ2qnb0yrxB1gXWn2iQQbUxZyWxa_oHL1BRsFZwYafrlYav_Mm4cigbj8RHA1cz8uGvwQKAu_9lZP3muadHds57PbQj6BptJNg3OUPu4GLykKMsWfN"/>
+</div>
+<div class="p-3 text-center border-t border-border bg-canvas relative z-10">
+<span class="font-title-lg text-title-lg text-primary peer-checked:text-cat-party transition-colors block leading-tight">Festive-contemporary</span>
+</div>
+</label>
+<!-- Option 4: Traditional Modern -->
+<label class="group relative cursor-pointer flex flex-col h-full rounded-2xl bg-canvas shadow-[0_4px_12px_rgba(32,26,40,0.06)] hover:shadow-[0_8px_24px_rgba(32,26,40,0.12)] transition-shadow border border-transparent overflow-hidden">
+<input class="border-0 focus:ring-0 peer sr-only" name="style_vibe" type="checkbox" value="traditional_modern"/>
+<div class="absolute inset-0 border-2 border-cat-party rounded-2xl opacity-0 peer-checked:opacity-100 transition-opacity z-10 pointer-events-none"></div>
+<div class="absolute top-2 right-2 z-20 w-6 h-6 rounded-full bg-cat-party text-white flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity scale-50 peer-checked:scale-100 shadow-lift">
+<span class="material-symbols-outlined text-[16px] font-bold" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-2 flex items-center justify-center overflow-hidden">
+<img class="w-full h-40 object-cover rounded-lg group-hover:scale-105 transition-transform duration-500 ease-out shadow-[0_2px_8px_rgba(32,26,40,0.04)]" data-alt="A pristine editorial flat-lay of a 'Traditional Modern' Indian ensemble. A sharply tailored silk bandhgala jacket in deep amethyst purple is paired with contemporary slim-fit trousers. The luxurious fabric textures are highlighted by crisp, studio-quality lighting, casting soft, realistic shadows on the pure white background. The composition balances classic Indian tailoring with a sleek, contemporary silhouette, conveying a premium, high-end shopping-grade aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSawXtZLGi8pHepKzF4nubjJnq7E0BHu0dVFbYO4bB8sWK8v7Us9oIEdL2LxJpeu1Bmy0ipbJtQrMH3GWWHyPKoMHMlo9RlU_5rNc5ezyGQuW47pXndZ_L2ljVzu6ok75ildJAp5CA4-hrxlfEC6YxItDfFIeNWC10fdCki51JGBQOurOqdCpnXcGJYlx3mndn0ZqEJ3hZLCy-Nj33YulpfWF7Yz7OFFxDd1oxwAk_sCqQ46NStGFkEWAxhzbDFmZt1jdvRUkCWHWv"/>
+</div>
+<div class="p-3 text-center border-t border-border bg-canvas relative z-10">
+<span class="font-title-lg text-title-lg text-primary peer-checked:text-cat-party transition-colors block leading-tight">Classic</span>
+</div>
+</label>
+</div>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full mx-auto z-40 bg-gradient-to-t from-canvas via-canvas to-transparent pt-12 pb-6 px-margin-side" style="left: 50%; transform: translateX(-50%);">
+<button class="bg-secondary text-white font-title-lg text-title-lg w-full py-4 rounded-2xl transition-colors active:scale-95 flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(226,59,122,0.3)]" onclick="window.parent.postMessage('permission_prime', '*')">
+        Continue
+        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+
+
+</body></html>

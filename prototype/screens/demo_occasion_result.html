@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#F5F2F8",
+                        "hot-text": "#B01A57",
+                        "ink": "#201A28",
+                        "cat-gym": "#1E7BB0",
+                        "primary-container": "#4a2e5b",
+                        "hot-container": "#FDE7EF",
+                        "on-secondary-fixed": "#3f001a",
+                        "outline": "#6B6472",
+                        "on-tertiary": "#201A28",
+                        "inverse-primary": "#EFE9F5",
+                        "on-primary-fixed-variant": "#583b69",
+                        "primary": "#4A2E5B",
+                        "on-secondary-container": "#B01A57",
+                        "on-primary": "#ffffff",
+                        "success": "#147A44",
+                        "primary-fixed": "#EFE9F5",
+                        "secondary-container": "#E23B7A",
+                        "cat-party": "#E23B7A",
+                        "canvas": "#FFFFFF",
+                        "secondary-fixed-dim": "#FDE7EF",
+                        "inverse-on-surface": "#f6eff3",
+                        "on-tertiary-fixed": "#261900",
+                        "surface": "#F5F2F8",
+                        "border": "#EEE9F2",
+                        "primary-fixed-dim": "#EFE9F5",
+                        "on-tertiary-container": "#7A5A16",
+                        "on-error": "#ffffff",
+                        "cat-travel": "#9A6410",
+                        "on-surface-variant": "#6B6472",
+                        "tertiary-container": "#F6ECD2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "ink-secondary": "#6B6472",
+                        "cat-casual": "#0F7A59",
+                        "on-surface": "#201A28",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#EEE9F2",
+                        "background": "#FFFFFF",
+                        "outline-variant": "#EEE9F2",
+                        "on-secondary-fixed-variant": "#B01A57",
+                        "surface-container": "#FFFFFF",
+                        "surface-tint": "#715382",
+                        "tertiary-fixed-dim": "#C6A15A",
+                        "secondary": "#E23B7A",
+                        "cat-office": "#3E5CC0",
+                        "on-error-container": "#93000a",
+                        "on-background": "#201A28",
+                        "surface-variant": "#F5F2F8",
+                        "on-primary-fixed": "#2a0f3b",
+                        "gold-container": "#F6ECD2",
+                        "secondary-fixed": "#F6ECD2",
+                        "on-tertiary-fixed-variant": "#5d4201",
+                        "surface-bright": "#FFFFFF",
+                        "tertiary-fixed": "#F6ECD2",
+                        "cat-ethnic": "#7A2E4C",
+                        "inverse-surface": "#332f33",
+                        "surface-container-low": "#FFFFFF",
+                        "tertiary": "#C6A15A",
+                        "on-primary-container": "#EFE9F5",
+                        "surface-container-high": "#F5F2F8",
+                        "error": "#D42D2D"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "24px",
+                        "sm": "8px",
+                        "md": "12px",
+                        "lg": "16px",
+                        "margin-side": "16px"
+                    },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+                    "fontFamily": {
+                        "display-mobile": [
+                            "Rozha One", "serif"
+                        ],
+                        "title-lg": [
+                            "Mukta", "sans-serif"
+                        ],
+                        "label-lg": [
+                            "Mukta", "sans-serif"
+                        ],
+                        "headline-lg": [
+                            "Rozha One", "serif"
+                        ],
+                        "body-md": [
+                            "Mukta", "sans-serif"
+                        ],
+                        "label-md": [
+                            "Mukta", "sans-serif"
+                        ],
+                        "headline-md": [
+                            "Rozha One", "serif"
+                        ],
+                        "display": [
+                            "Rozha One", "serif"
+                        ],
+                        "body-lg": [
+                            "Mukta", "sans-serif"
+                        ]
+                    },
+                    "fontSize": {
+                        "display-mobile": [
+                            "32px",
+                            {
+                                "lineHeight": "38px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "title-lg": [
+                            "20px",
+                            {
+                                "lineHeight": "26px",
+                                "fontWeight": "800"
+                            }
+                        ],
+                        "label-lg": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.5px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-lg": [
+                            "36px",
+                            {
+                                "lineHeight": "38px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "body-md": [
+                            "14px",
+                            {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "label-md": [
+                            "11px",
+                            {
+                                "lineHeight": "14px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "headline-md": [
+                            "30px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "display": [
+                            "40px",
+                            {
+                                "lineHeight": "48px",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "body-lg": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "600"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    
+</script>
+<style>
+    body { min-height: 100dvh; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface text-ink min-h-screen flex flex-col font-sans selection:bg-cat-party selection:text-white">
+
+<script>
+    const occData = {"_engine": "On-device keyword overlap only. No network call, no model, no cost, no latency, and it cannot fail in front of a reviewer. Lowercase the input, strip punctuation, score each bucket by matched keywords, take the max. Ties break by bucket order below. Zero matches -> 'general'.", "_bands": {"greatMatch": ">= 90", "strongMatch": "80-89", "floor": 80, "note": "Nothing below 80 is ever shown in the demo."}, "buckets": [{"key": "wedding", "title": "Wedding & sangeet", "keywords": ["wedding", "shaadi", "shadi", "sangeet", "mehendi", "mehndi", "haldi", "reception", "baraat", "marriage", "cousin", "bride", "groom", "\u0936\u093e\u0926\u0940", "\u0938\u0902\u0917\u0940\u0924", "\u092e\u0947\u0939\u0902\u0926\u0940"], "results": {"aarav": [{"items": ["w15", "w04", "w07", "w09"], "match": 94, "label": "Great match", "why": "Navy bandhgala over the cream kurta. Black trousers keep it sharp; tan loafers stop it going stiff."}, {"items": ["w04", "w14", "w13", "w09"], "match": 89, "label": "Strong match", "why": "Full traditional \u2014 kurta, dhoti, ivory stole. Right for the ceremony, not the reception."}, {"items": ["w11", "w01", "w07", "w09"], "match": 86, "label": "Strong match", "why": "Charcoal blazer, white oxford, black trousers. The wedding-guest default that never reads underdressed."}, {"items": ["w15", "w01", "w07", "w09"], "match": 83, "label": "Strong match", "why": "Bandhgala over a white oxford \u2014 half traditional, half formal. Good for a reception."}, {"items": ["w04", "w07", "w09", "w12"], "match": 81, "label": "Strong match", "why": "Kurta and black trousers on their own. The lightest option if the venue runs hot."}], "isha": [{"items": ["a04", "a10", "a12", "a14"], "match": 95, "label": "Great match", "why": "Rust silk against the maroon banarasi skirt, gold juttis and jhumkas to finish. This is the sangeet look."}, {"items": ["a01", "a09", "a13", "a12"], "match": 90, "label": "Great match", "why": "Chikankari with the palazzo and the silk dupatta. Ceremony-appropriate, and cool enough to sit through one."}, {"items": ["a02", "a10", "a12", "a14"], "match": 87, "label": "Strong match", "why": "White cotton shirt tucked into the banarasi skirt \u2014 the modern read, and it photographs well."}, {"items": ["a04", "a09", "a12", "a13"], "match": 84, "label": "Strong match", "why": "Rust blouse with ivory palazzo. Lighter than the skirt if the mehendi runs long."}, {"items": ["a01", "a10", "a12"], "match": 81, "label": "Strong match", "why": "Chikankari over the banarasi skirt. Layered and warmer \u2014 better for an evening baraat."}]}}, {"key": "festive", "title": "Festive", "keywords": ["diwali", "deepavali", "puja", "pooja", "festival", "festive", "tyohar", "navratri", "rakhi", "raksha", "ganesh", "eid", "onam", "pongal", "holi", "dussehra", "karwa", "\u0926\u093f\u0935\u093e\u0932\u0940", "\u0924\u094d\u092f\u094b\u0939\u093e\u0930", "\u092a\u0942\u091c\u093e", "\u0928\u0935\u0930\u093e\u0924\u094d\u0930\u093f"], "results": {"aarav": [{"items": ["w04", "w07", "w09", "w13"], "match": 93, "label": "Great match", "why": "Cream kurta with the ivory stole \u2014 festive without the full traditional commitment. Works for puja and for dinner after."}, {"items": ["w04", "w14", "w09"], "match": 90, "label": "Great match", "why": "Kurta and dhoti, tan loafers. The one that actually reads like a festival."}, {"items": ["w15", "w04", "w07", "w12"], "match": 87, "label": "Strong match", "why": "Bandhgala over the kurta for the dressier end of festive. Analog watch, nothing louder."}, {"items": ["w01", "w07", "w11", "w09"], "match": 84, "label": "Strong match", "why": "Blazer over white oxford, for an evening that's more party than puja."}, {"items": ["w04", "w06", "w09"], "match": 82, "label": "Strong match", "why": "Kurta over beige chinos \u2014 the everyday festive-Friday version."}], "isha": [{"items": ["a01", "a09", "a13", "a12"], "match": 93, "label": "Great match", "why": "Chikankari kurti, ivory palazzo, silk dupatta. Reads festive on a working day, which is what Diwali at the office needs."}, {"items": ["a04", "a09", "a12", "a14"], "match": 90, "label": "Great match", "why": "Rust silk with ivory palazzo \u2014 colour, without the full lehenga commitment."}, {"items": ["a05", "a09", "a12", "a13"], "match": 86, "label": "Strong match", "why": "Teal kurti with the palazzo. The everyday puja version."}, {"items": ["a01", "a07", "a12", "a14"], "match": 83, "label": "Strong match", "why": "Chikankari over straight jeans. Festive-Friday, not festival."}, {"items": ["a02", "a09", "a12"], "match": 80, "label": "Strong match", "why": "White shirt with palazzo. The quietest option here; the jhumkas do the work."}]}}, {"key": "office", "title": "Office", "keywords": ["office", "work", "meeting", "presentation", "client", "interview", "appraisal", "review", "boss", "daftar", "standup", "desk", "job", "placement", "hr", "\u0911\u092b\u093f\u0938", "\u0915\u093e\u092e", "\u092e\u0940\u091f\u093f\u0902\u0917"], "results": {"aarav": [{"items": ["w01", "w06", "w09", "w10"], "match": 92, "label": "Great match", "why": "White oxford, beige chinos, tan loafers. Breathable cotton for 32\u00b0C, and cream + tan suits his warm undertone."}, {"items": ["w01", "w07", "w11", "w09"], "match": 89, "label": "Strong match", "why": "Charcoal blazer over the white oxford. For the days with a client in the room."}, {"items": ["w03", "w06", "w09", "w12"], "match": 86, "label": "Strong match", "why": "Navy polo and chinos \u2014 office on the days nobody's watching."}, {"items": ["w02", "w06", "w09", "w10"], "match": 83, "label": "Strong match", "why": "Olive linen with chinos. The humid-day option; linen breathes where oxford doesn't."}, {"items": ["w04", "w07", "w09"], "match": 81, "label": "Strong match", "why": "Cream kurta and black trousers. Office-ethnic, for a festive Friday."}], "isha": [{"items": ["a02", "a08", "a11", "a15"], "match": 92, "label": "Great match", "why": "White cotton shirt, black tailored trousers, the sling bag. Clean, breathable, and it survives a 32\u00b0C commute."}, {"items": ["a05", "a08", "a15", "a11"], "match": 88, "label": "Strong match", "why": "Teal kurti with tailored trousers \u2014 office-ethnic, without looking like she's going somewhere after."}, {"items": ["a03", "a08", "a15"], "match": 86, "label": "Strong match", "why": "Black ribbed top and black trousers. A column of one colour, and the fastest thing in the closet to reach for."}, {"items": ["a06", "a07", "a11", "a15"], "match": 83, "label": "Strong match", "why": "Beige overshirt over jeans, for the days with no meetings in them."}, {"items": ["a01", "a08", "a15"], "match": 80, "label": "Strong match", "why": "Chikankari with black trousers. Office-ethnic, and it dresses up with one accessory."}]}}, {"key": "evening", "title": "Dinner & evening", "keywords": ["date", "dinner", "anniversary", "party", "birthday", "club", "drinks", "evening", "night", "celebration", "valentine", "launch", "\u0921\u0947\u091f", "\u092a\u093e\u0930\u094d\u091f\u0940", "\u0921\u093f\u0928\u0930"], "results": {"aarav": [{"items": ["w02", "w05", "w08", "w12"], "match": 91, "label": "Great match", "why": "Olive linen over indigo denim. A relaxed cut against a slim leg, tonal earthy palette, easy in humidity."}, {"items": ["w11", "w03", "w05", "w09"], "match": 88, "label": "Strong match", "why": "Blazer over navy polo with denim. Smart enough for a good table, not so much that he looks like he came from work."}, {"items": ["w01", "w05", "w09", "w10"], "match": 85, "label": "Strong match", "why": "White oxford and indigo jeans \u2014 the one that works everywhere and never gets remembered."}, {"items": ["w03", "w07", "w09", "w12"], "match": 82, "label": "Strong match", "why": "Navy polo with black trousers. Darker, and better for a late evening."}, {"items": ["w02", "w06", "w08"], "match": 80, "label": "Strong match", "why": "Olive linen with chinos and sneakers, for the casual end of the evening."}], "isha": [{"items": ["a04", "a08", "a14", "a12"], "match": 91, "label": "Great match", "why": "Rust silk blouse with black trousers, gold jhumkas, nothing else. Dinner, not a wedding."}, {"items": ["a03", "a07", "a11", "a14"], "match": 88, "label": "Strong match", "why": "Black ribbed top with indigo jeans. Works for a table and for standing up all night."}, {"items": ["a03", "a08", "a12", "a14"], "match": 85, "label": "Strong match", "why": "All black with gold juttis. The sharpest thing in the closet."}, {"items": ["a04", "a07", "a14", "a11"], "match": 82, "label": "Strong match", "why": "Rust silk untucked over jeans. Softer \u2014 better for a birthday than an anniversary."}, {"items": ["a02", "a08", "a14", "a12"], "match": 80, "label": "Strong match", "why": "White shirt, black trousers, gold at the ears. Quiet, and never wrong."}]}}, {"key": "casual", "title": "Everyday casual", "keywords": ["casual", "chill", "hangout", "friends", "weekend", "brunch", "movie", "mall", "college", "coffee", "ghumna", "outing", "shopping", "\u0915\u0948\u091c\u093c\u0941\u0905\u0932", "\u0926\u094b\u0938\u094d\u0924"], "results": {"aarav": [{"items": ["w03", "w05", "w08"], "match": 91, "label": "Great match", "why": "Navy polo, indigo jeans, white sneakers. The default that works six days out of seven."}, {"items": ["w02", "w05", "w08", "w12"], "match": 88, "label": "Strong match", "why": "Olive linen shirt over denim \u2014 one step up, without trying."}, {"items": ["w01", "w05", "w08"], "match": 85, "label": "Strong match", "why": "White oxford untucked with jeans and sneakers."}, {"items": ["w03", "w06", "w08"], "match": 83, "label": "Strong match", "why": "Polo and chinos, for when jeans are too warm."}, {"items": ["w02", "w06", "w08", "w10"], "match": 80, "label": "Strong match", "why": "Olive linen and beige chinos. Tonal, and the most forgiving thing here in heat."}], "isha": [{"items": ["a03", "a07", "a11", "a15"], "match": 91, "label": "Great match", "why": "Black ribbed top, indigo jeans, white sneakers. The default that works six days out of seven."}, {"items": ["a06", "a07", "a11", "a15"], "match": 88, "label": "Strong match", "why": "Beige overshirt over the jeans. One layer, and the whole thing looks considered."}, {"items": ["a05", "a07", "a11"], "match": 85, "label": "Strong match", "why": "Teal kurti with straight jeans \u2014 the Indian everyday that never feels like dressing up."}, {"items": ["a02", "a07", "a11", "a15"], "match": 83, "label": "Strong match", "why": "White shirt and jeans. Nothing to think about."}, {"items": ["a06", "a09", "a11"], "match": 80, "label": "Strong match", "why": "Overshirt with palazzo. The most comfortable thing here, and it still reads put-together."}]}}, {"key": "travel", "title": "Travel day", "keywords": ["airport", "flight", "travel", "trip", "journey", "train", "road", "vacation", "holiday", "goa", "commute", "safar", "\u0938\u092b\u093c\u0930", "\u092f\u093e\u0924\u094d\u0930\u093e", "\u092b\u094d\u0932\u093e\u0907\u091f"], "results": {"aarav": [{"items": ["w02", "w05", "w08", "w12"], "match": 92, "label": "Great match", "why": "Olive linen breathes on a full flight, denim survives the seat, sneakers come off at security in one move."}, {"items": ["w03", "w06", "w08"], "match": 88, "label": "Strong match", "why": "Polo and chinos \u2014 nothing to iron on the other side."}, {"items": ["w01", "w06", "w08", "w10"], "match": 85, "label": "Strong match", "why": "Oxford and chinos, if he's going straight from the airport into a meeting."}, {"items": ["w02", "w06", "w08"], "match": 83, "label": "Strong match", "why": "Linen and chinos, all light colours. Best for a hot arrival."}, {"items": ["w03", "w05", "w08", "w12"], "match": 80, "label": "Strong match", "why": "Polo and jeans \u2014 the one he'll actually reach for at 5am."}], "isha": [{"items": ["a06", "a07", "a11", "a15"], "match": 92, "label": "Great match", "why": "Beige linen overshirt breathes on a full flight, straight jeans survive the seat, sneakers come off at security in one move."}, {"items": ["a05", "a09", "a11", "a15"], "match": 88, "label": "Strong match", "why": "Teal kurti with palazzo. Nothing to iron, and the only thing here she can sleep in."}, {"items": ["a03", "a07", "a11", "a15"], "match": 85, "label": "Strong match", "why": "Ribbed top and jeans, layered under the overshirt if the cabin runs cold."}, {"items": ["a02", "a09", "a11"], "match": 83, "label": "Strong match", "why": "White shirt with palazzo, all light colours. Best for a hot arrival."}, {"items": ["a06", "a08", "a11", "a15"], "match": 80, "label": "Strong match", "why": "Overshirt and tailored trousers, if she's going straight from the airport into a meeting."}]}}], "fallback": {"key": "general", "title": "Everyday best", "note": "Zero keyword overlap. Reuse the 'casual' results but re-title to 'Everyday best' and set the caption to \"Nothing matched that exactly \u2014 here's what works most days.\" Honest, and it never reads as an error."}};
+    const imgMap = {"w01": "https://lh3.googleusercontent.com/aida-public/AB6AXuAENPVDqLZ2d3-D_ljpV20FdzLlDyEX7I_JA6wL5suTyx5Cjf1v_CoWxFgVmJgvNZbg3eSyPCRLdLNB3m4-jXv_k8-WilteShf1TbjSen1paaogPOhhvWq41nNpxwKqNci8wtzGJf5oQnSVkRTNxWPBWA3nwqBV_7L3B12yuOh8GoRu3uiQGe1m2CZMzf8aAf0sR2t7qbve41Fnsn6HISFk1CI7jxAiOJKereLRlvToEMEOSl4-JF7T7lgHbZPoxYSje9qHVvS5nVjw", "w02": "https://lh3.googleusercontent.com/aida-public/AB6AXuAg6OdAemxvF8qZjy_lJv7hMULtRIiCirztlhxgr8SYGXU3HeQtWRJmghyD1tsppEFnOrCbkCLJXTlYOl9L30FRI50whfAVKHwO6x845uxQ7FFecYcS0AgM_lCHsTZxm6jMqD5FoZlG3iKSODp2BRckjQqM39r1cPm9vQVoNtGBFcFEqNguavSdEXVM6OFekDl_LV2bRv0BeCXLxD3tRMykwgn-q9i66UTpl4K4AoVCyMBTzvs63UO97vuKNqzzmgVBxUEZhsFYQpO2", "w03": "https://lh3.googleusercontent.com/aida-public/AB6AXuA64bBncRnlU6LjrSu2lKg25cVlDY8mpUSI2Pa9VdgiY-3F3VSI1iuEnU_Oi9uk1EznXxEimxLxeZpwKZPbVlKk8WMKgiJtSao6l2O2xVanJBulCqCKc-W2ZYD7Ohp7mWOsButngnCk3bvowih9vWx8fat0g4GlZ_nYcs-H7TsU7OzsB9CfiU9KnqIUabr5cIaYsyPdeUWpf8RjFLyDKsE7yL75Hc24FpKGT6r4j2LzPsMIaImIUsgkVoaekVLQeoBA0EyrHuSAGtAZ", "w04": "https://lh3.googleusercontent.com/aida-public/AB6AXuANrmH6qNuadVGmfQYgnVXi1PRoXj7GI9G9-Xz44dlCyY-n4diZkAOv9elBfKFqWsFx5cCWKlVPQf48xO5OpQoLUIPvsUyz18gGfdMMLcY5pL2YrDH9CDGAJcjwxRw3-QezYQ6gBiAQ_dzVcrNcUStcss5XNLPddeTzggb_v99ItdTlvTb5bAHbYOgBJpYoeppsBYug45w-N4nRVeUPKWnb_Um4Mf67miAtsQoM2rN6KLaN6Gy2sjrkSgzn8sm-Nmjlkke1WNLSOcDs", "w05": "https://lh3.googleusercontent.com/aida-public/AB6AXuBS8JE-TRB_BYPrrbHPOmzkY01LGHe1Mn9OiK41Dq3VTChqcOstQkNanqhGw-ipu4OeNmQ5hGv2BJqT9SP_6P7H_uLBkkAGxOgMMCZuPoTqn2YkwGjwworv6TsIi-JWFgcxM2XEkeXn3Ai0UfC_7uHGMtcDx2HG2DhJ2deGPbchmbNJg3hlrhVUe4PoW4P5LnahIz-UTcwwlV6vlgEthefUIU-fIUwQfPokQJHW2sAhb8NpFDXhubsdjiojOmSnDYef8JXbvarfm01B", "w06": "https://lh3.googleusercontent.com/aida-public/AB6AXuCcTimP73UAiQtmURy8h14gUEGewXFBX1Yw48O_memHN6XOS8QV7YKDInQcW32z7ly595nsswkgCaTZ_6ylp59Cr6wxjHoahlW0DadRuZp3qiaMK3SoJgGi3M1CGTLXp7LQEgo-XT6uLHu0GF9b5lVHo4T8AqZTCHdMcZ9BC_JMtXZQBE8OP3iUGwmYCf3CanOiXB0HfTTOqVsGxhc3BQf-xnsQq3BcHixrel2BDdEepHoqyTfymzOF0kJo7lvZ6tgJsrOn8FJPQJVJ", "w07": "https://lh3.googleusercontent.com/aida-public/AB6AXuANto3pCNvtmE4b38MWkqTcLq6B_yGuAqfFr9L-38i3y8YtQaXTHZVbsvLoSkkvBw3ldVjuylynGQVGz9hkrIzeHZPjLGDSuFW12237ldJdddXwyOw9m6Yi4rRYpFHOAmvj2H8_t0EMXhhDP5Ai0JBg3SksoHtqAUzUxCZJeH4br6qQ2Y2fW_9eECfzTBOf8dJEjXrbsapWhP0cxuCsFTNHnlSYnVjn8B-15CRqQE3Gemz7wTP-uKr5vNcPF7jO_7WiKBT1CoCmIgax", "w08": "https://lh3.googleusercontent.com/aida-public/AB6AXuCxjEDognyDjrwI7FJz1izfDWKd69o0-BfugESKhr4Spcxmjm7u0_LopWJ3lIV19YJFQDShSZxcdsJiyaclX-VJeykgn9jZWyTvLMemewEhm_YcQgj_UUROKSVprEmrWrTuOq56Dm_X-cE7cef-BptY6q9cU0mrMBlIS_XBZQBxH0l9kzVhCif-VJh8HIdRPXyfOl0x0c6CpweTT_FzfRV9fKs0j_03lO_U2w25xvRXBoIwWVje1G9Sd9VaqgAWtzZ7x2FONhyTE6TH", "w09": "https://lh3.googleusercontent.com/aida-public/AB6AXuCT0HjfMWdBnch2q3Zjz4HOIjHUicPJGrkJh3iExoqUNgR6ACtjET1U9-09_I9qcJqT4KdAgPs-RbzRFC7wOLF_M0LoBizFx9v34J49GhXpj0O037eK6xt0XmNS_QWsYIAM97p9liiWPPXxj0Z0E4NtJEY6eKwErZl-Bo0HCDrH6zAEMuGBa4-kN7BgItIi_hndoCas06GOWzj4asWW3-JLH87DQ149vn9aL3ijD1u5JA6qekXTt53T94H-NYdld15TG-mVCrYWt0ts", "w10": "https://lh3.googleusercontent.com/aida-public/AB6AXuAJJ4N8poazAi1uF8qKj9F53L4PFBiQII40ThZ-vg2ZpYWILH5oB7kxmxyr0bEyd7tnpzaNtXErks0b3y3iMKWVHbwOZDlKJAvkIndst4N6GO_rUzj3J77X2HGRuZQhyFubYdRuexT2nnb5ifYJjFptREWaCYJSDButoQzTUTfEnne1KGllW9iuazuEW3yrLmN6hpwMj3OP2Z8_VMDfr5btpe3iSxMftBXZc0mWHz0NynoGq5UldoPTr7tlHM9DPpnEGoilFt3TjDMU", "w11": "https://lh3.googleusercontent.com/aida-public/AB6AXuCdxqqFQpy65-1AxbbCnQ46jRif8i08gu34T33nVX6cG5tFgxw9vNVdD-AieBl_bV9JB5qTwGEmYgsAyT4Vec33-hhyIYOrIBVo-vWofcgQNb1Ux9kxJ6mZNQAoeSUWU7rKp9U3bZyL5QkRrlvDQjZTGscHY5DUjVlH-HZK73orLthmOuo6Xwrvoo0KLBOTheEuPlUII2ZEM8IcJHzCaxBXN1Oox5GQSuTMdhaK1w5Dk0JZNELrjaoHTwPipZgP6B1H0NBhdqYvK21h", "w12": "https://lh3.googleusercontent.com/aida-public/AB6AXuAENPVDqLZ2d3-D_ljpV20FdzLlDyEX7I_JA6wL5suTyx5Cjf1v_CoWxFgVmJgvNZbg3eSyPCRLdLNB3m4-jXv_k8-WilteShf1TbjSen1paaogPOhhvWq41nNpxwKqNci8wtzGJf5oQnSVkRTNxWPBWA3nwqBV_7L3B12yuOh8GoRu3uiQGe1m2CZMzf8aAf0sR2t7qbve41Fnsn6HISFk1CI7jxAiOJKereLRlvToEMEOSl4-JF7T7lgHbZPoxYSje9qHVvS5nVjw", "w13": "https://lh3.googleusercontent.com/aida-public/AB6AXuBExPG5VrNvGZpaWhAHup9pU3Xi-muice_4XgOjddJi7jYz3jD1fkzrXmtp2lf8MI3e99U9oUnGyZicOjHSXnTQJwK_NYiuHPWzDgkINHGDjnhsACUMT24q7duj0-LYowsZ5MsAcSE7p8gcd0-COhstYjFcizB9BpNArpR5mb1ABOU1NSn-5Fv9ovS-gGsFr16UvoJKs0Kc_XDDa8B7TroigimAh68blrIf4PxeiUxDXGKWk7mOPHb_ckwIZL9Hvjfl70_IGOETro1J", "w14": "https://lh3.googleusercontent.com/aida-public/AB6AXuAWnRDuFP3yMujFTQmvC15_t0PUrFae0MO9SGJOa5DcP2Dw0p0v_-jU5galoRhRH2t3OLK7LgRBEYYSQmk6jbUJJlJmZ0jJqq22MGQgKiUAa76QMLRMLdXQ43cBT-nSanNXCW8uURi0IZkO71QVVvGKEmKCM8Bq3gnGq_hqi0GE9r1nWMZr1AWUkmWKf9ShD12ig7x0niKH5LSrQtzhpo10JvQrYMnL1ptJFuz696JNK0xFAbl5z-ghcQ2FQQfeD3iXWGl1Se8MEisA", "w15": "https://lh3.googleusercontent.com/aida-public/AB6AXuAP2gOW1sFv51ZR83A385bNF81kOqYEV414Jb0clF52U0pzo5XXN-5OpceF0aGOk0fclJTd8mE5W9AnsJ6noKKSDZLNE5XoFN7A_6PO118DUud8WGmiJUHa_4010RoNx4uxllJ8BymHz35JRZWecM0yWUB14cfCgQnzKiUROLRuPQubzzFAOoi739SKLv9v7OwW7MFKP74AKdCIUvSPuJfeN81U6Ctpsc9s9FABm_qyO3r1MOYYzzz8XrQ_8XC8hPqJ8QIAjKGinZhC"};
+    const wardrobe = [
+      {"id":"w01","name":"White oxford shirt","color":"White"},
+      {"id":"w02","name":"Olive linen shirt","color":"Olive"},
+      {"id":"w03","name":"Navy polo","color":"Navy"},
+      {"id":"w04","name":"Kurta (cream)","color":"Cream"},
+      {"id":"w05","name":"Indigo slim jeans","color":"Indigo"},
+      {"id":"w06","name":"Beige chinos","color":"Beige"},
+      {"id":"w07","name":"Black trousers","color":"Black"},
+      {"id":"w08","name":"White sneakers","color":"White"},
+      {"id":"w09","name":"Tan loafers","color":"Tan"},
+      {"id":"w10","name":"Brown leather belt","color":"Brown"},
+      {"id":"w11","name":"Charcoal blazer","color":"Charcoal"},
+      {"id":"w12","name":"Analog watch","color":"Silver"},
+      {"id":"w13","name":"Ivory silk stole","color":"Ivory"},
+      {"id":"w14","name":"Cream cotton dhoti","color":"Cream"},
+      {"id":"w15","name":"Navy bandhgala jacket","color":"Navy"}
+    ];
+    const wardrobeAlt = [
+      {"id":"a01","name":"Ivory chikankari kurti","color":"Ivory"},
+      {"id":"a02","name":"White cotton shirt","color":"White"},
+      {"id":"a03","name":"Black ribbed top","color":"Black"},
+      {"id":"a04","name":"Rust silk blouse","color":"Rust"},
+      {"id":"a05","name":"Teal cotton kurti","color":"Teal"},
+      {"id":"a06","name":"Beige linen overshirt","color":"Beige"},
+      {"id":"a07","name":"Indigo straight jeans","color":"Indigo"},
+      {"id":"a08","name":"Black tailored trousers","color":"Black"},
+      {"id":"a09","name":"Ivory palazzo","color":"Ivory"},
+      {"id":"a10","name":"Maroon banarasi skirt","color":"Maroon"},
+      {"id":"a11","name":"White sneakers","color":"White"},
+      {"id":"a12","name":"Gold juttis","color":"Gold"},
+      {"id":"a13","name":"Ivory silk dupatta","color":"Ivory"},
+      {"id":"a14","name":"Gold jhumkas","color":"Gold"},
+      {"id":"a15","name":"Tan leather sling bag","color":"Tan"}
+    ];
+    const COLOR_HEX = {
+      "White":"#FFFFFF","Ivory":"#F6F1E7","Cream":"#F2E8D5","Beige":"#E4D5BE",
+      "Tan":"#C8A27A","Brown":"#7A5230","Olive":"#6B7043","Teal":"#2E7D74",
+      "Navy":"#1F2A44","Indigo":"#3B4A73","Black":"#201A28","Charcoal":"#3A3A3C",
+      "Silver":"#C9CBD1","Gold":"#C6A15A","Rust":"#B4532A","Maroon":"#6E1B2E"
+    };
+imgMap.a11 = imgMap.w08;   // White sneakers      — identical item
+imgMap.a08 = imgMap.w07;   // Black trousers      — near-identical
+imgMap.a07 = imgMap.w05;   // Indigo jeans        — near-identical
+imgMap.a02 = imgMap.w01;   // White shirt         — close enough to read true
+imgMap.a13 = imgMap.w13;   // Ivory silk drape    — both fabricTile
+
+    const personas = [{"key": "isha", "name": "Isha", "city": "Delhi", "wardrobe": "seedData.wardrobeAlt", "items": 18, "outfits": 40, "forgottenGems": 3, "nextLooksFree": 12, "goesWith": {"item": "Indigo straight jeans", "count": 17}, "blurb": "Festive-contemporary. A real closet, three pieces almost forgotten.", "default": true}, {"key": "aarav", "name": "Aarav", "city": "Pune", "wardrobe": "seedData.wardrobe", "items": 18, "outfits": 40, "forgottenGems": 3, "nextLooksFree": 12, "goesWith": {"item": "White sneakers", "count": 18}, "blurb": "Smart-casual minimalist. A real closet, three pieces almost forgotten."}];
+    
+    function getCategoryIcon(name) {
+        name = name.toLowerCase();
+        if (name.includes('shoe') || name.includes('sneaker') || name.includes('loafer') || name.includes('sandal') || name.includes('heel') || name.includes('pump')) return 'footprint';
+        if (name.includes('necklace') || name.includes('earring') || name.includes('bracelet') || name.includes('watch') || name.includes('belt') || name.includes('bag') || name.includes('stole')) return 'diamond';
+        if (name.includes('jean') || name.includes('pant') || name.includes('trouser') || name.includes('skirt') || name.includes('short') || name.includes('chino') || name.includes('salwar')) return 'apparel';
+        return 'checkroom';
+    }
+
+    // Resolve an item id ("w05" / "a10") to its record. Returns null if unknown.
+    function itemById(id) {
+        return wardrobe.find(i => i.id === id) || wardrobeAlt.find(i => i.id === id) || null;
+    }
+
+    // Human-readable name for an id. NEVER returns a bare id.
+    function itemName(id) {
+        const it = itemById(id);
+        return it ? it.name : '';
+    }
+
+    // One thumbnail. size is 'lg' (96x144) or 'sm' (48x64).
+    // Photo when imgMap has the id; otherwise the designed placeholder.
+    function thumbHtml(id, size) {
+        const it = itemById(id);
+        const name = it ? it.name : '';
+        const box  = size === 'lg' ? 'w-16 h-24' : 'w-12 h-16';
+        const ic   = size === 'lg' ? 'text-lg'   : 'text-sm';
+        const tx   = size === 'lg' ? 'text-[8px]' : 'text-[6px]';
+        const url  = imgMap[id] || null;
+        if (url) {
+            return `<img src="${url}" alt="${name}" title="${name}" class="${box} object-cover rounded shadow-soft border border-border flex-shrink-0" />`;
+        }
+        const icon = getCategoryIcon(name);
+        const hex  = (it && COLOR_HEX[it.color]) || '#EEE9F2';
+        return `
+        <div class="${box} flex flex-col items-center justify-center bg-surface-container-lowest rounded shadow-soft border border-border p-1 flex-shrink-0" title="${name}">
+            <span class="material-symbols-outlined text-outline ${ic}">${icon}</span>
+            <span class="${tx} text-outline text-center line-clamp-2 mt-1">${name}</span>
+            <span class="w-2 h-2 rounded-full mt-1 border border-border" style="background:${hex}"></span>
+        </div>`;
+    }
+
+    function getPersona() {
+        try { return localStorage.getItem('fc_demo_persona') || 'isha'; } catch(e) { return window.name || 'isha'; }
+    }
+    
+    function search(query) {
+        let q = query.toLowerCase().replace(/[^\w\s\u0900-\u097F]/g, '');
+        let tokens = q.split(/\s+/).filter(Boolean);
+        
+        let bestBucket = null;
+        let maxScore = -1;
+        
+        occData.buckets.forEach(b => {
+            let score = 0;
+            b.keywords.forEach(kw => {
+                tokens.forEach(t => { if(t.includes(kw) || kw.includes(t)) score++; });
+            });
+            if (score > maxScore) {
+                maxScore = score;
+                bestBucket = b;
+            }
+        });
+        
+        if (maxScore === 0 || tokens.length === 0) {
+            bestBucket = occData.buckets.find(b => b.key === 'casual');
+            return { bucket: bestBucket, title: "Everyday best", caption: "Nothing matched that exactly — here's what works most days." };
+        }
+        return { bucket: bestBucket, title: bestBucket.title, caption: `3 looks for ${query}, from 15 items` };
+    }
+    
+    let showingAll = false;
+    
+    function doSearch(q) {
+        let res = search(q);
+        document.getElementById('caption').innerText = res.caption;
+        
+        let p = getPersona();
+        let items = res.bucket.results[p] || [];
+        
+        // Render 
+        const container = document.getElementById('results');
+        container.innerHTML = '';
+        
+        let displayItems = showingAll ? items : items.slice(0, 3);
+        
+        displayItems.forEach(item => {
+            let badgeStyle = item.match >= 90 ? "bg-gold-container border border-[#e6d0a1]" : "bg-surface-variant border border-border";
+            let color = item.match >= 90 ? "text-ink" : "text-ink-secondary";
+            
+            // Build thumbnails
+            let thumbsHtml = item.items.map(id => thumbHtml(id, 'lg')).join('');
+            let outfitTitle = item.items.slice(0, 2).map(itemName).filter(Boolean).join(' · ');
+            
+            container.innerHTML += `
+            <div role="button" tabindex="0" onclick="event.stopPropagation(); window.parent.postMessage('outfit_display','*')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();window.parent.postMessage('outfit_display','*');}" class="flex flex-col mb-6 bg-surface-container-lowest rounded-2xl shadow-soft border border-border overflow-hidden">
+                <div class="h-[120px] bg-surface flex items-center justify-center gap-2 p-2 overflow-x-auto">
+                    ${thumbsHtml}
+                </div>
+                <div class="p-4">
+                    <div class="inline-flex items-center gap-xs px-2 py-0.5 rounded-full mb-2 ${badgeStyle}">
+                        <span class="font-label-md ${color}">${item.label} &middot; ${item.match}%</span>
+                    </div>
+                    <h3 class="font-title-md text-ink mb-1">${outfitTitle}</h3>
+                    <p class="font-body-md text-ink-secondary">${item.why}</p>
+                </div>
+            </div>`;
+        });
+        
+        let btn = document.getElementById('more-btn');
+        if (!showingAll && items.length > 3) {
+            btn.classList.remove('hidden');
+        } else {
+            btn.classList.add('hidden');
+        }
+    }
+    
+    function setQuery(q) {
+        let i = document.getElementById('query-input');
+        i.value = q;
+        showingAll = false;
+        doSearch(q);
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('query-input').addEventListener('input', (e) => {
+            showingAll = false;
+            if(e.target.value.trim() !== '') doSearch(e.target.value);
+        });
+        let p = getPersona();
+        const personaObj = personas.find(x => x.key === p) || personas[0];
+        document.getElementById('header-title').innerText = personaObj.name + "'s closet";
+        setQuery('wedding');
+    });
+</script>
+<header class="w-full flex justify-between items-center px-margin-side h-[56px] z-50 bg-surface border-b border-border">
+    <button class="font-body-lg text-ink hover:opacity-80 transition-opacity p-2 min-w-[48px] min-h-[48px] flex items-center" onclick="event.stopPropagation(); window.parent.postMessage('demo_closet_tour', '*')">
+        <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+    <div class="font-title-lg text-ink" id="header-title">Isha's closet</div>
+    <button class="font-body-lg text-primary-container p-2 min-w-[48px] min-h-[48px] flex items-center justify-end" onclick="event.stopPropagation(); window.parent.postMessage('style_quiz', '*')">
+        Skip
+    </button>
+</header>
+<main class="flex-grow flex flex-col pb-safe pt-4 bg-surface px-margin-side overflow-y-auto no-scrollbar">
+    <div class="flex items-center bg-surface-container-lowest rounded-full px-4 h-10 border border-border mb-4">
+        <span class="material-symbols-outlined text-outline text-[18px] mr-2">search</span>
+        <input type="text" id="query-input" class="border-0 focus:ring-0 bg-transparent outline-none font-body-md text-ink flex-grow border-none focus:ring-0 p-0" placeholder="Type an occasion..." onkeydown="if(event.key === 'Enter') doSearch(this.value);" />
+    </div>
+
+    <div class="flex gap-2 mb-4 overflow-x-auto no-scrollbar pb-2">
+        <button class="px-3 py-1 rounded-full border border-border bg-surface-container-lowest font-label-md text-ink whitespace-nowrap min-h-[32px]" onclick="event.stopPropagation(); setQuery('Sangeet')">Sangeet</button>
+        <button class="px-3 py-1 rounded-full border border-border bg-surface-container-lowest font-label-md text-ink whitespace-nowrap min-h-[32px]" onclick="event.stopPropagation(); setQuery('Office')">Office</button>
+        <button class="px-3 py-1 rounded-full border border-border bg-surface-container-lowest font-label-md text-ink whitespace-nowrap min-h-[32px]" onclick="event.stopPropagation(); setQuery('Diwali')">Diwali</button>
+        <button class="px-3 py-1 rounded-full border border-border bg-surface-container-lowest font-label-md text-ink whitespace-nowrap min-h-[32px]" onclick="event.stopPropagation(); setQuery('Airport')">Airport</button>
+    </div>
+    
+    <p class="font-label-md text-ink mb-4" id="caption" aria-live="polite">3 looks for wedding, from 15 items</p>
+    
+    <div id="results" class="flex flex-col"></div>
+    
+    <button id="more-btn" class="hidden w-full bg-surface-container-lowest text-primary-container font-body-lg py-3 rounded-2xl shadow-soft border border-border hover:opacity-90 active:scale-95 transition-all duration-200 min-h-[48px] mb-8" onclick="event.stopPropagation(); showingAll = true; doSearch(document.getElementById('query-input').value);">
+        See 2 more looks
+    </button>
+</main>
+<footer class="p-margin-side bg-surface border-t border-border w-full">
+    <button class="bg-secondary text-white font-title-lg text-title-lg w-full py-3 rounded-2xl shadow-soft hover:opacity-90 active:scale-95 transition-all duration-200 min-h-[48px]" onclick="event.stopPropagation(); window.parent.postMessage('demo_trip_result', '*')">
+        Pack for a trip
+    </button>
+</footer>
+
+</body>
+</html>

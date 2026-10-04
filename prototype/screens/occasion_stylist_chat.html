@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FitCheck.ai - Occasion Stylist Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#F5F2F8",
+                      "on-primary-container": "#EFE9F5",
+                      "inverse-surface": "#332f33",
+                      "cat-gym": "#1E7BB0",
+                      "outline-variant": "#EEE9F2",
+                      "border": "#EEE9F2",
+                      "primary-fixed-dim": "#EFE9F5",
+                      "cat-office": "#3E5CC0",
+                      "surface-dim": "#EEE9F2",
+                      "inverse-on-surface": "#f6eff3",
+                      "inverse-primary": "#EFE9F5",
+                      "on-primary-fixed": "#2a0f3b",
+                      "ink": "#201A28",
+                      "surface-container-high": "#F5F2F8",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#F6ECD2",
+                      "secondary-container": "#E23B7A",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#C6A15A",
+                      "on-secondary-container": "#B01A57",
+                      "cat-ethnic": "#7A2E4C",
+                      "on-tertiary-fixed": "#261900",
+                      "surface-variant": "#F5F2F8",
+                      "primary": "#4A2E5B",
+                      "on-tertiary": "#201A28",
+                      "surface-container-highest": "#F5F2F8",
+                      "on-tertiary-fixed-variant": "#5d4201",
+                      "cat-party": "#E23B7A",
+                      "secondary": "#E23B7A",
+                      "on-secondary-fixed": "#3f001a",
+                      "canvas": "#FFFFFF",
+                      "tertiary-fixed": "#F6ECD2",
+                      "hot-text": "#B01A57",
+                      "on-secondary": "#ffffff",
+                      "hot-container": "#FDE7EF",
+                      "ink-secondary": "#6B6472",
+                      "success": "#147A44",
+                      "primary-container": "#4a2e5b",
+                      "on-surface": "#201A28",
+                      "error-container": "#ffdad6",
+                      "gold-container": "#F6ECD2",
+                      "secondary-fixed-dim": "#FDE7EF",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#D42D2D",
+                      "tertiary-container": "#F6ECD2",
+                      "cat-travel": "#9A6410",
+                      "on-background": "#201A28",
+                      "surface-bright": "#FFFFFF",
+                      "cat-casual": "#0F7A59",
+                      "surface-tint": "#715382",
+                      "surface-container-low": "#FFFFFF",
+                      "on-secondary-fixed-variant": "#B01A57",
+                      "surface-container": "#FFFFFF",
+                      "primary-fixed": "#EFE9F5",
+                      "on-primary-fixed-variant": "#583b69",
+                      "on-tertiary-container": "#7A5A16",
+                      "outline": "#6B6472",
+                      "on-primary": "#ffffff",
+                      "background": "#FFFFFF",
+                      "tertiary": "#C6A15A",
+                      "on-surface-variant": "#6B6472"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "xl": "24px",
+                      "md": "12px",
+                      "sm": "8px",
+                      "margin-side": "16px",
+                      "lg": "16px"
+              },
+                    "boxShadow": {
+                        "soft": "0 8px 24px -4px rgba(32, 26, 40, 0.08)",
+                        "lift": "0 12px 32px -6px rgba(32, 26, 40, 0.13)",
+                        "sheet": "0 -8px 32px -8px rgba(32, 26, 40, 0.14)"
+                    },
+              "fontFamily": {
+                      "display": [
+                              "Rozha One"
+                      ],
+                      "label-md": [
+                              "Mukta"
+                      ],
+                      "display-mobile": [
+                              "Rozha One"
+                      ],
+                      "title-lg": [
+                              "Mukta"
+                      ],
+                      "body-md": [
+                              "Mukta"
+                      ],
+                      "body-lg": [
+                              "Mukta"
+                      ],
+                      "headline-md": [
+                              "Rozha One"
+                      ],
+                      "label-lg": [
+                              "Mukta"
+                      ],
+                      "headline-lg": [
+                              "Rozha One"
+                      ]
+              },
+              "fontSize": {
+                      "display": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "26px",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "30px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-lg": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.5px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "36px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+  </style>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&amp;family=Mukta:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface text-ink font-body-md h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full h-[56px] bg-surface dark:bg-surface-container-high border-b border-border dark:border-outline-variant flex items-center justify-between px-margin-side z-50">
+<button onclick="history.back()" class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity flex items-center justify-center p-2 -ml-2 rounded-full hover:bg-surface-variant active:scale-95 duration-100" onclick="window.parent.postMessage(\'demo_occasion_result\',\'*\')">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim absolute left-1/2 -translate-x-1/2">Stylist</h1>
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity flex items-center justify-center p-2 -mr-2 rounded-full hover:bg-surface-variant active:scale-95 duration-100" onclick="window.parent.postMessage(\'demo_occasion_result\',\'*\')">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Chat Container -->
+<main class="flex-1 overflow-y-auto pt-[72px] pb-[90px] px-margin-side flex flex-col gap-6">
+<!-- Assistant Bubble 1 -->
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-white rounded-2xl rounded-tl-sm p-4 shadow-[0_4px_12px_rgba(32,26,40,0.06)] border border-border">
+<p class="font-body-md text-ink">Namaste! What are you dressing for?</p>
+</div>
+</div>
+<!-- Selectable Chips -->
+<div class="flex flex-wrap gap-2 pt-2">
+<button class="px-4 py-2 rounded-full bg-white border border-outline-variant text-ink font-label-lg text-label-lg hover:border-primary hover:text-primary transition-colors flex items-center gap-1 shadow-soft" onclick="window.parent.postMessage(\'demo_occasion_result\',\'*\')">
+<span>Office · 32°C</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-white border border-outline-variant text-ink font-label-lg text-label-lg hover:border-primary hover:text-primary transition-colors shadow-soft" onclick="window.parent.postMessage(\'demo_occasion_result\',\'*\')">
+                Sangeet
+            </button>
+<button class="px-4 py-2 rounded-full bg-white border border-outline-variant text-ink font-label-lg text-label-lg hover:border-primary hover:text-primary transition-colors shadow-soft" onclick="window.parent.postMessage(\'demo_occasion_result\',\'*\')">
+                Airport look
+            </button>
+</div>
+<!-- User Bubble 1 -->
+<div class="flex flex-col items-end self-end max-w-[85%]">
+<div class="bg-primary rounded-2xl rounded-tr-sm p-4 shadow-[0_4px_12px_rgba(32,26,40,0.08)]">
+<p class="font-body-md text-white">Diwali ke liye kuch traditional dikhao</p>
+</div>
+</div>
+<!-- Assistant Bubble 2 -->
+<div class="flex flex-col items-start max-w-[90%] gap-3">
+<div class="bg-white rounded-2xl rounded-tl-sm p-4 shadow-[0_4px_12px_rgba(32,26,40,0.06)] border border-border">
+<p class="font-body-md text-ink">Here's a festive look from your closet:</p>
+</div>
+<!-- Outfit Card inside chat -->
+<div role="button" tabindex="0" onclick="event.stopPropagation(); window.parent.postMessage('outfit_display','*')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();window.parent.postMessage('outfit_display','*');}" class="w-full bg-white rounded-2xl overflow-hidden shadow-[0_8px_16px_rgba(32,26,40,0.08)] border border-border relative">
+<!-- Badge -->
+<div class="absolute top-3 left-3 bg-gold-container text-on-tertiary-fixed-variant font-label-lg text-label-lg px-2 py-1 rounded-md flex items-center gap-1 z-10 shadow-soft border border-[#C6A15A]/30">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+                    Great match
+                </div>
+<!-- Image Flat-lay -->
+<div class="w-full h-48 bg-surface-container-low relative">
+<img class="w-full h-full object-cover" data-alt="A high-quality, professional flat-lay photograph of a crisp white linen kurta paired with tailored blue denim jeans. The garments are laid out on a clean white surface with soft, realistic contact shadows giving them a 3D presence. The lighting is bright and even, mimicking natural daylight for a modern, high-end e-commerce aesthetic. A minimalist, sophisticated vibe suitable for an Indian office context in hot weather." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKRC1huKJ8AhnqPAbvZBoSq-z--Gv_kVXb7NdUkx-Bqp-o8THqaQnexLLElD0DHBXgR5u77BG9bEV6W4CQg-R5kX7qUs9fLDLBUTb_1dazIocEAaipbollU3A0YKX0G-97Ug3wFaexxEhC3e32AEX88ZO6N6Dvy4AEsYdQ6QucvwUEMGuOkK7RN76YDBfSlRXc6j3J7X3FvF-el52bh4Is8V_UrhAjeM81lz76vqqLG8iYXrZWHramWQY_SV6I3MPHLMaFkeFXrQ1u"/>
+</div>
+<!-- Card Details -->
+<div class="p-4 flex flex-col gap-1 bg-white">
+<h2 class="font-body-lg text-body-lg text-ink">Urban Linen Comfort</h2>
+<p class="font-body-md text-ink-secondary">White cotton-linen blend Kurta with relaxed fit blue denim.</p>
+<div class="mt-3 flex gap-2">
+<button class="flex-1 bg-secondary text-white font-label-lg text-label-lg py-2.5 rounded-lg hover:bg-hot-text transition-colors shadow-soft">View Details</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Chat Input Bar -->
+<div class="fixed bottom-0 w-full bg-surface/95 backdrop-blur-md border-t border-border p-3 pb-safe z-40">
+<div class="flex items-center gap-2 max-w-3xl mx-auto">
+<div class="flex-1 bg-white border border-outline-variant rounded-full flex items-center px-4 py-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary shadow-soft transition-all" onclick="window.parent.postMessage(\'demo_occasion_result\',\'*\')">
+<input class="border-0 focus:ring-0 w-full bg-transparent border-none focus:ring-0 text-ink font-body-md placeholder-ink-secondary py-1 px-0" placeholder="Type in English or Hindi…" type="text"/>
+</div>
+<button class="bg-primary text-white p-3 rounded-full flex items-center justify-center hover:bg-primary-container transition-colors shadow-lift active:scale-95" onclick="window.parent.postMessage(\'demo_occasion_result\',\'*\')">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<script>
+    document.addEventListener('click', function(e) {
+        let el = e.target.closest('a, button');
+        if (el && !el.getAttribute('onclick') && !el.getAttribute('href')) {
+            e.preventDefault();
+            let toast = document.createElement('div');
+            toast.innerText = 'Not in this prototype';
+            toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#201A28;color:white;padding:8px 16px;border-radius:999px;font-family:Mukta;font-size:13px;z-index:99999;opacity:0;transition:opacity 0.3s;';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.opacity = '1', 10);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    });
+    </script>
+</body></html>
