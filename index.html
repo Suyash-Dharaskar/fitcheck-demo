@@ -38,13 +38,18 @@
      end a given line lands on depends on the viewport, so it cannot be checked
      by looking once. The scrim makes it safe everywhere and keeps the hue. */
   header.hero{background:
-                linear-gradient(180deg,rgba(26,20,34,.30) 0%,rgba(26,20,34,.14) 100%),
+                linear-gradient(180deg,rgba(26,20,34,.34) 0%,rgba(26,20,34,.30) 100%),
                 linear-gradient(135deg,#4A2E5B 0%,#8E44AD 55%,#E23B7A 100%);
               color:#fff;padding:72px 0 64px;margin-bottom:8px}
   header.hero h1{color:#fff}
-  header.hero .lede{color:rgba(255,255,255,.92)}
-  .kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-          margin-bottom:14px}
+  header.hero .lede{color:#fff}
+  /* A wordmark and a date, reading as the top of a page rather than as the
+     tiny uppercase eyebrow that sits above every AI-SaaS hero headline. Same
+     information, not the same shape. */
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+            padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.22);margin-bottom:34px}
+  .masthead .mark{font-family:'Rozha One',serif;font-size:21px}
+  .masthead .meta{font-size:14px;color:rgba(255,255,255,.88)}
 
   .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:14px;margin:34px 0 0}
   /* Tinted DOWN, not up. The gradient ends in #E23B7A, where white at 12px is
@@ -57,9 +62,13 @@
 
   .card{background:var(--canvas);border-radius:18px;padding:26px 28px;margin:22px 0;
         box-shadow:0 4px 16px rgba(32,26,40,.07)}
-  .quote{border-left:3px solid var(--hot);padding:4px 0 4px 18px;margin:18px 0;
-         font-size:18px;color:var(--ink)}
-  .quote cite{display:block;font-size:13.5px;color:var(--soft);font-style:normal;margin-top:8px}
+  /* Set as a pull-quote rather than fenced by a coloured bar: the type does
+     the work, which is what makes it read as editorial instead of as a
+     component. */
+  .quote{margin:26px 0;font-family:'Rozha One',Georgia,serif;font-size:clamp(21px,2.6vw,26px);
+         line-height:1.3;color:var(--ink);max-width:var(--measure)}
+  .quote cite{display:block;font-family:Mukta,sans-serif;font-size:13px;color:var(--soft);
+              font-style:normal;margin-top:10px;letter-spacing:.02em}
 
   table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px}
   th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -72,9 +81,17 @@
   .t-no{background:#FBE6E6;color:#7A1414}
   .t-later{background:var(--surface);color:var(--soft)}
 
-  .wrong{background:var(--canvas);border-radius:18px;padding:22px 26px;margin:16px 0;
-         border-left:4px solid var(--gold)}
+  /* Numbered and ruled, not tabbed. A thick accent down one side of a card is
+     the single most recognisable tell of a generated layout, and this page is
+     read by people who look at interfaces for a living. */
+  .wrong{background:var(--canvas);border-radius:18px;padding:24px 26px;margin:16px 0;
+         counter-increment:fix}
+  .wrong::before{content:"Correction " counter(fix);display:block;font-size:11.5px;
+                 font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+                 color:var(--gold);padding-bottom:12px;margin-bottom:14px;
+                 border-bottom:1px solid var(--line)}
   .wrong b{display:block;margin-bottom:4px}
+  .corrections{counter-reset:fix}
 
   .cta{background:var(--ink);color:#fff;border-radius:22px;padding:40px 32px;margin:52px 0 72px}
   .cta h2{color:#fff;margin-top:0}
@@ -95,7 +112,10 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="kicker">Product case study · 2026</div>
+    <div class="masthead">
+      <span class="mark">FitCheck.ai</span>
+      <span class="meta">Product case study · 2026</span>
+    </div>
     <h1>I set out to build a wardrobe app.<br>The evidence told me to build something smaller.</h1>
     <p class="lede">FitCheck.ai — an India-first wardrobe and styling app. This is the
     research, the measurements, the decisions, and the four places I was wrong.</p>
@@ -208,6 +228,7 @@ around them.</p>
 <h2>Where I was wrong</h2>
 <p>Four corrections I had to make to my own work. I think these matter more than
 the things I got right.</p>
+<div class="corrections">
 
 <div class="wrong">
   <b>I divided when I should have read the architecture.</b>
@@ -233,6 +254,8 @@ the things I got right.</p>
   one empty function: React Native Web’s alert is <code>static alert(){}</code>.
   Every error, every confirmation, discarded. It typechecks and it works on a
   phone — only an error path in a browser reveals it.
+</div>
+
 </div>
 
 <h2>The decision</h2>
