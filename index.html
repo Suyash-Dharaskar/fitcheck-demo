@@ -74,6 +74,12 @@
               font-style:normal;margin-top:10px;letter-spacing:.02em}
 
   table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px}
+  /* A four-column table of measurements has a min-content width wider than a
+     phone, and it was pushing the whole PAGE sideways -- 434px of content in a
+     375px window, so every section scrolled horizontally to accommodate one
+     table. The table scrolls inside its own card instead. */
+  .scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .scroll-x>table{min-width:520px}
   th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
   th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-weight:700}
   td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -121,14 +127,14 @@
     </div>
     <h1>I set out to build a wardrobe app.<br>The evidence told me to build something smaller.</h1>
     <p class="lede">FitCheck.ai — an India-first wardrobe and styling app. This is the
-    research, the measurements, the decisions, and the four places I was wrong.</p>
+    research, the measurements, the decisions, and the seven places I was wrong.</p>
     <div class="stats">
       <div class="stat"><b>11,389</b><span>app-store reviews read, 11 apps</span></div>
       <div class="stat"><b>1,463</b><span>feature requests ranked</span></div>
       <div class="stat"><b>2,486</b><span>YouTube comments analysed</span></div>
       <div class="stat"><b>12</b><span>models measured on real hardware</span></div>
       <div class="stat"><b>47</b><span>screens designed</span></div>
-      <div class="stat"><b>4</b><span>screens built first, deliberately</span></div>
+      <div class="stat"><b>13</b><span>screens built and running</span></div>
     </div>
   </div>
 </header>
@@ -144,7 +150,7 @@ every garment before the app does anything useful, and almost nobody finishes.</
 <b>can the technology actually deliver the promise on a mid-range Indian phone?</b></p>
 
 <h2>What I did</h2>
-<div class="card">
+<div class="card scroll-x">
   <table>
     <tr><th>Method</th><th>Scale</th><th>What it was for</th></tr>
     <tr><td>App teardowns</td><td class="num">15 apps</td><td>Six walked hands-on over ADB, not read about</td></tr>
@@ -153,6 +159,7 @@ every garment before the app does anything useful, and almost nobody finishes.</
     <tr><td>Comment corpus</td><td class="num">2,486</td><td>YouTube, where people argue rather than rate</td></tr>
     <tr><td>Feature parity</td><td class="num">128 × 6</td><td>Us against six apps, with UNKNOWN as the default</td></tr>
     <tr><td>Model benchmarks</td><td class="num">12</td><td>Measured, on real hardware, not quoted from papers</td></tr>
+    <tr><td>Competitor UI teardown</td><td class="num">2 apps</td><td>Flipkart and Myntra driven over ADB at 411×914dp, measured pixel by pixel</td></tr>
   </table>
 </div>
 <p class="note">The parity matrix was filled by a separate reader per app, under one
@@ -215,7 +222,7 @@ just record it. Neither idea was mine.</p>
 <h2>What I measured</h2>
 <p>Every number below is from a benchmark I ran, not a figure from a paper. Two of
 them changed the product.</p>
-<div class="card">
+<div class="card scroll-x">
 <table>
   <tr><th>Thing</th><th class="num">Target</th><th class="num">Measured</th><th>Consequence</th></tr>
   <tr><td>Background removal (cutout)</td><td class="num">2 s</td><td class="num"><b>10.9 s</b></td><td>Cut from v1. Every setting tried: half resolution works, quarter returns an empty mask, int8 buys 1.09×, fp16 is <i>slower</i></td></tr>
@@ -258,17 +265,44 @@ the things I got right.</p>
   Every error, every confirmation, discarded. It typechecks and it works on a
   phone — only an error path in a browser reveals it.
 </div>
+<div class="wrong">
+  <b>I measured the website when I meant the app.</b>
+  I spent a research pass measuring flipkart.com at phone width and wrote a
+  design system off it. They are two different products by two different teams,
+  and the app is the one built for a phone. <b>My user caught it, not me.</b>
+  Re-measured on the installed Android apps, the section title alone was out by
+  half again — and the rest of the system with it.
+</div>
+<div class="wrong">
+  <b>One line in one component made every thumbnail two pixels wide.</b>
+  The garment tile had <code>flex: 1</code> baked into its base style, which
+  carries <code>flex-basis: 0%</code> — and that beats any width a caller sets.
+  Height correct, width made entirely of its own borders. I fixed it in the
+  component rather than the screen in front of me; patching the symptom would
+  have left the next screen to rediscover it.
+</div>
+<div class="wrong">
+  <b>My own contrast checker was wrong.</b>
+  A script I wrote to audit this page skipped the linearisation on one colour
+  channel, and told me the body text failed at 2.31:1 when it is 16.94:1. I
+  would have “fixed” six colours that were never broken. It now asserts
+  black-on-white = 21.00 before it prints anything. <b>An instrument you have
+  not checked is an opinion.</b>
+</div>
 
 </div>
 
 <h2>The decision</h2>
 <p>128 features were marked for launch, 85 of them in the first release, to be
 built by one person. The honest answer to “can one person build this?” was no.</p>
-<p>So I built an <b>instrument instead of a product</b>: four screens, no AI model
-shipped, and a pass mark written down <i>before</i> the build —
+<p>So I started with an <b>instrument instead of a product</b>: four screens, no
+AI model shipped, and a pass mark written down <i>before</i> the build —
 <b>40% of 15 testers acting twice in ten days.</b> If that number is not met, the
-remaining 81 features are not worth building, and I will have found out in ten
-days instead of ten months.</p>
+remaining features are not worth building, and I will have found out in ten days
+instead of ten months.</p>
+<p class="note">That test has not been run yet, and nothing on this page claims
+it has. The criterion is published here so it cannot be moved afterwards, which
+is the only thing that makes a pass mark worth writing down.</p>
 <div class="card">
 <table>
   <tr><th>Of the 47 designed screens</th><th class="num">Count</th><th>Why</th></tr>
@@ -282,14 +316,79 @@ days instead of ten months.</p>
 from a link needs network scraping, which would end the “nothing leaves your
 phone” guarantee that is the product’s only real moat.</p>
 
+<h2>What I then built</h2>
+<p>The four-screen instrument shipped. Then the build continued down the
+evidence-led list rather than down the prototype — because the prototype was
+drawn <i>before</i> most of the evidence existed, and copying it would have baked
+in decisions the research had since contradicted.</p>
+<p>The order was chosen on one question: <b>what does the loop owe the user?</b></p>
+<div class="card scroll-x">
+<table>
+  <tr><th class="num">#</th><th>Phase</th><th>State</th><th>Why there</th></tr>
+  <tr><td class="num">1</td><td>Loop closers — history, your numbers, cost per wear, saved looks</td><td><span class="tag t-keep">Built</span></td><td>The app asked for a tap every morning and gave nothing back</td></tr>
+  <tr><td class="num">2</td><td>Taxonomy — custom categories, deeper colour, batch edit, negation</td><td><span class="tag t-later">Next</span></td><td>Where the evidence is loudest: 49, 29, 28 and 24 requests</td></tr>
+  <tr><td class="num">3</td><td>On-device auto-tagging, with the off switch</td><td><span class="tag t-later">Not yet</span></td><td>The switch ships with it, not after it</td></tr>
+  <tr><td class="num">4</td><td>Trips and packing</td><td><span class="tag t-keep">Built</span></td><td>Pulled forward: the differentiator, and the rules were already written</td></tr>
+  <tr><td class="num">5</td><td>Onboarding and trust — one drawer, DPDP centre, real export</td><td><span class="tag t-later">Not yet</span></td><td>Export is the #2 ask at 37 requests</td></tr>
+</table>
+</div>
+<p><b>Thirteen screens, five tabs, 7,311 lines, 23 shared components and 153
+assertions that run on every build.</b> Nothing in it is a placeholder.</p>
+
+<h3>Packing, as the shape of the whole argument</h3>
+<p>You say where you are going and for how long. Before you commit, the screen
+tells you what it is about to ask for: <i>“I will ask for 7 tops, 3 bottoms, 2
+pairs of shoes and one layer, plus something ethnic.”</i> One tap fills the bag
+from clothes you already photographed. Then you tick things off as they go in.</p>
+<p><b>There is no date picker.</b> A trip is a start date plus a number of nights —
+“Goa, four nights” — because that is how people say it out loud, and it removes
+the worst control on a phone.</p>
+<p>The rule is printed on the screen, in words, underneath. That is the point:
+<b>a rule can be argued with and a model cannot.</b> If you think two pairs of
+shoes is wrong for five nights, that is a product conversation, not a shrug.</p>
+
+<h2>Designing it</h2>
+<p>The first build worked and looked like a form. So I went to the two Indian
+apps that have spent the most on this problem and measured them — and
+<b>measured the wrong product first.</b></p>
+<div class="card scroll-x">
+<table>
+  <tr><th>&nbsp;</th><th>Their website</th><th>Their Android app</th></tr>
+  <tr><td>Section title</td><td class="num">17px</td><td class="num"><b>~26sp</b></td></tr>
+  <tr><td>Page background</td><td class="num">#F1F3F6</td><td class="num">#FFFFFF</td></tr>
+  <tr><td>Body text</td><td class="num">12px, 96% of all text</td><td class="num">13–16sp</td></tr>
+  <tr><td>Box shadows</td><td class="num">zero</td><td class="num">used, sparingly</td></tr>
+  <tr><td>Navigation</td><td class="num">top tabs</td><td class="num">bottom bar, 63dp</td></tr>
+</table>
+</div>
+<p>The section title is the one that mattered: in the app it is half as loud
+again as the figure I had copied off the website. <b>The app’s hierarchy is far
+more dramatic than the website’s, and that drama is most of why the app reads as
+designed and the website reads as listed.</b></p>
+<p>Three patterns only the app shows, and all three are now in ours:</p>
+<table>
+  <tr><th>Pattern</th><th>Where it went</th></tr>
+  <tr><td>The claim sits <b>on</b> the photograph; the name sits <b>below</b> the card — the exact inverse of the website</td><td>Category tiles carry a coloured label strip across the bottom</td></tr>
+  <tr><td>A rail’s last tile is <b>deliberately clipped</b> by the screen edge, which is how you know it scrolls</td><td>Every horizontal rail runs edge to edge</td></tr>
+  <tr><td>Navigation is built out of <b>photographs</b>, not words</td><td>You browse your wardrobe by type, as a rail of your own clothes</td></tr>
+</table>
+<p>One number I had right by luck: <b>their side margin is 16dp exactly. So is
+ours.</b></p>
+<p class="note">What I refused to copy, and said so in the file: their 12px body
+text (marketplace density for scanning hundreds of products — it would fail this
+project’s own accessibility checklist), their near-shadowless chrome, and
+urgency badges. Nothing in a wardrobe app is for sale.</p>
+
 </main>
 
 <div class="wrap">
 <section class="cta">
   <h2>See it</h2>
-  <p>The working app runs entirely on your device — no account, no server, and
-  nothing in it can upload a photograph. The prototype is the full product as
-  designed, all 47 screens.</p>
+  <p>Thirteen screens across five tabs, running entirely on your device — no
+  account, no server, and nothing in it can upload a photograph. Add a few
+  clothes and the rest of the app comes alive: log what you wore, keep a look,
+  see what a shirt costs you per wear, pack for a trip. The prototype alongside
+  it is the full product as designed, all 47 screens.</p>
   <div class="buttons">
     <a class="btn btn-primary" href="app/">Open the app</a>
     <a class="btn btn-ghost" href="prototype/gallery.html">All 47 screens</a>
