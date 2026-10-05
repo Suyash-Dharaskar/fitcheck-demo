@@ -11,7 +11,7 @@
 <style>
   :root{
     --ink:#201A28; --soft:#6B6472; --line:#EEE9F2; --surface:#F5F2F8;
-    --canvas:#FFFFFF; --plum:#4A2E5B; --hot:#E23B7A; --gold:#C6A15A; --ok:#147A44;
+    --canvas:#FFFFFF; --plum:#4A2E5B; --hot:#E23B7A; --gold:#C6A15A;--gold-text:#7A5A16; --ok:#147A44;
     /* The brand pink is 4.1:1 against white -- below the 4.5:1 AA floor for
        anything under 18.66px bold. This is the same hue at the brand's own
        darker stop, used wherever white text sits ON pink. #E23B7A stays for
@@ -26,6 +26,9 @@
        -webkit-font-smoothing:antialiased}
   .wrap{max-width:860px;margin:0 auto;padding:0 24px}
   h1,h2,h3{font-family:'Rozha One',Georgia,serif;font-weight:400;line-height:1.08;margin:0}
+  /* h3 is only 22px, so it wraps on a phone where h1 and h2 do not.
+     Display leading is right for the big two and cramped for this one. */
+  h3{line-height:1.2}
   h1{font-size:clamp(38px,7vw,64px);letter-spacing:-.015em}
   h2{font-size:clamp(28px,4.4vw,40px);letter-spacing:-.01em;margin:64px 0 8px}
   h3{font-size:22px;margin:32px 0 6px}
@@ -88,7 +91,7 @@
          counter-increment:fix}
   .wrong::before{content:"Correction " counter(fix);display:block;font-size:11.5px;
                  font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-                 color:var(--gold);padding-bottom:12px;margin-bottom:14px;
+                 color:var(--gold-text);padding-bottom:12px;margin-bottom:14px;
                  border-bottom:1px solid var(--line)}
   .wrong b{display:block;margin-bottom:4px}
   .corrections{counter-reset:fix}
